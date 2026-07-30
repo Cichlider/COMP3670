@@ -63,5 +63,3 @@ COMP3670/
 │   └── week-02-tutorial.pdf
 └── assignments/               # 作业要求与个人提交
 ```
-
-# COMP3670
