@@ -42,24 +42,20 @@ FG = min(7A₁ + 7A₂ + 7A₃ + 4Q + 4L, 22) + 23M + 55E
 
 课程已通过“取最好成绩”和 22% 上限为偶发缺席预留空间，因此课堂测验及实验练习不提供补做或延期。其他考核的延期或特殊考虑请遵循 ANU 的正式申请流程。
 
-## 学习资源
-
-- [MyTimetable](https://mytimetable.anu.edu.au/even/student)：第 1 周前选择实验课
-- [Poll Everywhere](https://pollev.com/anuiml2026)：课堂测验；使用 ANU 邮箱登录
-- **EchoVideo：** 讲座录像与字幕
-- **Ed Discussion Forum：** 通知与课程问题
-- **Gradescope：** 作业提交
-- **ANU Class Summary 与课程网站：** 官方课程要求、每周课件及政策
-
-
 ## 仓库结构
 
 ```text
 COMP3670/
-├── README.md                  # 课程概览与关键信息
-├── lectures/                  # 讲座课件
-│   └── week-01-handout.pdf
-├── labs/                      # 实验与辅导课材料
-│   └── week-02-tutorial.pdf
-└── assignments/               # 作业要求与个人提交
+├── README.md                    # 课程概览与关键信息
+├── comp3670_lectures/           # 讲座课件（lecture*.pdf、LA_lecture*.pdf）
+├── comp3670_tutsheet/           # 辅导课资料（tutsheet*.pdf）
+├── comp3670_worksheet/          # 练习题与 LA 练习
+├── comp3670_assignments/        # 作业 PDF
+├── comp3670_quiz/
+│   ├── 1.pdf ... 11.pdf          # 各讲 Quiz 原文件
+│   ├── quizzes.md                # 按顺序整理的题目与答案
+│   ├── assets/                   # Markdown 中使用的图示
+│   ├── web/                      # 离线自测网页及所需资源
+│   └── quiz_self_test.zip        # 自测网页压缩包
+└── output/pdf/                   # 生成的解答 PDF 与 TeX 源文件
 ```
