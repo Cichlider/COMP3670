@@ -1,0 +1,315 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\jot}{3pt}
+\allowdisplaybreaks[1]
+\pagestyle{plain}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\Nul}{\operatorname{Nul}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\blue}[1]{\textcolor{blue!55!black}{#1}}
+
+\begin{document}
+\section*{Question 1: Rank and Nullity}
+Let
+\begin{align*}
+A&=\begin{pmatrix}
+2&1&4&3&0\\
+1&-2&-3&4&-2\\
+0&1&2&-1&1\\
+3&-2&-1&8&-2
+\end{pmatrix}
+&b_t&=\begin{pmatrix}2\\-1\\1\\t\end{pmatrix}
+\end{align*}
+
+\textbf{(a) Row-echelon form and column space.} Apply the indicated row operations in order:
+\begin{align*}
+A
+&\xrightarrow{R_1\leftrightarrow R_2}
+\begin{pmatrix}
+1&-2&-3&4&-2\\
+2&1&4&3&0\\
+0&1&2&-1&1\\
+3&-2&-1&8&-2
+\end{pmatrix}\\
+&\xrightarrow{\substack{R_2\leftarrow R_2-2R_1\\R_4\leftarrow R_4-3R_1}}
+\begin{pmatrix}
+1&-2&-3&4&-2\\
+0&5&10&-5&4\\
+0&1&2&-1&1\\
+0&4&8&-4&4
+\end{pmatrix}\\
+&\xrightarrow{R_2\leftrightarrow R_3}
+\begin{pmatrix}
+1&-2&-3&4&-2\\
+0&1&2&-1&1\\
+0&5&10&-5&4\\
+0&4&8&-4&4
+\end{pmatrix}\\
+&\xrightarrow{\substack{R_3\leftarrow R_3-5R_2\\R_4\leftarrow R_4-4R_2}}
+\underbrace{\begin{pmatrix}
+1&-2&-3&4&-2\\
+0&1&2&-1&1\\
+0&0&0&0&-1\\
+0&0&0&0&0
+\end{pmatrix}}_{\text{row-echelon form}}
+\end{align*}
+The pivot columns are columns $1,2,5$. Use these columns from \emph{the original} $A$:
+\begin{align*}
+\Col(A)
+&=\operatorname{span}\left\{
+\begin{pmatrix}2\\1\\0\\3\end{pmatrix}\;
+\begin{pmatrix}1\\-2\\1\\-2\end{pmatrix}\;
+\begin{pmatrix}0\\-2\\1\\-2\end{pmatrix}
+\right\}
+\end{align*}
+These three columns form a basis because they correspond to pivots.
+
+\clearpage
+\textit{Question 1 (continued)}
+
+\textbf{(b) Rank, nullity, and null space.} First finish the row reduction:
+\begin{align*}
+&R_3\leftarrow -R_3\;\;
+R_1\leftarrow R_1+2R_2\;\;
+R_2\leftarrow R_2-R_3\\
+&\operatorname{rref}(A)=
+\begin{pmatrix}
+1&0&1&2&0\\
+0&1&2&-1&0\\
+0&0&0&0&1\\
+0&0&0&0&0
+\end{pmatrix}
+\end{align*}
+Set $x_3=s$ and $x_4=q$. The equations $A\mathbf{x}=0$ give
+\begin{align*}
+x_1+x_3+2x_4&=0&x_1&=-s-2q\\
+x_2+2x_3-x_4&=0&x_2&=-2s+q\\
+x_5&=0
+\end{align*}
+so
+\begin{align*}
+\mathbf{x}
+&=s\begin{pmatrix}-1\\-2\\1\\0\\0\end{pmatrix}
++q\begin{pmatrix}-2\\1\\0\\1\\0\end{pmatrix}
+\;\;s,q\in\R
+\end{align*}
+The two vectors are independent because their third and fourth entries are $(1,0)$ and $(0,1)$. Hence
+\begin{align*}
+\rank(A)&=3&\nullity(A)&=2&\rank(A)+\nullity(A)&=3+2=5
+\end{align*}
+This equals the number of columns of $A$, as required.
+
+\textbf{(c) Consistency and all solutions.} Apply the same row operations to $[A\mid b_t]$:
+\begin{align*}
+[A\mid b_t]
+&\longrightarrow
+\begin{pmatrix}
+1&-2&-3&4&-2&\vline&-1\\
+0&1&2&-1&1&\vline&1\\
+0&0&0&0&-1&\vline&-1\\
+0&0&0&0&0&\vline&t-1
+\end{pmatrix}
+\end{align*}
+The last row says $0=t-1$. Thus the system is consistent exactly when $t=1$.
+For $t=1$, the same remaining operations as in (b) give
+\begin{align*}
+\begin{pmatrix}
+1&0&1&2&0&\vline&1\\
+0&1&2&-1&0&\vline&0\\
+0&0&0&0&1&\vline&1\\
+0&0&0&0&0&\vline&0
+\end{pmatrix}
+\end{align*}
+and therefore every solution is
+\begin{align*}
+\boxed{\displaystyle
+\mathbf{x}=\begin{pmatrix}1\\0\\0\\0\\1\end{pmatrix}
++s\begin{pmatrix}-1\\-2\\1\\0\\0\end{pmatrix}
++q\begin{pmatrix}-2\\1\\0\\1\\0\end{pmatrix}
+\;\;s,q\in\R}
+\end{align*}
+
+\clearpage
+\section*{Question 2: Orthogonal Projection}
+Let
+\begin{align*}
+\mathbf a&=\begin{pmatrix}1\\-2\\2\\-4\end{pmatrix}&
+\mathbf b&=\begin{pmatrix}3\\2\\1\\-6\end{pmatrix}&
+\mathbf y&=\begin{pmatrix}3\\2\\-4\\-1\end{pmatrix}&
+S&=\operatorname{span}\{\mathbf a,\mathbf b\}
+\end{align*}
+
+\textbf{(a) Gram--Schmidt.} Start with $\mathbf a$:
+\begin{align*}
+\mathbf a^{\mathsf T}\mathbf a
+&=1^2+(-2)^2+2^2+(-4)^2=25\\
+\mathbf a^{\mathsf T}\mathbf b
+&=(1)(3)+(-2)(2)+(2)(1)+(-4)(-6)=25\\
+\mathbf w
+&=\mathbf b-\frac{\mathbf a^{\mathsf T}\mathbf b}{\mathbf a^{\mathsf T}\mathbf a}\mathbf a
+=\mathbf b-\mathbf a
+=\begin{pmatrix}2\\4\\-1\\-2\end{pmatrix}\\
+\mathbf w^{\mathsf T}\mathbf w
+&=2^2+4^2+(-1)^2+(-2)^2=25\\
+\mathbf a^{\mathsf T}\mathbf w
+&=25-25=0
+\end{align*}
+Both vectors have length $5$, so an orthonormal basis of $S$ is
+\begin{align*}
+\boxed{\displaystyle
+\mathbf e_1=\frac15\begin{pmatrix}1\\-2\\2\\-4\end{pmatrix}
+\;\;
+\mathbf e_2=\frac15\begin{pmatrix}2\\4\\-1\\-2\end{pmatrix}}
+\end{align*}
+
+\textbf{(b) Projection and residual.} Calculate the two coefficients:
+\begin{align*}
+\mathbf y^{\mathsf T}\mathbf a
+&=(3)(1)+(2)(-2)+(-4)(2)+(-1)(-4)=-5\\
+\mathbf y^{\mathsf T}\mathbf w
+&=(3)(2)+(2)(4)+(-4)(-1)+(-1)(-2)=20\\
+\mathbf y^{\mathsf T}\mathbf e_1&=-1
+&\mathbf y^{\mathsf T}\mathbf e_2&=4
+\end{align*}
+Thus
+\begin{align*}
+\operatorname{proj}_{S}(\mathbf y)
+&=(-1)\mathbf e_1+4\mathbf e_2
+=-\frac15\mathbf a+\frac45\mathbf w
+=\boxed{\frac15\begin{pmatrix}7\\18\\-6\\-4\end{pmatrix}}\\
+\mathbf r
+&=\mathbf y-\operatorname{proj}_{S}(\mathbf y)
+=\boxed{\frac15\begin{pmatrix}8\\-8\\-14\\-1\end{pmatrix}}
+\end{align*}
+Check the residual against both vectors that span $S$:
+\begin{align*}
+\mathbf a^{\mathsf T}\mathbf r
+&=\frac15\bigl(8+16-28+4\bigr)=0\\
+\mathbf b^{\mathsf T}\mathbf r
+&=\frac15\bigl(24-16-14+6\bigr)=0
+\end{align*}
+Therefore $\mathbf r$ is orthogonal to all of $S$.
+
+\textbf{(c) Distance.} The distance is the length of the residual:
+\begin{align*}
+\dist(\mathbf y,S)
+&=\norm{\mathbf r}
+=\sqrt{\frac{8^2+(-8)^2+(-14)^2+(-1)^2}{5^2}}
+=\sqrt{\frac{325}{25}}
+=\boxed{\sqrt{13}}
+\end{align*}
+
+\clearpage
+\section*{Question 3: Recommending Content on an Online Platform}
+Write $\mathbf u_i\in\R^{d_u}$ for user $i$ and $\mathbf v_j\in\R^{d_v}$ for video $j$, where $d_u\ne d_v$. Let $n_u,n_v$ be the numbers of users and videos.
+
+\textbf{(a) Clustering.} Cluster the video vectors into $K$ groups. Let $\boldsymbol\mu_k\in\R^{d_v}$ be the centre of group $k$. In preprocessing, keep a small bank $C_k$ of at most $B$ representative videos from each group. A user is first matched to a few promising groups, and only videos in their banks are scored. This avoids comparing that user with all $n_v$ videos. Different groups also provide different kinds of videos.
+
+\textbf{(b) Matrix score.} For nonzero vectors, define
+\begin{align*}
+\widehat{\mathbf u}_i&=\frac{\mathbf u_i}{\norm{\mathbf u_i}}\in\R^{d_u}&
+\widehat{\mathbf v}_j&=\frac{\mathbf v_j}{\norm{\mathbf v_j}}\in\R^{d_v}\\
+W&\in\R^{d_u\times d_v}&
+s(i,j)&=\widehat{\mathbf u}_i^{\mathsf T}W\widehat{\mathbf v}_j
+\in\R
+\end{align*}
+The matrix $W$ connects coordinates with different meanings and dimensions. A direct dot product $\mathbf u_i^{\mathsf T}\mathbf v_j$ is not defined when $d_u\ne d_v$. Normalising the vectors removes differences in their lengths, so the score focuses on the learned match. Rank videos by larger $s(i,j)$.
+
+\textbf{(c) Supervised learning and fast recommendations.} Use one training example for each \emph{viewed} user--video pair $(i,j)$. Its features are $(\widehat{\mathbf u}_i,\widehat{\mathbf v}_j)$, and its label is one of $L$ (like), $D$ (dislike), or $N$ (viewed with no response). An unviewed pair is not labelled $N$.
+
+Learn three matrices and three scalar biases:
+\begin{align*}
+M_L,M_D,M_N&\in\R^{d_u\times d_v}&
+b_L,b_D,b_N&\in\R\\
+z_c(i,j)&=\widehat{\mathbf u}_i^{\mathsf T}M_c\widehat{\mathbf v}_j+b_c
+&c&\in\{L,D,N\}\\
+p_c(i,j)&=\frac{e^{z_c(i,j)}}{e^{z_L(i,j)}+e^{z_D(i,j)}+e^{z_N(i,j)}}
+\end{align*}
+For the set $T$ of viewed pairs, with observed label $y_{ij}$, minimise
+\begin{align*}
+\mathcal L(M_L,M_D,M_N,b_L,b_D,b_N)
+&=-\frac{1}{|T|}\sum_{(i,j)\in T}\log p_{y_{ij}}(i,j)
++\lambda\sum_{c\in\{L,D,N\}}\norm{M_c}_{F}^{2}
+\;\;\lambda\ge 0
+\end{align*}
+Here $\norm{M_c}_{F}^{2}$ is the sum of the squares of all entries of $M_c$.
+After training, set $W=M_L-M_D$ in part (b). Then
+\begin{align*}
+\log\frac{p_L(i,j)}{p_D(i,j)}
+&=z_L(i,j)-z_D(i,j)\\
+&=\widehat{\mathbf u}_i^{\mathsf T}W\widehat{\mathbf v}_j+(b_L-b_D)\\
+&=s(i,j)+(b_L-b_D)
+\end{align*}
+The bias difference is the same for every video of one user. Thus ranking by $s(i,j)$ is exactly ranking by the model's like-to-dislike odds.
+
+\clearpage
+\textit{Question 3 (continued)}
+
+For each centre, normalise $\boldsymbol\mu_k$ and precompute $W\widehat{\boldsymbol\mu}_k$. Also precompute $W\widehat{\mathbf v}_j$ for every video in a bank. For a user, rank the $K$ centres by
+\begin{align*}
+s(i,k)&=\widehat{\mathbf u}_i^{\mathsf T}W\widehat{\boldsymbol\mu}_k
+\end{align*}
+Choose the best $h$ groups, score at most $hB$ bank videos with $s(i,j)$, and return the best $\ell$ videos, where $\ell\le hB$. The banks may be chosen by popularity and diversity within each cluster. This is approximate because some videos are absent from the banks.
+
+Assume $K,B,h,\ell$ are fixed as $n_v$ grows, $h\le K$, and the embeddings, centres, banks, and products with $W$ are prepared in advance. With fixed embedding dimensions, the time per user is
+\begin{align*}
+O\!\left(d_uK+K\log h+d_uhB+hB\log\ell\right)
+\end{align*}
+which has no $n_v$ term. If all user and video embeddings and each video's group number are kept, memory is
+\begin{align*}
+O\!\left(
+n_ud_u+n_vd_v+n_v+Kd_v+KB(d_v+d_u)+Kd_u+3d_ud_v
+\right)
+\end{align*}
+Here $KB(d_v+d_u)$ stores the bank videos and their precomputed products. If the $|T|$ training records are also kept, add $O(|T|)$ memory. Small extra arrays for biases and the output list are included in the bound.
+
+\textbf{(d) Drawback.} Only videos in the selected banks can be recommended. A new or less popular video may be missing even when it would suit a user, so the system can miss good recommendations.
+
+\clearpage
+\section*{Question 4: Matrix Products and Rank}
+Let $A\in\R^{m\times n}$.
+
+\textbf{(a) Show $\rank(A^{\mathsf T}A)=\rank(A)$.} First, if $A\mathbf x=0$, then
+\begin{align*}
+A^{\mathsf T}A\mathbf x&=A^{\mathsf T}0=0
+\end{align*}
+Conversely, suppose $A^{\mathsf T}A\mathbf x=0$. Multiply on the left by $\mathbf x^{\mathsf T}$:
+\begin{align*}
+0
+&=\mathbf x^{\mathsf T}A^{\mathsf T}A\mathbf x
+=(A\mathbf x)^{\mathsf T}(A\mathbf x)
+=\norm{A\mathbf x}^{2}\\
+&=\sum_{r=1}^{m}(A\mathbf x)_r^{2}
+\end{align*}
+Every term is nonnegative, so every term is zero. Hence $A\mathbf x=0$. We have shown
+\begin{align*}
+\Nul(A^{\mathsf T}A)&=\Nul(A)
+\end{align*}
+Both matrices have $n$ columns. Apply rank--nullity to each:
+\begin{align*}
+\rank(A^{\mathsf T}A)
+&=n-\nullity(A^{\mathsf T}A)\\
+&=n-\nullity(A)\\
+&=\boxed{\rank(A)}
+\end{align*}
+
+\textbf{(b) Invertibility and independent columns.} The matrix $A^{\mathsf T}A$ is $n\times n$. Thus
+\begin{align*}
+A^{\mathsf T}A\text{ is invertible}
+&\iff \rank(A^{\mathsf T}A)=n\\
+&\iff \rank(A)=n\\
+&\iff \text{the $n$ columns of $A$ are linearly independent}
+\end{align*}
+
+\end{document}
