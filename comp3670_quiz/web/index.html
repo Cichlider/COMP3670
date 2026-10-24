@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f6">
+  <title>COMP3670 Quiz 自测</title>
+  <meta name="description" content="按 Quiz 1–11 顺序练习 42 道 COMP3670 选择题，点击即查看对错与中文解析。">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="toolbar">
+      <div class="location"><span id="quizBadge">QUIZ 01</span><span class="slash">/</span><span id="questionPosition">第 1 题</span></div>
+      <div class="controls">
+        <label class="visually-hidden" for="quizSelect">练习范围</label>
+        <select id="quizSelect" aria-label="选择练习范围"></select>
+        <div class="score"><span><strong id="answeredCount">0</strong> / 42 已答</span><span class="score-divider"></span><span><strong id="correctCount">0</strong> 正确</span><span class="score-divider"></span><strong id="accuracy">—</strong></div>
+      </div>
+    </header>
+    <div class="progress-track" role="progressbar" aria-label="总进度" aria-valuemin="0" aria-valuemax="42" aria-valuenow="0" id="progressTrack"><div id="progressFill"></div></div>
+
+    <section class="question-card" aria-live="polite">
+      <div class="question-head">
+        <span class="question-number" id="questionNumber">01</span>
+        <h1 id="questionLabel">L1Q1</h1>
+        <span class="status-chip" id="questionStatus">待作答</span>
+      </div>
+      <div id="prompt" class="prompt"></div>
+      <div id="options" class="options"></div>
+      <div id="answerPanel" class="answer-panel" hidden></div>
+      <div class="source-links" id="sourceLinks"></div>
+    </section>
+
+    <nav class="pager" aria-label="题目切换">
+      <button type="button" id="prevButton" class="pager-button">← 上一题</button>
+      <span id="pagerCount"></span>
+      <button type="button" id="nextButton" class="pager-button">下一题 →</button>
+    </nav>
+
+    <div class="question-nav">
+      <div class="nav-top"><span>快速跳题</span><button class="reset-button" id="resetButton" type="button">重做当前范围</button></div>
+      <div id="questionMap" class="question-map" aria-label="题目列表"></div>
+    </div>
+    <p class="keyboard-tip">快捷键：1–4 选答案 · ← → 切题</p>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
