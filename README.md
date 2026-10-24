@@ -1,18 +1,8 @@
 # COMP3670 / COMP6670 — Introduction to Machine Learning
 
+[Quiz 在线自测网页](https://cichlider.github.io/COMP3670/)
+
 ANU 机器学习导论课程。本课程衔接后续机器学习与人工智能课程，默认学生具备先修课程要求的基础数学与编程能力。
-
-## 课程信息
-
-- **课程负责人：** Yun Kuen (Marco) Cheung、Diego Marcondes
-- **授课形式：** 以线下教学为主，鼓励出勤、参与和课堂互动
-- **周四讲座：** 08:30–10:00，Melville Hall G01
-- **周五讲座：** 08:30–10:00，Copland Lecture Theatre
-- **实验课：** 1.5 小时实验 + 0.5 小时答疑；第 1、12 周无实验课
-- **课程问答与通知：** Ed Discussion Forum
-- **私密事项：** [comp3670@anu.edu.au](mailto:comp3670@anu.edu.au)
-
-> 具体教室、时间和临时调整以 MyTimetable、课程网站及 Ed 公告为准。
 
 ## 关键日期
 
