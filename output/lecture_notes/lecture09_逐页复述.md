@@ -1,6 +1,6 @@
 # Lecture 09：特征分解与主成分分析，按幻灯片逐页复述
 
-来源：[lecture09.pdf](/Users/cichlidfish/COMP3670/comp3670_lectures/lecture09.pdf)，共 79 个 PDF 页面。下文严格按 PDF 页面顺序，章节页也单独保留。公式中的数据点默认是列向量，数据矩阵则把数据点转置后放在各行。每节附原页核对图；图中的点、颜色、坐标、球员姓名等细节也属于本节内容。原页没有展开的证明不冒充课件原文，必要的解释标为“理解补充”。
+来源：[lecture09.pdf](../../comp3670_lectures/lecture09.pdf)，共 79 个 PDF 页面。下文严格按 PDF 页面顺序，章节页也单独保留。公式中的数据点默认是列向量，数据矩阵则把数据点转置后放在各行。每节附原页核对图；图中的点、颜色、坐标、球员姓名等细节也属于本节内容。原页没有展开的证明不冒充课件原文，必要的解释标为“理解补充”。
 
 ## 第 1 页：课程与本周主题
 
@@ -9,7 +9,7 @@
 <details>
 <summary>展开第 1 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 1 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-01.jpg)
+![Lecture 09 第 1 页原始幻灯片](assets/lecture09-01.jpg)
 
 </details>
 
@@ -20,7 +20,7 @@
 <details>
 <summary>展开第 2 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 2 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-02.jpg)
+![Lecture 09 第 2 页原始幻灯片](assets/lecture09-02.jpg)
 
 </details>
 
@@ -31,7 +31,7 @@
 <details>
 <summary>展开第 3 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 3 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-03.jpg)
+![Lecture 09 第 3 页原始幻灯片](assets/lecture09-03.jpg)
 
 </details>
 
@@ -42,7 +42,7 @@
 <details>
 <summary>展开第 4 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 4 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-04.jpg)
+![Lecture 09 第 4 页原始幻灯片](assets/lecture09-04.jpg)
 
 </details>
 
@@ -53,7 +53,7 @@
 <details>
 <summary>展开第 5 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 5 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-05.jpg)
+![Lecture 09 第 5 页原始幻灯片](assets/lecture09-05.jpg)
 
 </details>
 
@@ -64,7 +64,7 @@
 <details>
 <summary>展开第 6 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 6 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-06.jpg)
+![Lecture 09 第 6 页原始幻灯片](assets/lecture09-06.jpg)
 
 </details>
 
@@ -79,7 +79,7 @@ $$\langle q,x\rangle q=25q=s.$$
 <details>
 <summary>展开第 7 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 7 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-07.jpg)
+![Lecture 09 第 7 页原始幻灯片](assets/lecture09-07.jpg)
 
 </details>
 
@@ -90,7 +90,7 @@ $$\langle q,x\rangle q=25q=s.$$
 <details>
 <summary>展开第 8 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 8 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-08.jpg)
+![Lecture 09 第 8 页原始幻灯片](assets/lecture09-08.jpg)
 
 </details>
 
@@ -101,7 +101,7 @@ $$\langle q,x\rangle q=25q=s.$$
 <details>
 <summary>展开第 9 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 9 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-09.jpg)
+![Lecture 09 第 9 页原始幻灯片](assets/lecture09-09.jpg)
 
 </details>
 
@@ -116,7 +116,7 @@ $$Av=\lambda v,$$
 <details>
 <summary>展开第 10 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 10 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-10.jpg)
+![Lecture 09 第 10 页原始幻灯片](assets/lecture09-10.jpg)
 
 </details>
 
@@ -127,7 +127,7 @@ $\lambda>0$ 表示缩放而不反向；$\lambda<0$ 表示缩放并反向；$\lam
 <details>
 <summary>展开第 11 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 11 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-11.jpg)
+![Lecture 09 第 11 页原始幻灯片](assets/lecture09-11.jpg)
 
 </details>
 
@@ -142,7 +142,7 @@ $$E_\lambda=\{v\in\mathbb R^d:Av=\lambda v\}=\operatorname{Nul}(A-\lambda I_d).$
 <details>
 <summary>展开第 12 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 12 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-12.jpg)
+![Lecture 09 第 12 页原始幻灯片](assets/lecture09-12.jpg)
 
 </details>
 
@@ -160,7 +160,7 @@ v_3=\begin{pmatrix}-4\\1\\2\end{pmatrix}.$$
 <details>
 <summary>展开第 13 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 13 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-13.jpg)
+![Lecture 09 第 13 页原始幻灯片](assets/lecture09-13.jpg)
 
 </details>
 
@@ -173,7 +173,7 @@ $$Av_1=(28,-56,84)^T=-28v_1,\quad Av_2=(18,36,18)^T=18v_2,\quad Av_3=0.$$
 <details>
 <summary>展开第 14 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 14 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-14.jpg)
+![Lecture 09 第 14 页原始幻灯片](assets/lecture09-14.jpg)
 
 </details>
 
@@ -184,7 +184,7 @@ $$Av_1=(28,-56,84)^T=-28v_1,\quad Av_2=(18,36,18)^T=18v_2,\quad Av_3=0.$$
 <details>
 <summary>展开第 15 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 15 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-15.jpg)
+![Lecture 09 第 15 页原始幻灯片](assets/lecture09-15.jpg)
 
 </details>
 
@@ -195,7 +195,7 @@ $$Av_1=(28,-56,84)^T=-28v_1,\quad Av_2=(18,36,18)^T=18v_2,\quad Av_3=0.$$
 <details>
 <summary>展开第 16 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 16 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-16.jpg)
+![Lecture 09 第 16 页原始幻灯片](assets/lecture09-16.jpg)
 
 </details>
 
@@ -208,7 +208,7 @@ $$Av_1=(28,-56,84)^T=-28v_1,\quad Av_2=(18,36,18)^T=18v_2,\quad Av_3=0.$$
 <details>
 <summary>展开第 17 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 17 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-17.jpg)
+![Lecture 09 第 17 页原始幻灯片](assets/lecture09-17.jpg)
 
 </details>
 
@@ -223,7 +223,7 @@ $$A=Q\Lambda Q^T=\sum_{j=1}^d\lambda_jq_jq_j^T.$$
 <details>
 <summary>展开第 18 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 18 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-18.jpg)
+![Lecture 09 第 18 页原始幻灯片](assets/lecture09-18.jpg)
 
 </details>
 
@@ -242,7 +242,7 @@ $$Q=\begin{pmatrix}
 <details>
 <summary>展开第 19 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 19 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-19.jpg)
+![Lecture 09 第 19 页原始幻灯片](assets/lecture09-19.jpg)
 
 </details>
 
@@ -257,7 +257,7 @@ $$Ax=-28\alpha_1q_1+18\alpha_2q_2.$$
 <details>
 <summary>展开第 20 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 20 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-20.jpg)
+![Lecture 09 第 20 页原始幻灯片](assets/lecture09-20.jpg)
 
 </details>
 
@@ -268,7 +268,7 @@ $$Ax=-28\alpha_1q_1+18\alpha_2q_2.$$
 <details>
 <summary>展开第 21 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 21 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-21.jpg)
+![Lecture 09 第 21 页原始幻灯片](assets/lecture09-21.jpg)
 
 </details>
 
@@ -283,7 +283,7 @@ $$v^TAv=\sum_{j=1}^d\lambda_j\alpha_j^2.$$
 <details>
 <summary>展开第 22 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 22 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-22.jpg)
+![Lecture 09 第 22 页原始幻灯片](assets/lecture09-22.jpg)
 
 </details>
 
@@ -294,7 +294,7 @@ $$v^TAv=\sum_{j=1}^d\lambda_j\alpha_j^2.$$
 <details>
 <summary>展开第 23 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 23 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-23.jpg)
+![Lecture 09 第 23 页原始幻灯片](assets/lecture09-23.jpg)
 
 </details>
 
@@ -309,7 +309,7 @@ $X_c$ 的第 $i$ 行是 $\widetilde x_i^T$，每个特征列的均值都是零�
 <details>
 <summary>展开第 24 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 24 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-24.jpg)
+![Lecture 09 第 24 页原始幻灯片](assets/lecture09-24.jpg)
 
 </details>
 
@@ -324,7 +324,7 @@ $$\operatorname{Var}(t_1,\ldots,t_n)=\frac1n\sum_{i=1}^n(t_i-\bar t)^2.$$
 <details>
 <summary>展开第 25 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 25 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-25.jpg)
+![Lecture 09 第 25 页原始幻灯片](assets/lecture09-25.jpg)
 
 </details>
 
@@ -338,7 +338,7 @@ C_{j\ell}=\frac1n\sum_i(x_{ij}-\mu_j)(x_{i\ell}-\mu_\ell).$$
 <details>
 <summary>展开第 26 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 26 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-26.jpg)
+![Lecture 09 第 26 页原始幻灯片](assets/lecture09-26.jpg)
 
 </details>
 
@@ -353,7 +353,7 @@ $$v^TCv=\frac1n\|X_cv\|_2^2\ge0.$$
 <details>
 <summary>展开第 27 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 27 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-27.jpg)
+![Lecture 09 第 27 页原始幻灯片](assets/lecture09-27.jpg)
 
 </details>
 
@@ -368,7 +368,7 @@ X_c=\begin{pmatrix}6&4\\4&6\\-6&-4\\-4&-6\end{pmatrix}.$$
 <details>
 <summary>展开第 28 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 28 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-28.jpg)
+![Lecture 09 第 28 页原始幻灯片](assets/lecture09-28.jpg)
 
 </details>
 
@@ -384,7 +384,7 @@ $$C=\frac14
 <details>
 <summary>展开第 29 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 29 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-29.jpg)
+![Lecture 09 第 29 页原始幻灯片](assets/lecture09-29.jpg)
 
 </details>
 
@@ -399,7 +399,7 @@ C'=\frac14(X'_c)^TX'_c=\begin{pmatrix}26&-26\\-26&26\end{pmatrix}.$$
 <details>
 <summary>展开第 30 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 30 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-30.jpg)
+![Lecture 09 第 30 页原始幻灯片](assets/lecture09-30.jpg)
 
 </details>
 
@@ -410,7 +410,7 @@ C'=\frac14(X'_c)^TX'_c=\begin{pmatrix}26&-26\\-26&26\end{pmatrix}.$$
 <details>
 <summary>展开第 31 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 31 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-31.jpg)
+![Lecture 09 第 31 页原始幻灯片](assets/lecture09-31.jpg)
 
 </details>
 
@@ -421,7 +421,7 @@ C'=\frac14(X'_c)^TX'_c=\begin{pmatrix}26&-26\\-26&26\end{pmatrix}.$$
 <details>
 <summary>展开第 32 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 32 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-32.jpg)
+![Lecture 09 第 32 页原始幻灯片](assets/lecture09-32.jpg)
 
 </details>
 
@@ -432,7 +432,7 @@ C'=\frac14(X'_c)^TX'_c=\begin{pmatrix}26&-26\\-26&26\end{pmatrix}.$$
 <details>
 <summary>展开第 33 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 33 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-33.jpg)
+![Lecture 09 第 33 页原始幻灯片](assets/lecture09-33.jpg)
 
 </details>
 
@@ -443,7 +443,7 @@ C'=\frac14(X'_c)^TX'_c=\begin{pmatrix}26&-26\\-26&26\end{pmatrix}.$$
 <details>
 <summary>展开第 34 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 34 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-34.jpg)
+![Lecture 09 第 34 页原始幻灯片](assets/lecture09-34.jpg)
 
 </details>
 
@@ -454,7 +454,7 @@ C'=\frac14(X'_c)^TX'_c=\begin{pmatrix}26&-26\\-26&26\end{pmatrix}.$$
 <details>
 <summary>展开第 35 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 35 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-35.jpg)
+![Lecture 09 第 35 页原始幻灯片](assets/lecture09-35.jpg)
 
 </details>
 
@@ -465,7 +465,7 @@ C'=\frac14(X'_c)^TX'_c=\begin{pmatrix}26&-26\\-26&26\end{pmatrix}.$$
 <details>
 <summary>展开第 36 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 36 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-36.jpg)
+![Lecture 09 第 36 页原始幻灯片](assets/lecture09-36.jpg)
 
 </details>
 
@@ -480,7 +480,7 @@ $$\operatorname{Var}(t_1,\ldots,t_n)=\frac1n\sum_i\langle q,\widetilde x_i\rangl
 <details>
 <summary>展开第 37 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 37 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-37.jpg)
+![Lecture 09 第 37 页原始幻灯片](assets/lecture09-37.jpg)
 
 </details>
 
@@ -495,7 +495,7 @@ $$\max_{\|q\|_2=1}q^TCq=\lambda_1.$$
 <details>
 <summary>展开第 38 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 38 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-38.jpg)
+![Lecture 09 第 38 页原始幻灯片](assets/lecture09-38.jpg)
 
 </details>
 
@@ -510,7 +510,7 @@ $$q^TCq=\sum_j\lambda_j\alpha_j^2\le\lambda_1\sum_j\alpha_j^2=\lambda_1.$$
 <details>
 <summary>展开第 39 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 39 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-39.jpg)
+![Lecture 09 第 39 页原始幻灯片](assets/lecture09-39.jpg)
 
 </details>
 
@@ -526,7 +526,7 @@ $$X_c=\begin{pmatrix}18&13&1&0\\0&1&13&18\\6&10&10&6\\-1&0&-18&-13\\-13&-18&0&-1
 <details>
 <summary>展开第 40 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 40 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-40.jpg)
+![Lecture 09 第 40 页原始幻灯片](assets/lecture09-40.jpg)
 
 </details>
 
@@ -539,7 +539,7 @@ $$C=\frac16X_c^TX_c=\begin{pmatrix}105&98&26&27\\98&105&27&26\\26&27&105&98\\27&
 <details>
 <summary>展开第 41 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 41 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-41.jpg)
+![Lecture 09 第 41 页原始幻灯片](assets/lecture09-41.jpg)
 
 </details>
 
@@ -552,7 +552,7 @@ $$q_1=\tfrac12(1,1,1,1)^T,\qquad t=X_cq_1=(16,16,16,-16,-16,-16)^T.$$
 <details>
 <summary>展开第 42 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 42 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-42.jpg)
+![Lecture 09 第 42 页原始幻灯片](assets/lecture09-42.jpg)
 
 </details>
 
@@ -563,7 +563,7 @@ $$q_1=\tfrac12(1,1,1,1)^T,\qquad t=X_cq_1=(16,16,16,-16,-16,-16)^T.$$
 <details>
 <summary>展开第 43 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 43 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-43.jpg)
+![Lecture 09 第 43 页原始幻灯片](assets/lecture09-43.jpg)
 
 </details>
 
@@ -574,7 +574,7 @@ $$q_1=\tfrac12(1,1,1,1)^T,\qquad t=X_cq_1=(16,16,16,-16,-16,-16)^T.$$
 <details>
 <summary>展开第 44 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 44 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-44.jpg)
+![Lecture 09 第 44 页原始幻灯片](assets/lecture09-44.jpg)
 
 </details>
 
@@ -589,7 +589,7 @@ $S_k$ 是所保留的子空间。
 <details>
 <summary>展开第 45 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 45 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-45.jpg)
+![Lecture 09 第 45 页原始幻灯片](assets/lecture09-45.jpg)
 
 </details>
 
@@ -600,7 +600,7 @@ $S_k$ 是所保留的子空间。
 <details>
 <summary>展开第 46 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 46 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-46.jpg)
+![Lecture 09 第 46 页原始幻灯片](assets/lecture09-46.jpg)
 
 </details>
 
@@ -615,7 +615,7 @@ $$\frac1nZ^TZ=Q_k^TCQ_k=\operatorname{diag}(\lambda_1,\ldots,\lambda_k).$$
 <details>
 <summary>展开第 47 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 47 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-47.jpg)
+![Lecture 09 第 47 页原始幻灯片](assets/lecture09-47.jpg)
 
 </details>
 
@@ -630,7 +630,7 @@ $$q_j^TCq_\ell=\lambda_\ell\langle q_j,q_\ell\rangle=\begin{cases}\lambda_j,&j=\
 <details>
 <summary>展开第 48 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 48 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-48.jpg)
+![Lecture 09 第 48 页原始幻灯片](assets/lecture09-48.jpg)
 
 </details>
 
@@ -646,7 +646,7 @@ $$q_3=\tfrac12(1,-1,-1,1)^T,\quad q_4=\tfrac12(1,-1,1,-1)^T.$$
 <details>
 <summary>展开第 49 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 49 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-49.jpg)
+![Lecture 09 第 49 页原始幻灯片](assets/lecture09-49.jpg)
 
 </details>
 
@@ -660,7 +660,7 @@ Z=X_cQ_2=\begin{pmatrix}16&15\\16&-15\\16&0\\-16&15\\-16&-15\\-16&0\end{pmatrix}
 <details>
 <summary>展开第 50 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 50 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-50.jpg)
+![Lecture 09 第 50 页原始幻灯片](assets/lecture09-50.jpg)
 
 </details>
 
@@ -671,7 +671,7 @@ Z=X_cQ_2=\begin{pmatrix}16&15\\16&-15\\16&0\\-16&15\\-16&-15\\-16&0\end{pmatrix}
 <details>
 <summary>展开第 51 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 51 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-51.jpg)
+![Lecture 09 第 51 页原始幻灯片](assets/lecture09-51.jpg)
 
 </details>
 
@@ -686,7 +686,7 @@ $$\widehat x_i=\mu+UU^T(x_i-\mu),\qquad E(U)=\frac1n\sum_{i=1}^n\|x_i-\widehat x
 <details>
 <summary>展开第 52 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 52 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-52.jpg)
+![Lecture 09 第 52 页原始幻灯片](assets/lecture09-52.jpg)
 
 </details>
 
@@ -701,7 +701,7 @@ $$E(U)\ge\sum_{\ell=k+1}^d\lambda_\ell.$$
 <details>
 <summary>展开第 53 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 53 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-53.jpg)
+![Lecture 09 第 53 页原始幻灯片](assets/lecture09-53.jpg)
 
 </details>
 
@@ -716,7 +716,7 @@ $$\widehat x_1=\mu+16q_1+15q_2=\tfrac12(71,91,81,101)^T.$$
 <details>
 <summary>展开第 54 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 54 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-54.jpg)
+![Lecture 09 第 54 页原始幻灯片](assets/lecture09-54.jpg)
 
 </details>
 
@@ -731,7 +731,7 @@ $$X-\widehat X=\tfrac12\begin{pmatrix}5&-5&1&-1\\-1&1&-5&5\\-4&4&4&-4\\-1&1&-5&5
 <details>
 <summary>展开第 55 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 55 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-55.jpg)
+![Lecture 09 第 55 页原始幻灯片](assets/lecture09-55.jpg)
 
 </details>
 
@@ -746,7 +746,7 @@ $$E(Q_2)=\frac{13+13+16+13+13+16}{6}=14=\lambda_3+\lambda_4.$$
 <details>
 <summary>展开第 56 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 56 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-56.jpg)
+![Lecture 09 第 56 页原始幻灯片](assets/lecture09-56.jpg)
 
 </details>
 
@@ -761,7 +761,7 @@ $$\operatorname{rank}(C)=\operatorname{rank}(X_c)=r\le\min(d,n-1).$$
 <details>
 <summary>展开第 57 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 57 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-57.jpg)
+![Lecture 09 第 57 页原始幻灯片](assets/lecture09-57.jpg)
 
 </details>
 
@@ -772,7 +772,7 @@ $$\operatorname{rank}(C)=\operatorname{rank}(X_c)=r\le\min(d,n-1).$$
 <details>
 <summary>展开第 58 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 58 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-58.jpg)
+![Lecture 09 第 58 页原始幻灯片](assets/lecture09-58.jpg)
 
 </details>
 
@@ -783,7 +783,7 @@ $$\operatorname{rank}(C)=\operatorname{rank}(X_c)=r\le\min(d,n-1).$$
 <details>
 <summary>展开第 59 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 59 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-59.jpg)
+![Lecture 09 第 59 页原始幻灯片](assets/lecture09-59.jpg)
 
 </details>
 
@@ -798,7 +798,7 @@ $$\rho_k=\frac{\sum_{j=1}^k\lambda_j}{\sum_{j=1}^d\lambda_j}.$$
 <details>
 <summary>展开第 60 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 60 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-60.jpg)
+![Lecture 09 第 60 页原始幻灯片](assets/lecture09-60.jpg)
 
 </details>
 
@@ -811,7 +811,7 @@ $$\rho_2=\frac{256+150}{256+150+8+6}=\frac{406}{420}\approx0.9667.$$
 <details>
 <summary>展开第 61 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 61 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-61.jpg)
+![Lecture 09 第 61 页原始幻灯片](assets/lecture09-61.jpg)
 
 </details>
 
@@ -833,7 +833,7 @@ $$\rho_2=\frac{256+150}{256+150+8+6}=\frac{406}{420}\approx0.9667.$$
 <details>
 <summary>展开第 62 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 62 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-62.jpg)
+![Lecture 09 第 62 页原始幻灯片](assets/lecture09-62.jpg)
 
 </details>
 
@@ -844,7 +844,7 @@ $$\rho_2=\frac{256+150}{256+150+8+6}=\frac{406}{420}\approx0.9667.$$
 <details>
 <summary>展开第 63 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 63 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-63.jpg)
+![Lecture 09 第 63 页原始幻灯片](assets/lecture09-63.jpg)
 
 </details>
 
@@ -855,7 +855,7 @@ $$\rho_2=\frac{256+150}{256+150+8+6}=\frac{406}{420}\approx0.9667.$$
 <details>
 <summary>展开第 64 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 64 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-64.jpg)
+![Lecture 09 第 64 页原始幻灯片](assets/lecture09-64.jpg)
 
 </details>
 
@@ -866,7 +866,7 @@ $$\rho_2=\frac{256+150}{256+150+8+6}=\frac{406}{420}\approx0.9667.$$
 <details>
 <summary>展开第 65 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 65 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-65.jpg)
+![Lecture 09 第 65 页原始幻灯片](assets/lecture09-65.jpg)
 
 </details>
 
@@ -877,7 +877,7 @@ $$\rho_2=\frac{256+150}{256+150+8+6}=\frac{406}{420}\approx0.9667.$$
 <details>
 <summary>展开第 66 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 66 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-66.jpg)
+![Lecture 09 第 66 页原始幻灯片](assets/lecture09-66.jpg)
 
 </details>
 
@@ -892,7 +892,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 67 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 67 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-67.jpg)
+![Lecture 09 第 67 页原始幻灯片](assets/lecture09-67.jpg)
 
 </details>
 
@@ -903,7 +903,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 68 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 68 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-68.jpg)
+![Lecture 09 第 68 页原始幻灯片](assets/lecture09-68.jpg)
 
 </details>
 
@@ -914,7 +914,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 69 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 69 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-69.jpg)
+![Lecture 09 第 69 页原始幻灯片](assets/lecture09-69.jpg)
 
 </details>
 
@@ -925,7 +925,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 70 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 70 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-70.jpg)
+![Lecture 09 第 70 页原始幻灯片](assets/lecture09-70.jpg)
 
 </details>
 
@@ -936,7 +936,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 71 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 71 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-71.jpg)
+![Lecture 09 第 71 页原始幻灯片](assets/lecture09-71.jpg)
 
 </details>
 
@@ -947,7 +947,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 72 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 72 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-72.jpg)
+![Lecture 09 第 72 页原始幻灯片](assets/lecture09-72.jpg)
 
 </details>
 
@@ -967,7 +967,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 73 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 73 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-73.jpg)
+![Lecture 09 第 73 页原始幻灯片](assets/lecture09-73.jpg)
 
 </details>
 
@@ -978,7 +978,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 74 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 74 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-74.jpg)
+![Lecture 09 第 74 页原始幻灯片](assets/lecture09-74.jpg)
 
 </details>
 
@@ -989,7 +989,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 75 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 75 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-75.jpg)
+![Lecture 09 第 75 页原始幻灯片](assets/lecture09-75.jpg)
 
 </details>
 
@@ -1000,7 +1000,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 76 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 76 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-76.jpg)
+![Lecture 09 第 76 页原始幻灯片](assets/lecture09-76.jpg)
 
 </details>
 
@@ -1011,7 +1011,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 77 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 77 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-77.jpg)
+![Lecture 09 第 77 页原始幻灯片](assets/lecture09-77.jpg)
 
 </details>
 
@@ -1022,7 +1022,7 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 78 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 78 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-78.jpg)
+![Lecture 09 第 78 页原始幻灯片](assets/lecture09-78.jpg)
 
 </details>
 
@@ -1033,6 +1033,6 @@ $$z_i=\begin{pmatrix}\langle q_1,x_i-\mu\rangle\\\langle q_2,x_i-\mu\rangle\end{
 <details>
 <summary>展开第 79 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 09 第 79 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture09-79.jpg)
+![Lecture 09 第 79 页原始幻灯片](assets/lecture09-79.jpg)
 
 </details>

@@ -1,6 +1,6 @@
 # Lecture 10：奇异值分解、低秩近似与推荐系统，按幻灯片逐页复述
 
-来源：[lecture10a.pdf](/Users/cichlidfish/COMP3670/comp3670_lectures/lecture10a.pdf)，共 44 个 PDF 页面。目录中本讲的文件名是 lecture10a，而不是 lecture10。以下严格按页顺序保留章节页、定义、证明、例题、数值表、算法、参考来源和限制条件。每节末附原页核对图。
+来源：[lecture10a.pdf](../../comp3670_lectures/lecture10a.pdf)，共 44 个 PDF 页面。目录中本讲的文件名是 lecture10a，而不是 lecture10。以下严格按页顺序保留章节页、定义、证明、例题、数值表、算法、参考来源和限制条件。每节末附原页核对图。
 
 ## 第 1 页：课程与主题
 
@@ -9,7 +9,7 @@
 <details>
 <summary>展开第 1 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 1 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-01.jpg)
+![Lecture 10 第 1 页原始幻灯片](assets/lecture10a-01.jpg)
 
 </details>
 
@@ -20,7 +20,7 @@
 <details>
 <summary>展开第 2 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 2 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-02.jpg)
+![Lecture 10 第 2 页原始幻灯片](assets/lecture10a-02.jpg)
 
 </details>
 
@@ -31,7 +31,7 @@
 <details>
 <summary>展开第 3 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 3 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-03.jpg)
+![Lecture 10 第 3 页原始幻灯片](assets/lecture10a-03.jpg)
 
 </details>
 
@@ -42,7 +42,7 @@
 <details>
 <summary>展开第 4 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 4 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-04.jpg)
+![Lecture 10 第 4 页原始幻灯片](assets/lecture10a-04.jpg)
 
 </details>
 
@@ -57,7 +57,7 @@ $$A=U_r\Sigma_rV_r^T=\sum_{i=1}^r\sigma_i u_iv_i^T,$$
 <details>
 <summary>展开第 5 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 5 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-05.jpg)
+![Lecture 10 第 5 页原始幻灯片](assets/lecture10a-05.jpg)
 
 </details>
 
@@ -68,7 +68,7 @@ $$A=U_r\Sigma_rV_r^T=\sum_{i=1}^r\sigma_i u_iv_i^T,$$
 <details>
 <summary>展开第 6 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 6 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-06.jpg)
+![Lecture 10 第 6 页原始幻灯片](assets/lecture10a-06.jpg)
 
 </details>
 
@@ -79,7 +79,7 @@ $$A=U_r\Sigma_rV_r^T=\sum_{i=1}^r\sigma_i u_iv_i^T,$$
 <details>
 <summary>展开第 7 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 7 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-07.jpg)
+![Lecture 10 第 7 页原始幻灯片](assets/lecture10a-07.jpg)
 
 </details>
 
@@ -94,7 +94,7 @@ $$a_{ij}=\langle p_i,\Sigma_rq_j\rangle=\sum_{\ell=1}^r\sigma_\ell p_{i\ell}q_{j
 <details>
 <summary>展开第 8 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 8 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-08.jpg)
+![Lecture 10 第 8 页原始幻灯片](assets/lecture10a-08.jpg)
 
 </details>
 
@@ -109,7 +109,7 @@ $$a_{ij}=10(0.6)(0.5)+2(0.2)(-0.4)=3-0.16=2.84.$$
 <details>
 <summary>展开第 9 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 9 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-09.jpg)
+![Lecture 10 第 9 页原始幻灯片](assets/lecture10a-09.jpg)
 
 </details>
 
@@ -124,7 +124,7 @@ $A^TA$、$AA^T$ 的正特征值都是 $\sigma_1^2,\ldots,\sigma_r^2$，重复值
 <details>
 <summary>展开第 10 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 10 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-10.jpg)
+![Lecture 10 第 10 页原始幻灯片](assets/lecture10a-10.jpg)
 
 </details>
 
@@ -140,7 +140,7 @@ $$Av_i=\left(\sum_{j=1}^r\sigma_ju_jv_j^T\right)v_i
 <details>
 <summary>展开第 11 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 11 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-11.jpg)
+![Lecture 10 第 11 页原始幻灯片](assets/lecture10a-11.jpg)
 
 </details>
 
@@ -155,7 +155,7 @@ $$\sigma_i=\sqrt{\lambda_i},\qquad u_i=\frac{Av_i}{\sigma_i}.$$
 <details>
 <summary>展开第 12 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 12 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-12.jpg)
+![Lecture 10 第 12 页原始幻灯片](assets/lecture10a-12.jpg)
 
 </details>
 
@@ -168,7 +168,7 @@ $$A=\begin{pmatrix}20&10\\8&19\\-2&14\end{pmatrix},\qquad A^TA=\begin{pmatrix}46
 <details>
 <summary>展开第 13 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 13 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-13.jpg)
+![Lecture 10 第 13 页原始幻灯片](assets/lecture10a-13.jpg)
 
 </details>
 
@@ -183,7 +183,7 @@ $$u_1=\frac{Av_1}{30}=\tfrac13(2,2,1)^T,\qquad u_2=\frac{Av_2}{15}=\tfrac13(2,-1
 <details>
 <summary>展开第 14 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 14 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-14.jpg)
+![Lecture 10 第 14 页原始幻灯片](assets/lecture10a-14.jpg)
 
 </details>
 
@@ -198,7 +198,7 @@ $$A=\left[\tfrac13\begin{pmatrix}2&2\\2&-1\\1&-2\end{pmatrix}\right]
 <details>
 <summary>展开第 15 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 15 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-15.jpg)
+![Lecture 10 第 15 页原始幻灯片](assets/lecture10a-15.jpg)
 
 </details>
 
@@ -209,7 +209,7 @@ $$A=\left[\tfrac13\begin{pmatrix}2&2\\2&-1\\1&-2\end{pmatrix}\right]
 <details>
 <summary>展开第 16 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 16 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-16.jpg)
+![Lecture 10 第 16 页原始幻灯片](assets/lecture10a-16.jpg)
 
 </details>
 
@@ -224,7 +224,7 @@ $$\|A\|_F=\sqrt{\sum_{i=1}^m\sum_{j=1}^da_{ij}^2}.$$
 <details>
 <summary>展开第 17 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 17 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-17.jpg)
+![Lecture 10 第 17 页原始幻灯片](assets/lecture10a-17.jpg)
 
 </details>
 
@@ -239,7 +239,7 @@ $A_k$ 每一列都在 $\operatorname{Col}(U_k)$ 中；反过来，对 $i\le k$ �
 <details>
 <summary>展开第 18 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 18 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-18.jpg)
+![Lecture 10 第 18 页原始幻灯片](assets/lecture10a-18.jpg)
 
 </details>
 
@@ -254,7 +254,7 @@ $$\|A-B\|_F^2\ge\|A-A_k\|_F^2=\sum_{i=k+1}^r\sigma_i^2.$$
 <details>
 <summary>展开第 19 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 19 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-19.jpg)
+![Lecture 10 第 19 页原始幻灯片](assets/lecture10a-19.jpg)
 
 </details>
 
@@ -269,7 +269,7 @@ $$A_1=30u_1v_1^T=\begin{pmatrix}12&16\\12&16\\6&8\end{pmatrix}.$$
 <details>
 <summary>展开第 20 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 20 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-20.jpg)
+![Lecture 10 第 20 页原始幻灯片](assets/lecture10a-20.jpg)
 
 </details>
 
@@ -282,7 +282,7 @@ $$A-A_1=\begin{pmatrix}8&-6\\-4&3\\-8&6\end{pmatrix}.$$
 <details>
 <summary>展开第 21 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 21 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-21.jpg)
+![Lecture 10 第 21 页原始幻灯片](assets/lecture10a-21.jpg)
 
 </details>
 
@@ -293,7 +293,7 @@ $$A-A_1=\begin{pmatrix}8&-6\\-4&3\\-8&6\end{pmatrix}.$$
 <details>
 <summary>展开第 22 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 22 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-22.jpg)
+![Lecture 10 第 22 页原始幻灯片](assets/lecture10a-22.jpg)
 
 </details>
 
@@ -304,7 +304,7 @@ $$A-A_1=\begin{pmatrix}8&-6\\-4&3\\-8&6\end{pmatrix}.$$
 <details>
 <summary>展开第 23 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 23 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-23.jpg)
+![Lecture 10 第 23 页原始幻灯片](assets/lecture10a-23.jpg)
 
 </details>
 
@@ -319,7 +319,7 @@ $$P\in\mathbb R^{n\times k},\quad Q\in\mathbb R^{m\times k},\quad \widehat R=PQ^
 <details>
 <summary>展开第 24 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 24 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-24.jpg)
+![Lecture 10 第 24 页原始幻灯片](assets/lecture10a-24.jpg)
 
 </details>
 
@@ -334,7 +334,7 @@ $$R=\begin{pmatrix}10&8&4&2\\8&10&2&4\\9&9&3&3\\4&2&10&8\\2&4&8&10\\3&3&9&9\end{
 <details>
 <summary>展开第 25 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 25 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-25.jpg)
+![Lecture 10 第 25 页原始幻灯片](assets/lecture10a-25.jpg)
 
 </details>
 
@@ -353,7 +353,7 @@ $U_3$ 的行表示用户，$V_3$ 的行表示电影；评分是以 $12\sqrt6,6\s
 <details>
 <summary>展开第 26 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 26 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-26.jpg)
+![Lecture 10 第 26 页原始幻灯片](assets/lecture10a-26.jpg)
 
 </details>
 
@@ -369,7 +369,7 @@ Q=V_2=\tfrac12\begin{pmatrix}1&1\\1&1\\1&-1\\1&-1\end{pmatrix}.$$
 <details>
 <summary>展开第 27 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 27 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-27.jpg)
+![Lecture 10 第 27 页原始幻灯片](assets/lecture10a-27.jpg)
 
 </details>
 
@@ -382,7 +382,7 @@ $$R_2=PQ^T=\begin{pmatrix}9&9&3&3\\9&9&3&3\\9&9&3&3\\3&3&9&9\\3&3&9&9\\3&3&9&9\e
 <details>
 <summary>展开第 28 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 28 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-28.jpg)
+![Lecture 10 第 28 页原始幻灯片](assets/lecture10a-28.jpg)
 
 </details>
 
@@ -393,7 +393,7 @@ $$R_2=PQ^T=\begin{pmatrix}9&9&3&3\\9&9&3&3\\9&9&3&3\\3&3&9&9\\3&3&9&9\\3&3&9&9\e
 <details>
 <summary>展开第 29 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 29 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-29.jpg)
+![Lecture 10 第 29 页原始幻灯片](assets/lecture10a-29.jpg)
 
 </details>
 
@@ -404,7 +404,7 @@ $$R_2=PQ^T=\begin{pmatrix}9&9&3&3\\9&9&3&3\\9&9&3&3\\3&3&9&9\\3&3&9&9\\3&3&9&9\e
 <details>
 <summary>展开第 30 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 30 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-30.jpg)
+![Lecture 10 第 30 页原始幻灯片](assets/lecture10a-30.jpg)
 
 </details>
 
@@ -420,7 +420,7 @@ $$L(P,Q)=\sum_{(i,j)\in\Omega}(r_{ij}-\langle p_i,q_j\rangle)^2
 <details>
 <summary>展开第 31 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 31 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-31.jpg)
+![Lecture 10 第 31 页原始幻灯片](assets/lecture10a-31.jpg)
 
 </details>
 
@@ -431,7 +431,7 @@ $$L(P,Q)=\sum_{(i,j)\in\Omega}(r_{ij}-\langle p_i,q_j\rangle)^2
 <details>
 <summary>展开第 32 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 32 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-32.jpg)
+![Lecture 10 第 32 页原始幻灯片](assets/lecture10a-32.jpg)
 
 </details>
 
@@ -442,7 +442,7 @@ $$L(P,Q)=\sum_{(i,j)\in\Omega}(r_{ij}-\langle p_i,q_j\rangle)^2
 <details>
 <summary>展开第 33 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 33 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-33.jpg)
+![Lecture 10 第 33 页原始幻灯片](assets/lecture10a-33.jpg)
 
 </details>
 
@@ -453,7 +453,7 @@ $$L(P,Q)=\sum_{(i,j)\in\Omega}(r_{ij}-\langle p_i,q_j\rangle)^2
 <details>
 <summary>展开第 34 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 34 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-34.jpg)
+![Lecture 10 第 34 页原始幻灯片](assets/lecture10a-34.jpg)
 
 </details>
 
@@ -468,7 +468,7 @@ $$\begin{pmatrix}10&8&?&2\\8&?&2&4\\9&9&3&?\\?&2&10&8\\2&4&?&10\\3&?&9&9\end{pma
 <details>
 <summary>展开第 35 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 35 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-35.jpg)
+![Lecture 10 第 35 页原始幻灯片](assets/lecture10a-35.jpg)
 
 </details>
 
@@ -483,7 +483,7 @@ $$\operatorname{RMSE}_{val}=\sqrt{\frac{(8-\widehat r_{12})^2+(10-\widehat r_{43
 <details>
 <summary>展开第 36 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 36 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-36.jpg)
+![Lecture 10 第 36 页原始幻灯片](assets/lecture10a-36.jpg)
 
 </details>
 
@@ -501,7 +501,7 @@ $$\operatorname{RMSE}_{val}=\sqrt{\frac{(8-\widehat r_{12})^2+(10-\widehat r_{43
 <details>
 <summary>展开第 37 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 37 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-37.jpg)
+![Lecture 10 第 37 页原始幻灯片](assets/lecture10a-37.jpg)
 
 </details>
 
@@ -512,7 +512,7 @@ $$\operatorname{RMSE}_{val}=\sqrt{\frac{(8-\widehat r_{12})^2+(10-\widehat r_{43
 <details>
 <summary>展开第 38 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 38 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-38.jpg)
+![Lecture 10 第 38 页原始幻灯片](assets/lecture10a-38.jpg)
 
 </details>
 
@@ -525,7 +525,7 @@ GroupLens 的 MovieLens 100K 包含 100,000 条评分、943 个用户、1,682 �
 <details>
 <summary>展开第 39 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 39 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-39.jpg)
+![Lecture 10 第 39 页原始幻灯片](assets/lecture10a-39.jpg)
 
 </details>
 
@@ -538,7 +538,7 @@ GroupLens 的 MovieLens 100K 包含 100,000 条评分、943 个用户、1,682 �
 <details>
 <summary>展开第 40 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 40 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-40.jpg)
+![Lecture 10 第 40 页原始幻灯片](assets/lecture10a-40.jpg)
 
 </details>
 
@@ -557,7 +557,7 @@ $$\operatorname{RMSE}_{test}=\sqrt{\frac1{|T|}\sum_{(i,j)\in T}(r_{ij}-\widehat 
 <details>
 <summary>展开第 41 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 41 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-41.jpg)
+![Lecture 10 第 41 页原始幻灯片](assets/lecture10a-41.jpg)
 
 </details>
 
@@ -577,7 +577,7 @@ $$\operatorname{RMSE}_{test}=\sqrt{\frac1{|T|}\sum_{(i,j)\in T}(r_{ij}-\widehat 
 <details>
 <summary>展开第 42 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 42 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-42.jpg)
+![Lecture 10 第 42 页原始幻灯片](assets/lecture10a-42.jpg)
 
 </details>
 
@@ -598,7 +598,7 @@ $$\operatorname{RMSE}_{test}=\sqrt{\frac1{|T|}\sum_{(i,j)\in T}(r_{ij}-\widehat 
 <details>
 <summary>展开第 43 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 43 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-43.jpg)
+![Lecture 10 第 43 页原始幻灯片](assets/lecture10a-43.jpg)
 
 </details>
 
@@ -609,6 +609,6 @@ SVD 用左右两组标准正交方向描述矩形矩阵；截断 SVD 最小化�
 <details>
 <summary>展开第 44 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 10 第 44 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture10a-44.jpg)
+![Lecture 10 第 44 页原始幻灯片](assets/lecture10a-44.jpg)
 
 </details>

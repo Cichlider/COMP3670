@@ -1,6 +1,6 @@
 # Lecture 12：优化、SVM 与神经网络，按幻灯片逐页复述
 
-来源：[lecture12.pdf](/Users/cichlidfish/COMP3670/comp3670_lectures/lecture12.pdf)，共 60 个 PDF 页面，印刷编号从 0/53 到 53/53，另含章节页。以下按 PDF 实际顺序逐页讲述，保留公式、算法、数值表、图意、条件、参考来源和总结页。每节附原页核对图。“理解补充”用于澄清课件简化表述，不与原课件陈述混淆。本讲所列算法默认值是在复述课件，不是额外查询的当前软件配置建议。
+来源：[lecture12.pdf](../../comp3670_lectures/lecture12.pdf)，共 60 个 PDF 页面，印刷编号从 0/53 到 53/53，另含章节页。以下按 PDF 实际顺序逐页讲述，保留公式、算法、数值表、图意、条件、参考来源和总结页。每节附原页核对图。“理解补充”用于澄清课件简化表述，不与原课件陈述混淆。本讲所列算法默认值是在复述课件，不是额外查询的当前软件配置建议。
 
 ## 第 1 页（课件 0/53）：本讲主题
 
@@ -9,7 +9,7 @@ COMP3670/COMP6670《Introduction to Machine Learning》，Lecture 12：Optimisat
 <details>
 <summary>展开第 1 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 1 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-01.jpg)
+![Lecture 12 第 1 页原始幻灯片](assets/lecture12-01.jpg)
 
 </details>
 
@@ -20,7 +20,7 @@ COMP3670/COMP6670《Introduction to Machine Learning》，Lecture 12：Optimisat
 <details>
 <summary>展开第 2 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 2 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-02.jpg)
+![Lecture 12 第 2 页原始幻灯片](assets/lecture12-02.jpg)
 
 </details>
 
@@ -31,7 +31,7 @@ COMP3670/COMP6670《Introduction to Machine Learning》，Lecture 12：Optimisat
 <details>
 <summary>展开第 3 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 3 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-03.jpg)
+![Lecture 12 第 3 页原始幻灯片](assets/lecture12-03.jpg)
 
 </details>
 
@@ -42,7 +42,7 @@ COMP3670/COMP6670《Introduction to Machine Learning》，Lecture 12：Optimisat
 <details>
 <summary>展开第 4 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 4 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-04.jpg)
+![Lecture 12 第 4 页原始幻灯片](assets/lecture12-04.jpg)
 
 </details>
 
@@ -57,7 +57,7 @@ $\widehat\theta$ 是最小点，$J(\widehat\theta)$ 是最小值。学习中的�
 <details>
 <summary>展开第 5 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 5 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-05.jpg)
+![Lecture 12 第 5 页原始幻灯片](assets/lecture12-05.jpg)
 
 </details>
 
@@ -76,7 +76,7 @@ $\widehat\theta$ 是最小点，$J(\widehat\theta)$ 是最小值。学习中的�
 <details>
 <summary>展开第 6 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 6 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-06.jpg)
+![Lecture 12 第 6 页原始幻灯片](assets/lecture12-06.jpg)
 
 </details>
 
@@ -87,7 +87,7 @@ $\widehat\theta$ 是最小点，$J(\widehat\theta)$ 是最小值。学习中的�
 <details>
 <summary>展开第 7 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 7 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-07.jpg)
+![Lecture 12 第 7 页原始幻灯片](assets/lecture12-07.jpg)
 
 </details>
 
@@ -98,7 +98,7 @@ $\widehat\theta$ 是最小点，$J(\widehat\theta)$ 是最小值。学习中的�
 <details>
 <summary>展开第 8 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 8 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-08.jpg)
+![Lecture 12 第 8 页原始幻灯片](assets/lecture12-08.jpg)
 
 </details>
 
@@ -111,7 +111,7 @@ $\widehat\theta$ 是最小点，$J(\widehat\theta)$ 是最小值。学习中的�
 <details>
 <summary>展开第 9 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 9 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-09.jpg)
+![Lecture 12 第 9 页原始幻灯片](assets/lecture12-09.jpg)
 
 </details>
 
@@ -126,7 +126,7 @@ $$X=\begin{pmatrix}\phi_0(X_1)&\cdots&\phi_k(X_1)\\\vdots&&\vdots\\\phi_0(X_N)&\
 <details>
 <summary>展开第 10 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 10 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-10.jpg)
+![Lecture 12 第 10 页原始幻灯片](assets/lecture12-10.jpg)
 
 </details>
 
@@ -141,7 +141,7 @@ $$-2X^T(Y-X\theta)=0\ \Longrightarrow\ 2X^TY=2X^TX\theta\ \Longrightarrow\ X^TX\
 <details>
 <summary>展开第 11 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 11 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-11.jpg)
+![Lecture 12 第 11 页原始幻灯片](assets/lecture12-11.jpg)
 
 </details>
 
@@ -156,7 +156,7 @@ $$\widehat\theta=(X^TX)^{-1}X^TY,\qquad \widehat h(x)=\Phi(x)^T\widehat\theta.$$
 <details>
 <summary>展开第 12 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 12 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-12.jpg)
+![Lecture 12 第 12 页原始幻灯片](assets/lecture12-12.jpg)
 
 </details>
 
@@ -172,7 +172,7 @@ $$\widehat\theta^{RIDGE}=(X^TX+\lambda I)^{-1}X^TY.$$
 <details>
 <summary>展开第 13 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 13 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-13.jpg)
+![Lecture 12 第 13 页原始幻灯片](assets/lecture12-13.jpg)
 
 </details>
 
@@ -185,7 +185,7 @@ $$\nabla J=-2X^T(Y-X\theta)+2\lambda\theta.$$
 <details>
 <summary>展开第 14 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 14 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-14.jpg)
+![Lecture 12 第 14 页原始幻灯片](assets/lecture12-14.jpg)
 
 </details>
 
@@ -196,7 +196,7 @@ $$\nabla J=-2X^T(Y-X\theta)+2\lambda\theta.$$
 <details>
 <summary>展开第 15 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 15 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-15.jpg)
+![Lecture 12 第 15 页原始幻灯片](assets/lecture12-15.jpg)
 
 </details>
 
@@ -216,7 +216,7 @@ $$\nabla\ell_i(w)=(\sigma(w^TX_i)-Y_i)X_i,\qquad
 <details>
 <summary>展开第 16 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 16 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-16.jpg)
+![Lecture 12 第 16 页原始幻灯片](assets/lecture12-16.jpg)
 
 </details>
 
@@ -227,7 +227,7 @@ $$\nabla\ell_i(w)=(\sigma(w^TX_i)-Y_i)X_i,\qquad
 <details>
 <summary>展开第 17 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 17 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-17.jpg)
+![Lecture 12 第 17 页原始幻灯片](assets/lecture12-17.jpg)
 
 </details>
 
@@ -238,7 +238,7 @@ $$\nabla\ell_i(w)=(\sigma(w^TX_i)-Y_i)X_i,\qquad
 <details>
 <summary>展开第 18 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 18 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-18.jpg)
+![Lecture 12 第 18 页原始幻灯片](assets/lecture12-18.jpg)
 
 </details>
 
@@ -253,7 +253,7 @@ $$\theta(t+1)\leftarrow\theta(t)-\alpha\nabla J(\theta(t)),$$
 <details>
 <summary>展开第 19 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 19 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-19.jpg)
+![Lecture 12 第 19 页原始幻灯片](assets/lecture12-19.jpg)
 
 </details>
 
@@ -274,7 +274,7 @@ $$\theta(t+1)\leftarrow\theta(t)-\alpha\nabla J(\theta(t)),$$
 <details>
 <summary>展开第 20 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 20 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-20.jpg)
+![Lecture 12 第 20 页原始幻灯片](assets/lecture12-20.jpg)
 
 </details>
 
@@ -285,7 +285,7 @@ $$\theta(t+1)\leftarrow\theta(t)-\alpha\nabla J(\theta(t)),$$
 <details>
 <summary>展开第 21 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 21 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-21.jpg)
+![Lecture 12 第 21 页原始幻灯片](assets/lecture12-21.jpg)
 
 </details>
 
@@ -300,7 +300,7 @@ $$J(\theta(t))-J(\widehat\theta)\le\frac{\|\theta(0)-\widehat\theta\|^2}{2\alpha
 <details>
 <summary>展开第 22 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 22 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-22.jpg)
+![Lecture 12 第 22 页原始幻灯片](assets/lecture12-22.jpg)
 
 </details>
 
@@ -311,7 +311,7 @@ $$J(\theta(t))-J(\widehat\theta)\le\frac{\|\theta(0)-\widehat\theta\|^2}{2\alpha
 <details>
 <summary>展开第 23 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 23 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-23.jpg)
+![Lecture 12 第 23 页原始幻灯片](assets/lecture12-23.jpg)
 
 </details>
 
@@ -328,7 +328,7 @@ $$J(\theta(t))-J(\widehat\theta)\le\frac{\|\theta(0)-\widehat\theta\|^2}{2\alpha
 <details>
 <summary>展开第 24 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 24 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-24.jpg)
+![Lecture 12 第 24 页原始幻灯片](assets/lecture12-24.jpg)
 
 </details>
 
@@ -339,7 +339,7 @@ $$J(\theta(t))-J(\widehat\theta)\le\frac{\|\theta(0)-\widehat\theta\|^2}{2\alpha
 <details>
 <summary>展开第 25 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 25 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-25.jpg)
+![Lecture 12 第 25 页原始幻灯片](assets/lecture12-25.jpg)
 
 </details>
 
@@ -350,7 +350,7 @@ $$J(\theta(t))-J(\widehat\theta)\le\frac{\|\theta(0)-\widehat\theta\|^2}{2\alpha
 <details>
 <summary>展开第 26 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 26 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-26.jpg)
+![Lecture 12 第 26 页原始幻灯片](assets/lecture12-26.jpg)
 
 </details>
 
@@ -365,7 +365,7 @@ $$\mathbb E[g]=\sum_{i=1}^N\frac1N\nabla\ell_i(\theta)=\nabla J(\theta).$$
 <details>
 <summary>展开第 27 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 27 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-27.jpg)
+![Lecture 12 第 27 页原始幻灯片](assets/lecture12-27.jpg)
 
 </details>
 
@@ -380,7 +380,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 28 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 28 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-28.jpg)
+![Lecture 12 第 28 页原始幻灯片](assets/lecture12-28.jpg)
 
 </details>
 
@@ -391,7 +391,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 29 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 29 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-29.jpg)
+![Lecture 12 第 29 页原始幻灯片](assets/lecture12-29.jpg)
 
 </details>
 
@@ -402,7 +402,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 30 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 30 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-30.jpg)
+![Lecture 12 第 30 页原始幻灯片](assets/lecture12-30.jpg)
 
 </details>
 
@@ -413,7 +413,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 31 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 31 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-31.jpg)
+![Lecture 12 第 31 页原始幻灯片](assets/lecture12-31.jpg)
 
 </details>
 
@@ -424,7 +424,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 32 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 32 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-32.jpg)
+![Lecture 12 第 32 页原始幻灯片](assets/lecture12-32.jpg)
 
 </details>
 
@@ -435,7 +435,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 33 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 33 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-33.jpg)
+![Lecture 12 第 33 页原始幻灯片](assets/lecture12-33.jpg)
 
 </details>
 
@@ -446,7 +446,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 34 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 34 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-34.jpg)
+![Lecture 12 第 34 页原始幻灯片](assets/lecture12-34.jpg)
 
 </details>
 
@@ -457,7 +457,7 @@ $$g(t)=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta(t)),\qquad\theta(t+1)\leftarrow
 <details>
 <summary>展开第 35 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 35 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-35.jpg)
+![Lecture 12 第 35 页原始幻灯片](assets/lecture12-35.jpg)
 
 </details>
 
@@ -472,7 +472,7 @@ $$J(w,b)=\frac12\|w\|^2+C\sum_{i=1}^N\max\{0,1-y_i(\langle w,\phi(x_i)\rangle+b)
 <details>
 <summary>展开第 36 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 36 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-36.jpg)
+![Lecture 12 第 36 页原始幻灯片](assets/lecture12-36.jpg)
 
 </details>
 
@@ -483,7 +483,7 @@ $$J(w,b)=\frac12\|w\|^2+C\sum_{i=1}^N\max\{0,1-y_i(\langle w,\phi(x_i)\rangle+b)
 <details>
 <summary>展开第 37 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 37 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-37.jpg)
+![Lecture 12 第 37 页原始幻灯片](assets/lecture12-37.jpg)
 
 </details>
 
@@ -498,7 +498,7 @@ $$x^2<4x-3\iff x^2-4x+3<0\iff(x-1)(x-3)<0\iff1<x<3.$$
 <details>
 <summary>展开第 38 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 38 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-38.jpg)
+![Lecture 12 第 38 页原始幻灯片](assets/lecture12-38.jpg)
 
 </details>
 
@@ -509,7 +509,7 @@ $$x^2<4x-3\iff x^2-4x+3<0\iff(x-1)(x-3)<0\iff1<x<3.$$
 <details>
 <summary>展开第 39 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 39 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-39.jpg)
+![Lecture 12 第 39 页原始幻灯片](assets/lecture12-39.jpg)
 
 </details>
 
@@ -520,7 +520,7 @@ $$x^2<4x-3\iff x^2-4x+3<0\iff(x-1)(x-3)<0\iff1<x<3.$$
 <details>
 <summary>展开第 40 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 40 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-40.jpg)
+![Lecture 12 第 40 页原始幻灯片](assets/lecture12-40.jpg)
 
 </details>
 
@@ -531,7 +531,7 @@ $$x^2<4x-3\iff x^2-4x+3<0\iff(x-1)(x-3)<0\iff1<x<3.$$
 <details>
 <summary>展开第 41 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 41 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-41.jpg)
+![Lecture 12 第 41 页原始幻灯片](assets/lecture12-41.jpg)
 
 </details>
 
@@ -542,7 +542,7 @@ $$x^2<4x-3\iff x^2-4x+3<0\iff(x-1)(x-3)<0\iff1<x<3.$$
 <details>
 <summary>展开第 42 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 42 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-42.jpg)
+![Lecture 12 第 42 页原始幻灯片](assets/lecture12-42.jpg)
 
 </details>
 
@@ -553,7 +553,7 @@ $$x^2<4x-3\iff x^2-4x+3<0\iff(x-1)(x-3)<0\iff1<x<3.$$
 <details>
 <summary>展开第 43 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 43 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-43.jpg)
+![Lecture 12 第 43 页原始幻灯片](assets/lecture12-43.jpg)
 
 </details>
 
@@ -574,7 +574,7 @@ $$f_w(x)=A_3\sigma(A_2\sigma(A_1x)).$$
 <details>
 <summary>展开第 44 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 44 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-44.jpg)
+![Lecture 12 第 44 页原始幻灯片](assets/lecture12-44.jpg)
 
 </details>
 
@@ -593,7 +593,7 @@ $$\widehat p_{w,k}(x)=\frac{e^{f_{w,k}(x)}}{\sum_{j=1}^Ke^{f_{w,j}(x)}},\quad\wi
 <details>
 <summary>展开第 45 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 45 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-45.jpg)
+![Lecture 12 第 45 页原始幻灯片](assets/lecture12-45.jpg)
 
 </details>
 
@@ -608,7 +608,7 @@ $$\zeta(x)=\sum_{i=0}^{d_1}w_i^{(2)}\,\sigma\!\left(\sum_{j=0}^dw_{i,j}^{(1)}x_j
 <details>
 <summary>展开第 46 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 46 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-46.jpg)
+![Lecture 12 第 46 页原始幻灯片](assets/lecture12-46.jpg)
 
 </details>
 
@@ -623,7 +623,7 @@ $K$ 类则 $J(w)=-\frac1N\sum_i\log\widehat p_{w,Y_i}(X_i)$，即真实类别被
 <details>
 <summary>展开第 47 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 47 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-47.jpg)
+![Lecture 12 第 47 页原始幻灯片](assets/lecture12-47.jpg)
 
 </details>
 
@@ -634,7 +634,7 @@ $K$ 类则 $J(w)=-\frac1N\sum_i\log\widehat p_{w,Y_i}(X_i)$，即真实类别被
 <details>
 <summary>展开第 48 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 48 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-48.jpg)
+![Lecture 12 第 48 页原始幻灯片](assets/lecture12-48.jpg)
 
 </details>
 
@@ -645,7 +645,7 @@ $K$ 类则 $J(w)=-\frac1N\sum_i\log\widehat p_{w,Y_i}(X_i)$，即真实类别被
 <details>
 <summary>展开第 49 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 49 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-49.jpg)
+![Lecture 12 第 49 页原始幻灯片](assets/lecture12-49.jpg)
 
 </details>
 
@@ -658,7 +658,7 @@ XOR 的两类点位于相对角，单条直线不能分离，因此单感知器�
 <details>
 <summary>展开第 50 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 50 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-50.jpg)
+![Lecture 12 第 50 页原始幻灯片](assets/lecture12-50.jpg)
 
 </details>
 
@@ -669,7 +669,7 @@ XOR 的两类点位于相对角，单条直线不能分离，因此单感知器�
 <details>
 <summary>展开第 51 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 51 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-51.jpg)
+![Lecture 12 第 51 页原始幻灯片](assets/lecture12-51.jpg)
 
 </details>
 
@@ -680,7 +680,7 @@ XOR 的两类点位于相对角，单条直线不能分离，因此单感知器�
 <details>
 <summary>展开第 52 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 52 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-52.jpg)
+![Lecture 12 第 52 页原始幻灯片](assets/lecture12-52.jpg)
 
 </details>
 
@@ -691,7 +691,7 @@ XOR 的两类点位于相对角，单条直线不能分离，因此单感知器�
 <details>
 <summary>展开第 53 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 53 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-53.jpg)
+![Lecture 12 第 53 页原始幻灯片](assets/lecture12-53.jpg)
 
 </details>
 
@@ -706,7 +706,7 @@ $m$ 是动量向量，初始设为零，$0<\beta<1$ 控制历史贡献的指数�
 <details>
 <summary>展开第 54 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 54 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-54.jpg)
+![Lecture 12 第 54 页原始幻灯片](assets/lecture12-54.jpg)
 
 </details>
 
@@ -721,7 +721,7 @@ $$m(t)=\beta m(t-1)-\alpha\nabla J(w(t)+\beta m(t-1)),\qquad w(t+1)=w(t)+m(t).$$
 <details>
 <summary>展开第 55 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 55 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-55.jpg)
+![Lecture 12 第 55 页原始幻灯片](assets/lecture12-55.jpg)
 
 </details>
 
@@ -736,7 +736,7 @@ $$s(t)=s(t-1)+g(t)^2,\qquad w(t+1)=w(t)-\frac\alpha{\sqrt{s(t)+\epsilon}}\,g(t).
 <details>
 <summary>展开第 56 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 56 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-56.jpg)
+![Lecture 12 第 56 页原始幻灯片](assets/lecture12-56.jpg)
 
 </details>
 
@@ -751,7 +751,7 @@ $0<\beta<1$，课件通常取 0.9。相较 Adagrad 的永久累计，此处 $s$ 
 <details>
 <summary>展开第 57 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 57 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-57.jpg)
+![Lecture 12 第 57 页原始幻灯片](assets/lecture12-57.jpg)
 
 </details>
 
@@ -769,7 +769,7 @@ $$w(t+1)=w(t)+\frac\alpha{\sqrt{\widehat s(t)+\epsilon_{root}}+\epsilon}\,\wideh
 <details>
 <summary>展开第 58 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 58 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-58.jpg)
+![Lecture 12 第 58 页原始幻灯片](assets/lecture12-58.jpg)
 
 </details>
 
@@ -780,7 +780,7 @@ $$w(t+1)=w(t)+\frac\alpha{\sqrt{\widehat s(t)+\epsilon_{root}}+\epsilon}\,\wideh
 <details>
 <summary>展开第 59 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 59 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-59.jpg)
+![Lecture 12 第 59 页原始幻灯片](assets/lecture12-59.jpg)
 
 </details>
 
@@ -799,6 +799,6 @@ $$w(t+1)=w(t)+\frac\alpha{\sqrt{\widehat s(t)+\epsilon_{root}}+\epsilon}\,\wideh
 <details>
 <summary>展开第 60 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 12 第 60 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture12-60.jpg)
+![Lecture 12 第 60 页原始幻灯片](assets/lecture12-60.jpg)
 
 </details>

@@ -1,6 +1,6 @@
 # Lecture 11：微积分，按幻灯片逐页复述
 
-来源：[lecture11.pdf](/Users/cichlidfish/COMP3670/comp3670_lectures/lecture11.pdf)，共 69 个 PDF 页面，课件印刷编号从 0/62 到 62/62，另含不增加编号的章节页。下文按 PDF 实际顺序逐页复述，同时标注印刷页码，保留全部定义、表格、例题、推导、图意与提醒。每节附原页核对图。数学上的必要限定标为“理解补充”，以免把讲义的简化说法误当成无条件定理。
+来源：[lecture11.pdf](../../comp3670_lectures/lecture11.pdf)，共 69 个 PDF 页面，课件印刷编号从 0/62 到 62/62，另含不增加编号的章节页。下文按 PDF 实际顺序逐页复述，同时标注印刷页码，保留全部定义、表格、例题、推导、图意与提醒。每节附原页核对图。数学上的必要限定标为“理解补充”，以免把讲义的简化说法误当成无条件定理。
 
 ## 第 1 页（课件 0/62）：主题与讲师
 
@@ -9,7 +9,7 @@
 <details>
 <summary>展开第 1 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 1 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-01.jpg)
+![Lecture 11 第 1 页原始幻灯片](assets/lecture11-01.jpg)
 
 </details>
 
@@ -20,7 +20,7 @@ Lecture 2、3 讨论能否学习，Lecture 4 提供模型，但很多地方最�
 <details>
 <summary>展开第 2 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 2 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-02.jpg)
+![Lecture 11 第 2 页原始幻灯片](assets/lecture11-02.jpg)
 
 </details>
 
@@ -38,7 +38,7 @@ Lecture 2、3 讨论能否学习，Lecture 4 提供模型，但很多地方最�
 <details>
 <summary>展开第 3 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 3 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-03.jpg)
+![Lecture 11 第 3 页原始幻灯片](assets/lecture11-03.jpg)
 
 </details>
 
@@ -49,7 +49,7 @@ Lecture 2、3 讨论能否学习，Lecture 4 提供模型，但很多地方最�
 <details>
 <summary>展开第 4 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 4 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-04.jpg)
+![Lecture 11 第 4 页原始幻灯片](assets/lecture11-04.jpg)
 
 </details>
 
@@ -64,7 +64,7 @@ $$E_{in}(\theta)=\frac14\sum_{i=1}^4(y_i-\theta x_i)^2=7.5\theta^2-30\theta+31.5
 <details>
 <summary>展开第 5 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 5 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-05.jpg)
+![Lecture 11 第 5 页原始幻灯片](assets/lecture11-05.jpg)
 
 </details>
 
@@ -75,7 +75,7 @@ $$E_{in}(\theta)=\frac14\sum_{i=1}^4(y_i-\theta x_i)^2=7.5\theta^2-30\theta+31.5
 <details>
 <summary>展开第 6 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 6 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-06.jpg)
+![Lecture 11 第 6 页原始幻灯片](assets/lecture11-06.jpg)
 
 </details>
 
@@ -86,7 +86,7 @@ $$E_{in}(\theta)=\frac14\sum_{i=1}^4(y_i-\theta x_i)^2=7.5\theta^2-30\theta+31.5
 <details>
 <summary>展开第 7 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 7 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-07.jpg)
+![Lecture 11 第 7 页原始幻灯片](assets/lecture11-07.jpg)
 
 </details>
 
@@ -97,7 +97,7 @@ $$E_{in}(\theta)=\frac14\sum_{i=1}^4(y_i-\theta x_i)^2=7.5\theta^2-30\theta+31.5
 <details>
 <summary>展开第 8 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 8 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-08.jpg)
+![Lecture 11 第 8 页原始幻灯片](assets/lecture11-08.jpg)
 
 </details>
 
@@ -108,7 +108,7 @@ $$E_{in}(\theta)=\frac14\sum_{i=1}^4(y_i-\theta x_i)^2=7.5\theta^2-30\theta+31.5
 <details>
 <summary>展开第 9 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 9 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-09.jpg)
+![Lecture 11 第 9 页原始幻灯片](assets/lecture11-09.jpg)
 
 </details>
 
@@ -119,7 +119,7 @@ $$E_{in}(\theta)=\frac14\sum_{i=1}^4(y_i-\theta x_i)^2=7.5\theta^2-30\theta+31.5
 <details>
 <summary>展开第 10 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 10 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-10.jpg)
+![Lecture 11 第 10 页原始幻灯片](assets/lecture11-10.jpg)
 
 </details>
 
@@ -130,7 +130,7 @@ $$E_{in}(\theta)=\frac14\sum_{i=1}^4(y_i-\theta x_i)^2=7.5\theta^2-30\theta+31.5
 <details>
 <summary>展开第 11 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 11 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-11.jpg)
+![Lecture 11 第 11 页原始幻灯片](assets/lecture11-11.jpg)
 
 </details>
 
@@ -145,7 +145,7 @@ $$f(x)=\begin{cases}(x^2-1)/(x-1),&x<3,\\1,&x\ge3.\end{cases}$$
 <details>
 <summary>展开第 12 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 12 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-12.jpg)
+![Lecture 11 第 12 页原始幻灯片](assets/lecture11-12.jpg)
 
 </details>
 
@@ -156,7 +156,7 @@ $\lim_{x\to a}f(x)=L$ 表示让 $x$ 足够接近 $a$、但不等于 $a$，便能
 <details>
 <summary>展开第 13 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 13 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-13.jpg)
+![Lecture 11 第 13 页原始幻灯片](assets/lecture11-13.jpg)
 
 </details>
 
@@ -174,7 +174,7 @@ $$E_{in}(\theta)=\tfrac14\sum_{i=1}^4\mathbf1\{h_\theta(x_i)\ne y_i\}
 <details>
 <summary>展开第 14 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 14 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-14.jpg)
+![Lecture 11 第 14 页原始幻灯片](assets/lecture11-14.jpg)
 
 </details>
 
@@ -185,7 +185,7 @@ $$E_{in}(\theta)=\tfrac14\sum_{i=1}^4\mathbf1\{h_\theta(x_i)\ne y_i\}
 <details>
 <summary>展开第 15 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 15 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-15.jpg)
+![Lecture 11 第 15 页原始幻灯片](assets/lecture11-15.jpg)
 
 </details>
 
@@ -200,7 +200,7 @@ $$\frac{\Delta f}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}.$$
 <details>
 <summary>展开第 16 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 16 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-16.jpg)
+![Lecture 11 第 16 页原始幻灯片](assets/lecture11-16.jpg)
 
 </details>
 
@@ -211,7 +211,7 @@ $$\frac{\Delta f}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}.$$
 <details>
 <summary>展开第 17 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 17 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-17.jpg)
+![Lecture 11 第 17 页原始幻灯片](assets/lecture11-17.jpg)
 
 </details>
 
@@ -224,7 +224,7 @@ $$f'(x)=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.$$
 <details>
 <summary>展开第 18 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 18 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-18.jpg)
+![Lecture 11 第 18 页原始幻灯片](assets/lecture11-18.jpg)
 
 </details>
 
@@ -241,7 +241,7 @@ $$\frac{(x+\Delta x)^2-x^2}{\Delta x}
 <details>
 <summary>展开第 19 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 19 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-19.jpg)
+![Lecture 11 第 19 页原始幻灯片](assets/lecture11-19.jpg)
 
 </details>
 
@@ -252,7 +252,7 @@ $$\frac{(x+\Delta x)^2-x^2}{\Delta x}
 <details>
 <summary>展开第 20 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 20 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-20.jpg)
+![Lecture 11 第 20 页原始幻灯片](assets/lecture11-20.jpg)
 
 </details>
 
@@ -263,7 +263,7 @@ $$\frac{(x+\Delta x)^2-x^2}{\Delta x}
 <details>
 <summary>展开第 21 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 21 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-21.jpg)
+![Lecture 11 第 21 页原始幻灯片](assets/lecture11-21.jpg)
 
 </details>
 
@@ -276,7 +276,7 @@ $$f(x+\Delta x)\approx f(x)+f'(x)\Delta x\qquad(\Delta x\text{ 很小时}).$$
 <details>
 <summary>展开第 22 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 22 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-22.jpg)
+![Lecture 11 第 22 页原始幻灯片](assets/lecture11-22.jpg)
 
 </details>
 
@@ -287,7 +287,7 @@ $$f(x+\Delta x)\approx f(x)+f'(x)\Delta x\qquad(\Delta x\text{ 很小时}).$$
 <details>
 <summary>展开第 23 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 23 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-23.jpg)
+![Lecture 11 第 23 页原始幻灯片](assets/lecture11-23.jpg)
 
 </details>
 
@@ -298,7 +298,7 @@ $$f(x+\Delta x)\approx f(x)+f'(x)\Delta x\qquad(\Delta x\text{ 很小时}).$$
 <details>
 <summary>展开第 24 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 24 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-24.jpg)
+![Lecture 11 第 24 页原始幻灯片](assets/lecture11-24.jpg)
 
 </details>
 
@@ -309,7 +309,7 @@ $$f(x+\Delta x)\approx f(x)+f'(x)\Delta x\qquad(\Delta x\text{ 很小时}).$$
 <details>
 <summary>展开第 25 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 25 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-25.jpg)
+![Lecture 11 第 25 页原始幻灯片](assets/lecture11-25.jpg)
 
 </details>
 
@@ -320,7 +320,7 @@ $$f(x+\Delta x)\approx f(x)+f'(x)\Delta x\qquad(\Delta x\text{ 很小时}).$$
 <details>
 <summary>展开第 26 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 26 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-26.jpg)
+![Lecture 11 第 26 页原始幻灯片](assets/lecture11-26.jpg)
 
 </details>
 
@@ -339,7 +339,7 @@ $$f(x+\Delta x)\approx f(x)+f'(x)\Delta x\qquad(\Delta x\text{ 很小时}).$$
 <details>
 <summary>展开第 27 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 27 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-27.jpg)
+![Lecture 11 第 27 页原始幻灯片](assets/lecture11-27.jpg)
 
 </details>
 
@@ -354,7 +354,7 @@ $$E'_{in}(\theta)=\frac1N\sum_i\ell'_i(\theta).$$
 <details>
 <summary>展开第 28 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 28 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-28.jpg)
+![Lecture 11 第 28 页原始幻灯片](assets/lecture11-28.jpg)
 
 </details>
 
@@ -367,7 +367,7 @@ $$(fg)'(x)=f'(x)g(x)+f(x)g'(x).$$
 <details>
 <summary>展开第 29 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 29 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-29.jpg)
+![Lecture 11 第 29 页原始幻灯片](assets/lecture11-29.jpg)
 
 </details>
 
@@ -382,7 +382,7 @@ $$\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}=g'(f(x))f'(x).$$
 <details>
 <summary>展开第 30 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 30 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-30.jpg)
+![Lecture 11 第 30 页原始幻灯片](assets/lecture11-30.jpg)
 
 </details>
 
@@ -402,7 +402,7 @@ $$\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}=g'(f(x))f'(x).$$
 <details>
 <summary>展开第 31 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 31 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-31.jpg)
+![Lecture 11 第 31 页原始幻灯片](assets/lecture11-31.jpg)
 
 </details>
 
@@ -417,7 +417,7 @@ $$\ell'(\theta)=-2x(y-\theta x),\quad E'_{in}(\theta)=-\frac2N\sum_ix_i(y_i-\the
 <details>
 <summary>展开第 32 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 32 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-32.jpg)
+![Lecture 11 第 32 页原始幻灯片](assets/lecture11-32.jpg)
 
 </details>
 
@@ -432,7 +432,7 @@ $$\sigma'(z)=\frac{e^{-z}}{(1+e^{-z})^2}=\sigma(z)(1-\sigma(z)).$$
 <details>
 <summary>展开第 33 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 33 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-33.jpg)
+![Lecture 11 第 33 页原始幻灯片](assets/lecture11-33.jpg)
 
 </details>
 
@@ -447,7 +447,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 34 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 34 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-34.jpg)
+![Lecture 11 第 34 页原始幻灯片](assets/lecture11-34.jpg)
 
 </details>
 
@@ -458,7 +458,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 35 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 35 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-35.jpg)
+![Lecture 11 第 35 页原始幻灯片](assets/lecture11-35.jpg)
 
 </details>
 
@@ -469,7 +469,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 36 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 36 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-36.jpg)
+![Lecture 11 第 36 页原始幻灯片](assets/lecture11-36.jpg)
 
 </details>
 
@@ -480,7 +480,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 37 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 37 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-37.jpg)
+![Lecture 11 第 37 页原始幻灯片](assets/lecture11-37.jpg)
 
 </details>
 
@@ -491,7 +491,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 38 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 38 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-38.jpg)
+![Lecture 11 第 38 页原始幻灯片](assets/lecture11-38.jpg)
 
 </details>
 
@@ -502,7 +502,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 39 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 39 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-39.jpg)
+![Lecture 11 第 39 页原始幻灯片](assets/lecture11-39.jpg)
 
 </details>
 
@@ -515,7 +515,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 40 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 40 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-40.jpg)
+![Lecture 11 第 40 页原始幻灯片](assets/lecture11-40.jpg)
 
 </details>
 
@@ -526,7 +526,7 @@ $$\frac{d\ell}{dw}=-\frac1p\,p(1-p)x=-(1-p)x.$$
 <details>
 <summary>展开第 41 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 41 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-41.jpg)
+![Lecture 11 第 41 页原始幻灯片](assets/lecture11-41.jpg)
 
 </details>
 
@@ -537,7 +537,7 @@ $f''$ 是导数 $f'$ 的导数，表示斜率变化的速度。$f''>0$ 时斜率
 <details>
 <summary>展开第 42 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 42 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-42.jpg)
+![Lecture 11 第 42 页原始幻灯片](assets/lecture11-42.jpg)
 
 </details>
 
@@ -548,7 +548,7 @@ $f''$ 是导数 $f'$ 的导数，表示斜率变化的速度。$f''>0$ 时斜率
 <details>
 <summary>展开第 43 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 43 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-43.jpg)
+![Lecture 11 第 43 页原始幻灯片](assets/lecture11-43.jpg)
 
 </details>
 
@@ -563,7 +563,7 @@ $$-LL(\theta)=-\log120-7\log\theta-3\log(1-\theta).$$
 <details>
 <summary>展开第 44 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 44 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-44.jpg)
+![Lecture 11 第 44 页原始幻灯片](assets/lecture11-44.jpg)
 
 </details>
 
@@ -580,7 +580,7 @@ $$(-LL)'=-\frac{k}{\theta}+\frac{N-k}{1-\theta}=0\quad\Longrightarrow\quad\wideh
 <details>
 <summary>展开第 45 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 45 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-45.jpg)
+![Lecture 11 第 45 页原始幻灯片](assets/lecture11-45.jpg)
 
 </details>
 
@@ -601,7 +601,7 @@ $$\widehat\theta=\frac{\sum_ix_iy_i}{\sum_ix_i^2},\qquad E''_{in}=\frac2N\sum_ix
 <details>
 <summary>展开第 46 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 46 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-46.jpg)
+![Lecture 11 第 46 页原始幻灯片](assets/lecture11-46.jpg)
 
 </details>
 
@@ -612,7 +612,7 @@ $$\widehat\theta=\frac{\sum_ix_iy_i}{\sum_ix_i^2},\qquad E''_{in}=\frac2N\sum_ix
 <details>
 <summary>展开第 47 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 47 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-47.jpg)
+![Lecture 11 第 47 页原始幻灯片](assets/lecture11-47.jpg)
 
 </details>
 
@@ -623,7 +623,7 @@ $f'(c)=0,f''(c)>0$ 都是某一点的条件，图中两个不同谷底都满足�
 <details>
 <summary>展开第 48 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 48 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-48.jpg)
+![Lecture 11 第 48 页原始幻灯片](assets/lecture11-48.jpg)
 
 </details>
 
@@ -638,7 +638,7 @@ $$f(ax+by)\le af(x)+bf(y),$$
 <details>
 <summary>展开第 49 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 49 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-49.jpg)
+![Lecture 11 第 49 页原始幻灯片](assets/lecture11-49.jpg)
 
 </details>
 
@@ -649,7 +649,7 @@ $$f(ax+by)\le af(x)+bf(y),$$
 <details>
 <summary>展开第 50 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 50 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-50.jpg)
+![Lecture 11 第 50 页原始幻灯片](assets/lecture11-50.jpg)
 
 </details>
 
@@ -662,7 +662,7 @@ $$f(ax+by)\le af(x)+bf(y),$$
 <details>
 <summary>展开第 51 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 51 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-51.jpg)
+![Lecture 11 第 51 页原始幻灯片](assets/lecture11-51.jpg)
 
 </details>
 
@@ -673,7 +673,7 @@ $$f(ax+by)\le af(x)+bf(y),$$
 <details>
 <summary>展开第 52 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 52 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-52.jpg)
+![Lecture 11 第 52 页原始幻灯片](assets/lecture11-52.jpg)
 
 </details>
 
@@ -684,7 +684,7 @@ $$f(ax+by)\le af(x)+bf(y),$$
 <details>
 <summary>展开第 53 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 53 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-53.jpg)
+![Lecture 11 第 53 页原始幻灯片](assets/lecture11-53.jpg)
 
 </details>
 
@@ -695,7 +695,7 @@ $$f(ax+by)\le af(x)+bf(y),$$
 <details>
 <summary>展开第 54 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 54 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-54.jpg)
+![Lecture 11 第 54 页原始幻灯片](assets/lecture11-54.jpg)
 
 </details>
 
@@ -711,7 +711,7 @@ $$E_{in}(\theta_0,\theta_1)=\tfrac14\sum_i(y_i-\theta_0-\theta_1x_i)^2
 <details>
 <summary>展开第 55 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 55 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-55.jpg)
+![Lecture 11 第 55 页原始幻灯片](assets/lecture11-55.jpg)
 
 </details>
 
@@ -727,7 +727,7 @@ $$\frac{\partial E_{in}}{\partial\theta_0}=2\theta_0+5\theta_1-10,\qquad
 <details>
 <summary>展开第 56 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 56 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-56.jpg)
+![Lecture 11 第 56 页原始幻灯片](assets/lecture11-56.jpg)
 
 </details>
 
@@ -740,7 +740,7 @@ $$\nabla f(x)=\left(\frac{\partial f}{\partial x_1}(x),\ldots,\frac{\partial f}{
 <details>
 <summary>展开第 57 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 57 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-57.jpg)
+![Lecture 11 第 57 页原始幻灯片](assets/lecture11-57.jpg)
 
 </details>
 
@@ -753,7 +753,7 @@ $$f(x+\Delta x)\approx f(x)+\nabla f(x)^T\Delta x,$$
 <details>
 <summary>展开第 58 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 58 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-58.jpg)
+![Lecture 11 第 58 页原始幻灯片](assets/lecture11-58.jpg)
 
 </details>
 
@@ -766,7 +766,7 @@ $$f(x+\Delta x)\approx f(x)+\nabla f(x)^T\Delta x,$$
 <details>
 <summary>展开第 59 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 59 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-59.jpg)
+![Lecture 11 第 59 页原始幻灯片](assets/lecture11-59.jpg)
 
 </details>
 
@@ -777,7 +777,7 @@ $$f(x+\Delta x)\approx f(x)+\nabla f(x)^T\Delta x,$$
 <details>
 <summary>展开第 60 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 60 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-60.jpg)
+![Lecture 11 第 60 页原始幻灯片](assets/lecture11-60.jpg)
 
 </details>
 
@@ -793,7 +793,7 @@ $$\widehat\theta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},\
 <details>
 <summary>展开第 61 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 61 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-61.jpg)
+![Lecture 11 第 61 页原始幻灯片](assets/lecture11-61.jpg)
 
 </details>
 
@@ -810,7 +810,7 @@ $$\widehat\theta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},\
 <details>
 <summary>展开第 62 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 62 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-62.jpg)
+![Lecture 11 第 62 页原始幻灯片](assets/lecture11-62.jpg)
 
 </details>
 
@@ -829,7 +829,7 @@ $$\nabla RSS=2X^TX\theta-2X^TY=-2X^T(Y-X\theta).$$
 <details>
 <summary>展开第 63 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 63 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-63.jpg)
+![Lecture 11 第 63 页原始幻灯片](assets/lecture11-63.jpg)
 
 </details>
 
@@ -844,7 +844,7 @@ $$\nabla^2E_{in}=\begin{pmatrix}2&5\\5&15\end{pmatrix},$$
 <details>
 <summary>展开第 64 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 64 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-64.jpg)
+![Lecture 11 第 64 页原始幻灯片](assets/lecture11-64.jpg)
 
 </details>
 
@@ -855,7 +855,7 @@ $$\nabla^2E_{in}=\begin{pmatrix}2&5\\5&15\end{pmatrix},$$
 <details>
 <summary>展开第 65 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 65 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-65.jpg)
+![Lecture 11 第 65 页原始幻灯片](assets/lecture11-65.jpg)
 
 </details>
 
@@ -870,7 +870,7 @@ $$v^T(2X^TX)v=2(Xv)^T(Xv)=2\|Xv\|^2\ge0.$$
 <details>
 <summary>展开第 66 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 66 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-66.jpg)
+![Lecture 11 第 66 页原始幻灯片](assets/lecture11-66.jpg)
 
 </details>
 
@@ -886,7 +886,7 @@ $$RSS(\widehat\theta+v)=RSS(\widehat\theta)-2v^TX^T(Y-X\widehat\theta)+\|Xv\|^2
 <details>
 <summary>展开第 67 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 67 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-67.jpg)
+![Lecture 11 第 67 页原始幻灯片](assets/lecture11-67.jpg)
 
 </details>
 
@@ -905,7 +905,7 @@ $$RSS(\widehat\theta+v)=RSS(\widehat\theta)-2v^TX^T(Y-X\widehat\theta)+\|Xv\|^2
 <details>
 <summary>展开第 68 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 68 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-68.jpg)
+![Lecture 11 第 68 页原始幻灯片](assets/lecture11-68.jpg)
 
 </details>
 
@@ -916,6 +916,6 @@ $$RSS(\widehat\theta+v)=RSS(\widehat\theta)-2v^TX^T(Y-X\widehat\theta)+\|Xv\|^2
 <details>
 <summary>展开第 69 页原始 slide，核对图表、标注和公式</summary>
 
-![Lecture 11 第 69 页原始幻灯片](/Users/cichlidfish/COMP3670/output/lecture_notes/assets/lecture11-69.jpg)
+![Lecture 11 第 69 页原始幻灯片](assets/lecture11-69.jpg)
 
 </details>
