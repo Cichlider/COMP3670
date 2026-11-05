@@ -1,0 +1,370 @@
+COMP3670 MACHINE LEARNING                                                                                                                                                                                                                 1/2
+LEARNING / STATISTICS / MODELS / CLUSTERING / ORTHONORMAL GEOMETRY
+
+Learning from data                                                                      Parametric estimation & logistic models                               K-means
+Deduction: theory/premises → prediction; true premises                                  Parametric: fixed finite-dimensional family.                          For nonempty clusters C1 , . . . , Ck :
+and valid logic imply the conclusion. Induction:                                        Nonparametric: complexity may grow with data;                                   k
+                                                                                                                                                                                                                            1
+                                                                                                                                                                        X X                                                       X
+observations → a general rule; finite evidence cannot                                   locality/smoothing replaces a fixed shape assumption.                  J =                 ∥xi − cr ∥ ,
+                                                                                                                                                                                                    2
+                                                                                                                                                                                                                  cr =                    xi .
+prove a universal claim. One counterexample can falsify it.                             Plug-in: estimate η, then apply a decision rule.                                                                                  |Cr |
+Supervised: labelled (xi , yi ); classification (discrete y),                           Likelihood / MLE (i.i.d. observations):                                         r=1 i∈Cr                                                  i∈Cr
+regression (numerical y). Unsupervised: only xi ; discover                                                               N                                    Lloyd steps: initialize centers/partition; assign each point
+structure. Reinforcement: state → action → reward;
+                                                                                                                         Y                                    to its nearest center; recompute means; repeat until
+                                                                                                             L(θ) =            p(zi | θ),
+learn a policy maximizing cumulative reward, often                                                                                                            assignments stabilize. Use multiple starts; different
+delayed.                                                                                                                 i=1                                  initializations can reach different local optima.
+PLA (yi ∈ {−1, +1}). Initialize w = b = 0. Find a                                                                        X                                        X
+                                                                                                                                                                                    2
+                                                                                                                                                                                           X
+                                                                                                                                                                                                                      2                   2
+misclassified point, update, repeat until no errors:                                                 θ̂ = arg max               log p(zi | θ).                           ∥xi − c∥ =                 ∥xi − x̄∥ + n∥c − x̄∥ .
+                                                                                                                 θ
+             w ← w + yi xi ,        b ← b + yi .                                                                          i                                         i                          i
+L1 predicts +1 if wT x + b > 0, otherwise −1. Strictly                                  Data fixed, parameter varies; likelihood is not a probability         Thus the mean uniquely minimizes a nonempty cluster’s
+linearly separable data ⇒ finitely many updates; otherwise                              distribution over θ. Bernoulli: p̂ = k/N . Gaussian MLE:              SSE. Assignment and mean updates never increase J.
+no termination guarantee. Zero training error does not                                              −1
+                                                                                                         X
+                                                                                                                           2           −1
+                                                                                                                                            X
+                                                                                                                                                        2
+                                                                                                                                                              With no empty clusters and ties kept in the current cluster,
+imply generalization.                                                                      µ̂ = N             zi ,       σ̂ = N                 (zi − µ̂) .   any assignment change strictly decreases J; finitely many
+                                                                                                                                                              partitions ⇒ finite termination, not global optimality.
+Variance & numerical integration                                                                         i                                  i
+                                                                                        Consistency/efficiency need correct specification and                 Empty cluster: its mean is undefined; repair/reseed (e.g.
+                                          2               2                 2
+     Var(X) = E[(X − EX) ] = E[X ] − (EX) .                                                                                                                   a distant point), or keep the previous center under a
+                                                                                        regularity; a wrong family can fit well yet remain wrong.
+           Rb
+                                                                                        Logistic regression, y ∈ {0, 1}:                                      chosen policy. The stated termination proof assumes
+For I =            f (x)dx, let h = (b − a)/n, xi = a + ih,
+             a                                                                                                                                                nonempty clusters, so do not silently divide by zero.
+fi = f (xi ).                                                                                           T                            1
+                                                                                                 g = w x + b, p = σ(g) =                  ,                   Feature scaling changes the geometry.
+Composite trapezoidal rule                                                                                                       1 + e−g
+                           "                                    #                                                   p                                         Hierarchical clustering
+                                          n−1
+                                                                                                              log        = g.                                 Agglomerative: start with singleton clusters; repeatedly
+                    h
+                                        X
+               Tn =            f0 + 2             fi + fn           .                                             1−p                                         merge the closest pair under a chosen linkage; record
+                    2                                                                   Odds = e ; increasing xj by one multiplies odds by ewj ,
+                                                                                                   g
+                                                                                                                                                              merge height; continue to one cluster.
+                                          i=1                                           holding others fixed. Threshold p > 1/2 iff g > 0. Costs                       dsingle (A, B) =      min d(x, y),
+If max[a,b] |f ′′ | ≤ M2 :                                                              can change the threshold.                                                                                    x∈A,y∈B
+
+                         M2 (b − a)3                                                          ℓCE (y, p) = −y log p − (1 − y) log(1 − p).                                dcomplete (A, B) =                max            d(x, y),
+             |I − Tn | ≤             .                                                                               Q    y                                                                              x∈A,y∈B
+                             12n2                                                       Conditional likelihood    p i (1 − pi )1−yi ; MLE =
+                                                                                                                i i
+                                                                                                                                                                                                     1
+                                                                                                                                                                                                              XX
+Composite Simpson rule (n even)                                                         minimize mean cross-entropy, not directly 0–1 error.                       daverage (A, B) =                                           d(x, y).
+                                                                                        Confident wrong probabilities incur large loss.                                                            |A||B|
+                                                                           
+                                                                                                                                                                                                              x∈A y∈B
+             h
+                               X                       X                                Nonparametric classification
+     Sn =
+                                                                                                                                                             Single can chain via bridges; complete favors compact
+             3
+               f0 + 4                  fi + 2                  fi + fn  .             Histogram density, bin A(x), width l in 1D:
+                                                                                                                                                              clusters; average uses all cross-pairs. A dendrogram’s
+                               1≤i<n                  2≤i<n                                                    #{i : Xi ∈ A(x)}                               vertical height is merge dissimilarity. A horizontal cut
+                                i odd                  i even                                         fˆ(x) =                      .
+                                                                                                                        Nl                                    gives clusters as connected branches below it; horizontal
+If max |f | ≤ M4 , |I − Sn | ≤ M4 (b − a)5 /(180n4 ).
+            (4)                                                                         In d dimensions, divide by bin volume instead of l. Kernel            spacing has no distance meaning. Linkage choice can
+Doubling n: error bounds divide by 4 (trapezoid), 16                                    density estimate, normalized κ:                                       change the partition at the same cut height.
+(Simpson).                                                                                                    1
+                                                                                                                   X  x − Xi 
+                                                                                                                                                              Orthonormal geometry
+                                                                                                   fˆ(x) =              κ             .
+Generalization & complexity                                                                                 Nσ  d             σ                               Cauchy–Schwarz:
+D = {(Xi , Yi )}N
+                i=1 i.i.d.; L(h) = Eout (h),
+                                                                                                                          i                                                               T
+                                                                                                                                                                                    |x y| ≤ ∥x∥∥y∥.
+                                                                                        Small bins/bandwidth: high variance; large: more
+L
+b(h) = Ein (h); ERM minimizes L
+                              b. Bounds below use                                                                                                             Equality iff x, y linearly dependent (including a zero
+                                                                                        smoothing/bias. Scaling and irrelevant features affect
+binary 0–1 loss.                                                                                                                                              vector). Proof: 0 ≤ ∥x − ay∥2 , choose a = xT y/∥y∥2
+                                                                                        distances; high dimension causes
+                                                                                                                     P sparse neighborhoods.
+Hoeffding, fixed h before viewing D:                                                                                                                          for y ̸= 0.
+                                                                                        Unified local vote (Wi ≥ 0,       Wi = 1):
+          Pr{|L(h) − Lb(h)| > ϵ} ≤ 2e                     −2N ϵ2
+                                                                        .                                       X                  i                          Orthonormal list: qiT qj = δij , hence linearly
+                                                                                                                                                              independent. If it spans S, it is an orthonormal basis.
+For finite |H| = M , union bound gives                                                               η̂(x) =             Wi (x)1{Yi = 1},
+                                                                                                                                                              With Q = [q1 · · · qk ]:
+                                                                 −2N ϵ2
+      Pr{sup |L(h) − L
+                     b(h)| > ϵ} ≤ 2M e                                      .                                        i                                                   T
+                                                                                                                                                                    Q Q = Ik ,          [x]Q = Q x (x ∈ S).
+                                                                                                                                                                                                                  T
+               h                                                                                         ĥ(x) = 1{η̂(x) > 1/2}.                              The coefficients follow by taking dot products.
+Thus simultaneously
+                p                                                                       Histogram: Wi = 1{Xi ∈ A(x)}/N (x); handle empty                      Rectangular Q generally has QQT ̸= Id .
+L(h) ≤ L  b(h) + log(2M/δ)/(2N ), with probability                                      cells. kNN: Wi = 1/k for the k nearest points, else 0.                Orthogonal matrix is square with QT Q = I:
+≥ 1 − δ. Searching over data-selected h requires uniform                                Small k: flexible/noisy. Odd k prevents binary vote ties,               Q
+                                                                                                                                                                 −1          T             T
+                                                                                                                                                                      = Q , (Qx) (Qy) = x y, ∥Qx∥ = ∥x∥.
+                                                                                                                                                                                                                  T
+control.                                                                                not distance ties.
+                                                                                                                      κ((x − Xi )/σ)                          It preserves lengths, distances and nonzero-vector angles.
+Shatter: realize all 2N labellings of some N points.                                            Kernel: Wi (x) = P                       .                    Do not confuse orthogonal columns with a square
+S(H, N ): maximum number of labellings; v = dV C :                                                                       κ((x − Xj )/σ)                       orthogonal matrix.
+                                                                                                                               j
+largest shatterable size. One-direction threshold: 1;                                                                                                         Gram–Schmidt, independent v1 , . . . , vk :
+intervals: 2; affine hyperplanes in Rd : d + 1.                                         Handle a zero denominator for compact-support kernels.
+Sauer: finite v, N > v ⇒ S(H, N ) ≤ (N + 1)v .                                                      −∥u∥2                                                                     u1 = v1 , q1 = u1 /∥u1 ∥,
+                                                                                        Gaussian e        ; Cauchy (1 + ∥u∥d+1 )−1 ; uniform                                      X
+Course VC bound:                                                                        1∥u∥≤1 ; triangular (1 − ∥u∥)+ ; Epanechnikov                             uj = v j −
+                                                                                                                                                                                              T
+                                                                                                                                                                                          (qi vj )qi ,                qj = uj /∥uj ∥.
+                                                          v −N ϵ2 /32                   (1 − ∥u∥2 )+ . Common constants cancel in normalized
+     Pr{sup |L − L
+                 b| > ϵ} ≤ 8(N + 1) e                                           .
+          h                                                                             weights. Select k, l, σ by validation/CV.                                                  i<j
+          p                                                                                                                                                   Subtract all previous components, then normalize. Prefix
+Penalty          32
+                 N [v log(N + 1) + log(8/δ)].
+                                                                                        Trees, bagging & random forests                                       spans are unchanged. Zero residual means dependence;
+                                                                                        CART: recursively split xj ≤ a; leaves form axis-aligned
+                                    ∗
+Agnostic PAC: Pr{L(ĥ) ≤ L(h ) + ϵ} ≥ 1 − δ for all                                                                                                           skip it rather than normalize zero. Check QT Q = I
+                                                                                        boxes. Predict majority class in each leaf. Each path is an
+P , once N ≥ NH (ϵ, δ); h∗ = arg minh∈H L(h).                                           AND; same-class leaves are OR’ed.
+                                                                                                                                                              afterwards.
+Binary distribution-free PAC ⇔ v < ∞ (standard                                          Let p be class-1 fraction in node R:                                  Spectral theorem & PSD
+measurability assumptions). Sufficient course-bound order:                                                                                                    For real symmetric A = AT ∈ Rd×d , there is a real
+                                                                                             IG = 2p(1 − p), Ierr = min(p, 1 − p),
+                      v log(1/ϵ) + log(1/δ)                                                                                                                   orthonormal eigenbasis:
+         NH = O                                 .                                         IH = −p log p − (1 − p) log(1 − p), 0 log 0 = 0.
+                                ϵ2                                                                                                                                                                            T
+                                                                                        Impurity 0 at pure nodes, maximal at p = 1/2.                                            Aqj = λj qj ,            Q Q = I,
+Approximation vs estimation:                                                                                    NL             NU                                                                         d
+                    ∗            ∗
+ L(ĥ) − L(f ) = L(h ) − L(f ) + L(ĥ) − L(h ) .
+                                                  ∗                             ∗                ∆I = I(R) −        I(RL ) −       I(RU ).                                                     T
+                                                                                                                                                                                                        X
+                                                                                                                                                                                                                          T
+ |        {z           }   |         {z           } |               {z              }                           NR             NR                                                A = QΛQ            =             λj qj qj .
+   excess over Bayes              ∆app                            ∆est                  Here NR is parent size, NL , NU are child sizes. Choose
+                                                                                                                                                                                                         j=1
+                                                                                        the largest admissible decrease; repeat. A local greedy
+Restricting H can increase approximation error but reduce                                                                                                     Distinct-eigenvalue eigenvectors are orthogonal; within a
+                                                                                        split is not global ERM over all trees. Stop by purity,
+estimation difficulty. This is related to the bias/variance
+                                                                                        depth, minimum leaf size; prune/validate. Deep single                 repeated eigenspace choose an orthonormal basis. QT :
+trade-off.                                                                                                                                                    obtain coordinates; Λ: scale; Q: reconstruct.
+                                                                                        trees have high variance; rescaling one feature
+K-fold CV: fit on K − 1 folds, score the held-out fold;                                                                                                                      X                                            X
+                                                                                        monotonically preserves threshold order.                                     x=           aj qj        ⇒
+                                                                                                                                                                                                          T
+                                                                                                                                                                                                        x Ax =
+                                                                                                                                                                                                                                     2
+                                                                                                                                                                                                                                λj aj .
+rotate, then average:
+                                              K
+                                          X                                                                                                                                  j                                             j
+                                     −1                 (j)
+               ECV (M ) = K                           Eval (M ).                                                                                              Positive semidefinite: A ⪰ 0 iff xT Ax ≥ 0 for all x, iff
+                                          j=1                                                                                                                 every λj ≥ 0. Positive definite: strict positivity for every
+                                                                                                                                                              nonzero x, iff every λj > 0.
+Choose hyperparameters by CV, refit on development
+                                                                                                                                                              PSD can be singular; PD is invertible. For any real B,
+data; test once on untouched data. Fit preprocessing
+                                                                                                                                                              B T B ⪰ 0 since xT B T Bx = ∥Bx∥2 . Negative
+inside each fold. Fold scores are dependent; CV winner’s
+                                                                                                                                                              eigenvalues rule out PSD. A general real non-symmetric
+score can be optimistic.
+                                                                                                                                                              matrix need not have an orthonormal eigenbasis.
+
+
+
+Selected course notes / L1–4, 5b, 8a–b, 9–12 and LA5–8 / bounds assume their stated conditions                                                                                                          A4 / 100% / duplex, long-edge
+COMP3670 MACHINE LEARNING                                                                                                                                                                                                              2/2
+SVM / SVD / SECOND-ORDER TESTS / OPTIMISATION / NEURAL NETWORKS / OPTIMIZERS
+
+SVM: hard, soft & nonlinear                                                            Second-order tests & convexity                                                 Ensemble learning
+Labels yi ∈ {−1, +1}; fi = wT xi + b. SVM                                              1D stationary point: f ′ (x∗ ) = 0 (interior, differentiable)                  Bagging: draw B bootstrap samples of size N with
+convention: predict +1 for f ≥ 0, else −1. With w ̸= 0:                                is necessary, not sufficient. If f ′′ (x∗ ) > 0: strict local                  replacement; fit a tree per sample; majority vote
+                      mi                    |wT x + b|                                 min; < 0: strict local max; = 0: inconclusive. Check                           (classification), average (regression). Variance reduction is
+  mi = yi fi , γi =        , d(x, H) =                 .                               boundaries and non-differentiable points too.                                  greater when members are less correlated.
+                      ∥w∥                       ∥w∥                                    Multivariable: ∇f (x∗ ) = 0; Hessian Hij = ∂i ∂j f                             Random forest: bootstrap plus a random feature subset
+Raw scores change under positive rescaling of (w, b); the                              (symmetric for C 2 functions).                                                 at every split; often deep trees. Feature randomness
+hyperplane and geometric margins do not.                                                                                             T               T                decorrelates trees. Forests are more stable, less
+Hard margin (both classes, strictly separable):                                             f (x + v) ≈ f (x) + ∇f (x) v + 12 v H(x)v.                                interpretable; no universal immunity to overfitting.
+              min 21 ∥w∥
+                                 2
+                                         s.t. mi ≥ 1 (∀i).                             At a stationary point: H ≻ 0 implies strict local min;
+                                                                                       H ≺ 0 implies strict local max; indefinite H implies
+                                                                                                                                                                      Neural networks & backpropagation
+              w,b
+                                                                                       saddle. Semidefinite/singular H: test inconclusive. Local                      Forward pass: a0 = x; hidden layers
+At optimum mini mi = 1, training margin γ = 1/∥w∥,                                                                                                                                 ℓ       ℓ ℓ−1        ℓ          ℓ               ℓ
+full band width 2/∥w∥. Support vectors: points with                                    min requires H ⪰ 0 for C 2 functions.                                                    z =W a          +b ,       a = ϕ(z ).
+mi = 1 touch the margin boundaries. Rescale any                                        Convexity on a convex domain:                                                  Without nonlinear activations, stacked affine layers
+separator by its minimum functional margin to see why                                  f (tx + (1 − t)y) ≤ tf (x) + (1 − t)f (y), t ∈ [0, 1].                         collapse to one affine map. Depth/width set flexibility;
+minimum norm maximizes margin.                                                         For differentiable f , equivalent to                                           training is generally nonconvex. Universal approximation
+Soft margin, C > 0:                                                                    f (y) ≥ f (x) + ∇f (x)T (y − x). For C 2 f , equivalent                        is an expressiveness result, not a guarantee of trainability
+                                                   X                                   to H(x) ⪰ 0 everywhere. Every local min is global;                             or generalization.
+                             1    2
+              min            2 ∥w∥ + C                       ξi ,                      ∇f = 0 is sufficient for global min. Strict convexity gives                    Activations: ReLU (z)+ = max(0, z);
+              w,b,ξ
+                                                        i                              at most one minimizer, not its existence. H ≻ 0                                σ(z) = 1/(1 + e−z ); tanh z; arctan z; step 1{z ≥ 0}.
+                                                                                       everywhere is sufficient for strict convexity, not necessary.                       ′                                           ′
+               s.t. mi ≥ 1 − ξi , ξi ≥ 0.                                                                                                                                 ϕReLU = 1{z > 0} (z ̸= 0),                σ = σ(1 − σ),
+For fixed w, b, ξi∗ = (1 − mi )+ = max(0, 1 − mi );                                    Normal equations & ridge                                                                ′                2
+                                                                                                                                                                      (tanh z) = 1 − tanh z, (arctan z) = (1 + z ) .
+                                                                                                                                                                                                                           ′           2 −1
+equivalent objective:                                                                  Rows of design X ∈ RN ×p include any intercept/basis                           ReLU at zero: choose a subgradient (often 0); step has no
+                                                                                       features; y ∈ RN .
+                                                 X
+        J(w, b) = 12 ∥w∥ + C
+                                     2
+                                                            (1 − mi )+ .                                                                                              useful ordinary gradient at its jump.
+                                                                                                                       2                             T
+                                                                                          RSS = ∥Xθ − y∥ ,                     ∇RSS = 2X (Xθ − y),                    Output: binary sigmoid + binary cross-entropy; multiclass
+                                                    i                                         2                    T                             T            T       softmax + cross-entropy:
+                                                                                            ∇ RSS = 2X X ⪰ 0,             X X θ̂ = X y.
+ξ = 0: satisfies margin; 0 < ξ < 1: correct side inside                                                                                                                                   ez c
+band; ξ = 1: decision boundary; ξ > 1: wrong side.                                     If X has full column rank:                                                                pc = P z , ŷ = arg max pc ,
+Correct labels may still incur hinge loss. In soft SVM,
+                                                                                                                 T   −1
+                                                                                                          θ̂ = (X X) X y.
+                                                                                                                           T                                                                 e j            c
+                                                                                                                                                                                            j
+inside-margin/violating points can influence the fit too.                              Otherwise minimizers need not be unique; fitted training                                                     X
+Large C: penalize violations more; small C: prefer small                               predictions are unique. Numerically solve least squares,                                            ℓ=−              yc log pc .
+norms. Feature units change distances and regularization                               not an explicit inverse.                                                                                     c
+geometry; tune scaling and C together. Soft margin                                     Ridge with λ > 0:                                                              Use one-hot y; subtract maxj zj before exponentiating
+allows w = 0, a constant score.                                                                                      2                   T               −1       T
+                                                                                                                                                                      for numerical stability. For either matched sigmoid/BCE
+                                                                                         J = RSS + λ∥θ∥ ,                      θ̂ = (X X + λI)                X y,
+QP: quadratic convex objective plus linear constraints;
+                                                                                                                           T                                          or softmax/CE, output error is δ L = p − y.
+every local minimum is global. A suitable solver is still                                           ∇J = 2X (Xθ − y) + 2λθ.
+                                                                                                                                                                      Backprop (linear output logits):
+necessary.                                                                               T
+                                                                                       X X + λI ≻ 0: unique solution and improved                                                      ℓ        ℓ+1 T       ℓ+1        ′       ℓ
+Subgradient step. Compute I = {i : mi < 1} from the                                    conditioning. Formula penalizes all entries; to leave                                       δ = ((W       ) δ     ) ⊙ ϕ (z ),
+same old parameters, then update both:                                                 intercept unpenalized replace I by diag(0, 1, . . . , 1)                                    ∂ℓ       ℓ  ℓ−1 T         ∂ℓ      ℓ
+                                                        X                                                                                                                               = δ (a     ) ,           =δ .
+           w
+                  +
+                      = (1 − η)w + ηC                           yi xi ,                (uniqueness then needs corresponding conditions).                                          ∂W ℓ                      ∂bℓ
+                                                                                       Logistic gradient (augmented x includes bias):                                 Average sample gradients for mean batch loss. Chain rule
+                                                        i∈I                                                    ′                                                      transmits error backwards; keep tensor shapes consistent.
+                                                                                                              σ (z) = σ(z)(1 − σ(z)),
+                                                                                                                                                                      Saturating activations can yield small gradients.
+                                         X
+                  +                                                                                                             T
+              b       = b + ηC                   yi .                                                     ∇ ℓ = (σ(w xi ) − yi )xi ,                                  Initialization: small random zero-mean weights break
+                                         i∈I                                                      1
+                                                                                                    Xw i                                                 1 T          neuron symmetry; biases may be zero. Weight variances
+                                                                                                                                                 2
+                                                                                        ∇J =                   (pi − yi )xi ,            ∇ J =             X DX,      (not standard deviations), fan-in nin , fan-out nout :
+Shrinkage plus margin corrections; zero hinge derivative at                                       N                                                      N
+m = 1 is a valid subgradient choice. Individual steps need                                                i                                                                          1                  2               2
+                                                                                       D = diag(pi (1 − pi )) ⪰ 0. Convex, usually no closed                               LeCun        , Xavier                , He        .
+not decrease J; arbitrary constant steps need not                                                                                                                                  nin            nin + nout           nin
+converge.                                                                              form; unregularized separable data may have no finite                          He suits ReLU; Xavier balances layer scales. All-zero
+Nonlinear SVM: choose a fixed feature map ϕ; replace xi                                MLE.                                                                           hidden weights keep units symmetric.
+by ϕ(xi ) in the score, hinge objective and updates. Still                             Parametric vsP local regression. Linear parameter models
+convex in (w, b); curved boundary in original space. E.g.                              use hθ (x) =       θj ϕj (x); features may be nonlinear in
+                                                                                                                                                                      Optimizer update equations
+ϕ(x) = (x, x2 ), 4x − x2 − 3 > 0 ⇐⇒ 1 < x < 3. A                                                               j                                                      Let gt = ∇J(wt ) or a mini-batch gradient; all vector
+                                                                                                                       ∗
+                                                                                       x. For squared loss, f (x)P  = E[Y | X = x]. Kernel /                          squares, roots, products/divisions below are
+radial feature x21 + x22 represents circular boundaries.
+                                                                                       kNN regression: ĥ(x) =         Wi (x)Yi , using                               coordinatewise. Initialize historical states to zero.
+SVD & latent-factor recommendation                                                                                   i
+                                                                                                                                                                      0 < β, β1 , β2 < 1; ϵ > 0 stabilizes denominators.
+A ∈ Rm×d , rank r; compact SVD:                                                        normalized kernel weights or 1/k for nearest neighbors.
+                                                                                       Regression trees: leaf mean, splits minimizing child RSS;                      Momentum / heavy ball (velocity convention):
+                                                r
+                                     T
+                                                X
+                                                                        T              forests average predictions.                                                         vt = βvt−1 − αt gt ,          wt+1 = wt + vt .
+            A = Ur Σr Vr =                              σj uj vj ,                                                                                                    Accumulates descent directions; can reduce oscillation and
+                                                                                       GD, learning rates & convergence
+                                                j=1                                                                                                                   speed traversal of flat directions.
+                                                                                                        θt+1 = θt − α∇J(θt ).                                         Nesterov (gradient at look-ahead position):
+Ur ∈ Rm×r , Vr ∈ Rd×r have orthonormal columns;                                        Full GD uses all N examples per step. For J = RSS/N :
+σ1 ≥ · · · ≥ σr > 0.                                                                                                                                                            vt = βvt−1 − αt ∇J(wt + βvt−1 ),
+                                                                                                      +             2 T
+  Avj = σj uj ,
+                             T
+                          A uj = σj vj ,
+                                                                T
+                                                            A Avj = σj vj .
+                                                                                   2                 θ = θ − α X (Xθ − y).                                                                 wt+1 = wt + vt .
+                                                                                                                   N                                                  Unlike heavy ball, it evaluates the gradient after the
+Truncation: Ak = Uk Σk VkT                      is best among rank-≤ k                 Large α may oscillate/diverge; tiny α is slow. Stop by                         predicted momentum displacement.
+matrices in Frobenius error:                                                           small gradient, small objective/parameter changes, or                          Adagrad (permanent squared-gradient sum):
+                      2
+                             X
+                                          2                 2
+                                                                        X
+                                                                                 2     iteration budget; validation can guide early stopping.                                                                          αt gt
+     ∥A − Ak ∥F =                        σj ,      ∥A∥F =                       σj .   Convex K-smooth objective, minimizer θ ∗ exists and                              st = st−1 + gt ⊙ gt ,        wt+1 = wt − √             .
+                                                                                       0 < α ≤ 1/K:                                                                                                                    st + ϵ
+                              j>k                                           j
+                                                                                                                                                                      Effective coordinatewise learning rates shrink; useful for
+Ratings: R ∈ Rn×m , P ∈ Rn×k , Q ∈ Rm×k ;                                                                         ∗    ∥θ0 − θ ∗ ∥2                                   sparse coordinates, but may become too small.
+                                                                                                    J(θt ) − J(θ ) ≤                 .
+r̂ij = pT               T
+         i qj , R̂ = P Q . Fully observed:                                                                                  2αt                                       RMSProp (EMA instead of permanent sum):
+P = Uk Σk , Q = Vk . Rows are individual embeddings;                                   K bounds Hessian eigenvalues / gradient Lipschitz                                           st = βst−1 + (1 − β)gt ⊙ gt ,
+columns are patterns.                                                                  constant. For strongly convex J with curvature µ > 0,                                                             αt gt
+Missing ratings: unknown ̸= 0. Fit only observed training                              suitable GD has a linear rate. Nonconvex descent need                                           wt+1 = wt − √            .
+pairs Ω:                                                                               not find a global minimum.                                                                                        st + ϵ
+                                                                                                                                                                      Forgets old squared gradients. Course convention puts ϵ
+                                                                                                                         P
+                                                                                       SGD / mini-batches, J = N −1           ℓi :
+         X
+                                 T         2                        2              2
+   L=                 (rij − pi qj ) + λ(∥P ∥F + ∥Q∥F ).                                                                                     i                        inside the root in these two methods.
+                                                                                                      1
+                                                                                                          X
+                                                                                             gt =                  ∇ℓi (θt ),       θt+1 = θt − αt gt .               Adam (course’s negative-gradient moment):
+        (i,j)∈Ω
+                                                                                                      b                                                                             mt = β1 mt−1 − (1 − β1 )gt ,
+ALS (λ > 0): small random initialization, alternate exact                                                 i∈Bt
+ridge subproblems. With Ωi = {j : (i, j) ∈ Ω},                                                                                                                                    st = β2 st−1 + (1 − β2 )gt ⊙ gt ,
+                                                 !−1                                   Uniform sampling gives E[gt | θt ] = ∇J(θt ). One epoch                                       mt                   st
+                                                                                       ≈ N/b updates. Smaller b: cheaper, noisier steps; larger                            m̂t =           ,    ŝt =           ,    t ≥ 1,
+                      X
+                                     T
+                                                             X
+                                                                                       b: less gradient variance, more cost. Apply regularizer                                     1 − β1t              1 − β2t
+       pi =                  qj qj + λI                                 rij qj .
+                                                                                       gradients separately, without dropping their scaling.                                                             αt m̂t
+                      j∈Ωi                                   j∈Ωi                                                                                                                 wt+1 = wt + √                     .
+                                                                                       A fixed learning rate often leaves a noise floor. Under                                                      ŝt + ϵroot + ϵ
+Swap users/items to update each qj . Solve linear systems                              standard stochastic-approximation assumptions, a                               Use m0 = s0 = 0; first gradient is t = 1 for bias
+rather than explicitly invert. Exact blocks                                            sufficient diminishing-step condition is                                       correction. Common course values: β1 = .9, β2 = .999,
+decrease/nonincrease L, but joint problem is nonconvex;                                                                                                               ϵ = 10−8 , ϵroot = 0.
+                                                                                                      X                             X
+                                                                                                                                                 2
+no global guarantee. Validate k, λ, reserve test ratings;                                                     αt = ∞,                        αt < ∞.
+                                                                                                                                                                      Sign check: negative gradient is already stored in mt , so
+           ⇒ cold start. Held-out
+no records q                                                                                          t                              t                                Adam’s final update is plus. With a positive-gradient first
+                                                                                       E.g. αt = a/(b + t)γ , 1/2 < γ ≤ 1. These step rules                           moment, use a minus update instead. Do not mix
+                             P
+RMSE =            |T |−1                         (rij − r̂ij )2 .
+                                 (i,j)∈T                                               alone do not guarantee convergence without assumptions                         conventions. Bias correction compensates zero-initialized
+                                                                                       on the objective and gradient noise.                                           EMAs, not statistical model bias.
+Notation: unqualified norms are Euclidean / I is identity / optimizer conventions follow Lecture 12   A4 / 100% / duplex, long-edge
+

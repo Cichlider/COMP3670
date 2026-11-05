@@ -1,0 +1,389 @@
+\documentclass[a4paper]{article}
+\usepackage[top=7mm,bottom=7mm,left=7mm,right=7mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,microtype,xcolor,fontspec,xeCJK}
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]
+\setmainfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]
+\setCJKmainfont{PingFang.ttc}[Path=/System/Library/AssetsV2/com_apple_MobileAsset_Font8/86ba2c91f017a3749571a82f2c6d890ac7ffb2fb.asset/AssetData/,FontIndex=3,BoldFont=PingFang.ttc,BoldFeatures={FontIndex=11}]
+\setCJKsansfont{PingFang.ttc}[Path=/System/Library/AssetsV2/com_apple_MobileAsset_Font8/86ba2c91f017a3749571a82f2c6d890ac7ffb2fb.asset/AssetData/,FontIndex=3,BoldFont=PingFang.ttc,BoldFeatures={FontIndex=11}]
+\xeCJKsetup{CJKmath=true}
+\usepackage{enumitem}
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.0pt}
+\setlength{\jot}{1.1pt}
+\definecolor{ink}{HTML}{152E3A}
+\definecolor{muted}{HTML}{51616A}
+\definecolor{line}{HTML}{B7C1C6}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\1}{\mathbf1}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\sect}[1]{\par\vspace{2.8pt}{\color{ink}\fontsize{8.6}{9.7}\selectfont\bfseries #1}\par\vspace{1.1pt}}
+\newcommand{\kw}[1]{\textbf{#1}}
+\newcommand{\smallnote}[1]{{\color{muted}#1}}
+\newlength{\cw}\setlength{\cw}{\dimexpr(\textwidth-8mm)/3\relax}
+\newsavebox{\A}\newsavebox{\B}\newsavebox{\C}\newsavebox{\D}\newsavebox{\F}\newsavebox{\G}
+\newenvironment{sheetcol}[1]{\def\currentbox{#1}\begin{lrbox}{#1}\begin{minipage}[t]{\cw}\vspace{0pt}\fontsize{7.2}{8.7}\selectfont\raggedright\setlength{\abovedisplayskip}{1.5pt}\setlength{\belowdisplayskip}{1.5pt}\setlength{\abovedisplayshortskip}{1pt}\setlength{\belowdisplayshortskip}{1pt}}{\end{minipage}\end{lrbox}\global\setbox\currentbox=\box\currentbox}
+\newcommand{\head}[2]{\noindent{\color{ink}\fontsize{15}{16}\selectfont\bfseries COMP3670}\hspace{6pt}{\fontsize{9}{11}\selectfont 机器学习速查 / MACHINE LEARNING}\hfill{\color{muted}\fontsize{8}{10}\selectfont #1 / 2}\par\vspace{1.5pt}{\color{muted}\fontsize{7.1}{8.5}\selectfont #2}\par\vspace{3pt}{\color{ink}\hrule height .7pt}\vspace{3pt}}
+\newcommand{\foot}[1]{\vfill\vspace{3pt}{\color{line}\hrule height .35pt}\vspace{2pt}{\color{muted}\fontsize{6.3}{7.2}\selectfont #1\hfill A4 / 100\% / 双面长边翻转}}
+
+\begin{document}
+
+\begin{sheetcol}{\A}
+\sect{从数据学习 / Learning from data}
+\kw{演绎（Deduction）：}理论／前提 $\to$ 预测；真前提加有效逻辑可保证结论。\kw{归纳（Induction）：}观察 $\to$ 一般规律；有限证据不能证明普遍命题，一个反例就可将其\kw{证伪（falsify）}。
+
+\kw{监督学习（Supervised）：}有标签 $(x_i,y_i)$；分类输出离散，回归输出数值。\kw{无监督（Unsupervised）：}只有 $x_i$，发现结构。\kw{强化学习（Reinforcement）：}状态 $\to$ 动作 $\to$ 奖励，学习最大化累积奖励的策略（policy）；奖励可延迟。
+
+\kw{感知机学习算法（Perceptron learning algorithm, PLA）：}$y_i\in\{-1,+1\}$。令 $w=b=0$；找到错分点，更新，重复到无错分：
+\[w\gets w+y_ix_i,\qquad b\gets b+y_i.\]
+L1 约定 $w^Tx+b>0$ 判 $+1$，否则 $-1$。严格线性可分时有限步停止；不可分时无此保证。训练零错误不等于\kw{泛化（generalization）}良好。
+
+\sect{方差与数值积分 / Variance \& integration}
+\[\Var(X)=\E[(X-\E X)^2]=\E[X^2]-(\E X)^2.\]
+求 $I=\int_a^b f(x)dx$，记 $h=(b-a)/n$、$x_i=a+ih$、$f_i=f(x_i)$。
+
+\kw{复合梯形公式（Trapezoidal rule）}
+\[T_n=\frac h2\left[f_0+2\sum_{i=1}^{n-1}f_i+f_n\right].\]
+若 $\max_{[a,b]}|f''|\le M_2$，则
+\[|I-T_n|\le\frac{M_2(b-a)^3}{12n^2}.\]
+\kw{复合辛普森公式（Simpson's rule）}：$n$ 为偶数；内点权重按奇、偶索引取 $4,2$。
+\[S_n=\frac h3\left[f_0+4\!\sum_{\substack{1\le i<n\\i\text{ odd}}}\!f_i
++2\!\sum_{\substack{2\le i<n\\i\text{ even}}}\!f_i+f_n\right].\]
+若 $\max|f^{(4)}|\le M_4$，则 $|I-S_n|\le M_4(b-a)^5/(180n^4)$。$n$ 加倍，梯形／Simpson 误差界分别缩为 $1/4$、$1/16$。
+
+\sect{泛化与复杂度 / Generalization}
+$D=\{(X_i,Y_i)\}_{i=1}^N$ 独立同分布（i.i.d.）；$L=E_{out}$ 为总体风险，$\widehat L=E_{in}$ 为经验风险；ERM 最小化 $\widehat L$。以下界用于二元 0--1 损失。
+
+\kw{Hoeffding 不等式}：$h$ 须在看数据前固定。
+\[\Pr\{|L(h)-\widehat L(h)|>\epsilon\}\le2e^{-2N\epsilon^2}.\]
+有限集合 $|\mathcal H|=M$，用\kw{并集界（union bound）}：
+\[\Pr\{\sup_h|L(h)-\widehat L(h)|>\epsilon\}\le2Me^{-2N\epsilon^2}.\]
+以至少 $1-\delta$ 的概率，所有 $h$ 同时满足 $L(h)\le\widehat L(h)+\sqrt{\log(2M/\delta)/(2N)}$。数据选出的规则需要这种一致控制（uniform control）。
+
+\kw{打散（Shatter）：}存在一个 $N$ 点集，其全部 $2^N$ 标记均可实现。$S(\mathcal H,N)$ 是最多可实现标记数；$v=d_{VC}$ 是最大可打散规模。单向阈值 VC 维为 1；区间为 2；$\R^d$ 中仿射超平面为 $d+1$。
+
+\kw{Sauer 引理：}有限 $v$、$N>v$ 时，$S(\mathcal H,N)\le(N+1)^v$。课件 VC 泛化界：
+\[\Pr\{\sup_h|L-\widehat L|>\epsilon\}\le8(N+1)^ve^{-N\epsilon^2/32}.\]
+复杂度罚项为 $\sqrt{\frac{32}{N}[v\log(N+1)+\log(8/\delta)]}$。
+
+\kw{不可知 PAC（Agnostic PAC）：}对任意分布 $P$，当 $N\ge N_{\mathcal H}(\epsilon,\delta)$，要求 $\Pr\{L(\hat h)\le L(h^*)+\epsilon\}\ge1-\delta$，其中 $h^*=\argmin_{h\in\mathcal H}L(h)$。二元分布无关 PAC 可学习 $\Leftrightarrow v<\infty$（标准可测性条件下）。课件界给出的充分样本量级：
+\[N_{\mathcal H}=O\!\left(\frac{v\log(1/\epsilon)+\log(1/\delta)}{\epsilon^2}\right).\]
+\kw{逼近／估计误差（Approximation / estimation）}
+\[\underbrace{L(\hat h)-L(f^*)}_{\text{Bayes 超额风险}}=
+\underbrace{L(h^*)-L(f^*)}_{\Delta_{app}}+
+\underbrace{L(\hat h)-L(h^*)}_{\Delta_{est}}.\]
+$\Delta_{app}$ 来自模型集合限制；$\Delta_{est}$ 来自有限数据。缩小集合可增加逼近误差，却降低估计难度；与偏差／方差权衡（bias--variance trade-off）有关。
+
+\kw{$K$ 折交叉验证（Cross-validation, CV）：}每次以 $K-1$ 折训练、剩余一折验证，轮换取平均：
+\[E_{CV}(M)=K^{-1}\sum_{j=1}^K E_{val}^{(j)}(M).\]
+按 CV 选超参数后，在开发数据上重拟合；未触碰的测试集只作最终评价。预处理也应在每折内拟合。折间分数不独立；获胜候选的 CV 分数仍可能乐观。
+\end{sheetcol}
+
+\begin{sheetcol}{\B}
+\sect{参数估计与逻辑模型 / Parametric models}
+\kw{参数方法（Parametric）：}固定有限维模型族。\kw{非参数（Nonparametric）：}复杂度可随数据增长，以局部性／平滑代替固定形状。\kw{代入法（Plug-in）：}先估计条件概率 $\eta$，再代入决策规则。
+
+\kw{似然（Likelihood）与最大似然估计（Maximum likelihood estimation, MLE）}，i.i.d.：
+\[\mathcal L(\theta)=\prod_{i=1}^N p(z_i\mid\theta),\]
+\[\hat\theta=\argmax_\theta\sum_i\log p(z_i\mid\theta).\]
+数据固定，参数变化；似然不是参数的概率分布。Bernoulli 模型 $\hat p=k/N$；高斯（Gaussian）MLE：
+\[\hat\mu=N^{-1}\sum_i z_i,\qquad\hat\sigma^2=N^{-1}\sum_i(z_i-\hat\mu)^2.\]
+一致性／渐近效率要求模型正确及正则条件；错误模型族即使拟合很好，也可能系统性偏离真实规律。
+
+\kw{逻辑回归（Logistic regression）}，$y\in\{0,1\}$：
+\[g=w^Tx+b,\quad p=\sigma(g)=\frac1{1+e^{-g}},\]
+\[\log\frac p{1-p}=g.\]
+\kw{几率（odds）}$=p/(1-p)=e^g$，$g$ 是\kw{对数几率（log-odds）}。其余变量固定，$x_j$ 加一使 odds 乘 $e^{w_j}$，不是使概率乘该倍数。$p>1/2\iff g>0$；代价可改变阈值。
+
+\kw{交叉熵（Cross-entropy, CE）}
+\[\ell_{CE}(y,p)=-y\log p-(1-y)\log(1-p).\]
+条件似然 $\prod_i p_i^{y_i}(1-p_i)^{1-y_i}$；MLE 等价最小化平均 CE，并非直接最小化 0--1 错误。自信且错误的概率惩罚很大。
+
+\kw{逻辑回归梯度（Gradient）}：增广 $x$ 含偏置。
+\[\sigma'(z)=\sigma(z)(1-\sigma(z)),\]
+\[\nabla_w\ell_i=(\sigma(w^Tx_i)-y_i)x_i,\]
+平均梯度与 Hessian 公式见背面。
+
+\sect{非参数分类 / Nonparametric classification}
+\kw{直方图密度（Histogram density）：}一维箱 $A(x)$ 宽度为 $l$：
+\[\hat f(x)=\frac{\#\{i:X_i\in A(x)\}}{Nl}
+.\]
+$d$ 维时分母中的 $l$ 换为箱体积。
+\kw{核密度估计（Kernel density estimation, KDE）：}核 $\kappa$ 已归一化，带宽（bandwidth）为 $\sigma$。
+\[\hat f(x)=\frac1{N\sigma^d}\sum_i\kappa\!\left(\frac{x-X_i}{\sigma}\right).\]
+小箱宽／带宽：高方差、易过拟合；大带宽：更平滑、偏差增大。量纲、无关特征和高维稀疏性都会影响距离。
+
+\kw{统一局部投票（Local vote）}：$W_i\ge0$，$\sum_iW_i=1$。
+\[\hat\eta(x)=\sum_i W_i(x)\1\{Y_i=1\},\]
+\[\hat h(x)=\1\{\hat\eta(x)>1/2\}.\]
+\kw{直方图分类：}$W_i=\1\{X_i\in A(x)\}/N(x)$，空箱须另定规则。\kw{$k$ 近邻（kNN）：}最近 $k$ 点各权重 $1/k$，其余为零；小 $k$ 更灵活、噪声更大。奇数 $k$ 避免二元票数平局，不能避免距离并列。
+
+\kw{核分类（Kernel classification）}
+\[\text{Kernel:}\quad W_i(x)=
+\frac{\kappa((x-X_i)/\sigma)}{\sum_j\kappa((x-X_j)/\sigma)}.\]
+紧支撑核须处理分母为零。\kw{高斯核（Gaussian）}$e^{-\norm u^2}$；\kw{柯西核（Cauchy）}$(1+\norm u^{d+1})^{-1}$；\kw{均匀核（Uniform）}$\1_{\norm u\le1}$；\kw{三角核（Triangular）}$(1-\norm u)_+$；\kw{Epanechnikov 核}$(1-\norm u^2)_+$。共同常数在权重归一化时抵消。$k,l,\sigma$ 用验证／CV 选择。
+
+\sect{决策树与不纯度 / Trees \& impurity}
+\kw{CART：}递归问 $x_j\le a$，叶子构成轴对齐区域，各叶输出多数类。路径条件取 AND，同类叶子取 OR。
+
+节点 $R$ 内类别 1 比例为 $p$；Gini／误分类／熵不纯度：
+\[I_G=2p(1-p),\quad I_{err}=\min(p,1-p),\]
+\[I_H=-p\log p-(1-p)\log(1-p),\quad0\log0=0.\]
+纯节点不纯度为 0；$p=1/2$ 时最大。\kw{不纯度下降（Impurity decrease）：}
+\[\Delta I=I(R)-\frac{N_L}{N_R}I(R_L)-\frac{N_U}{N_R}I(R_U).\]
+$N_R$ 是父节点人数，$N_L,N_U$ 为两子节点人数。选合法候选中下降最大的分裂，再递归。\kw{贪心（greedy）}局部最优不等于树空间全局 ERM。按纯度、深度、最小叶人数停止，或\kw{剪枝（pruning）}；用验证选约束。深单树方差高；严格单调变换保持可实现的阈值划分，排序可反向。
+\end{sheetcol}
+
+\begin{sheetcol}{\C}
+\sect{K 均值聚类 / K-means}
+非空簇 $C_1,\ldots,C_k$ 的目标为簇内平方和（SSE）：
+\[J=\sum_{r=1}^k\sum_{i\in C_r}\norm{x_i-c_r}^2,\qquad
+c_r=\frac1{|C_r|}\sum_{i\in C_r}x_i.\]
+\kw{Lloyd 步骤：}初始化中心／划分；把每点分到最近中心；重新计算均值；重复到分配不变。多次初始化择优，可能收敛到不同局部最优。
+\[\sum_i\norm{x_i-c}^2=
+\sum_i\norm{x_i-\bar x}^2+n\norm{c-\bar x}^2.\]
+此恒等式说明均值唯一最小化非空簇 SSE。分配和均值更新均不增加 $J$。若始终无空簇、距离并列时留在原簇，则每次分组改变严格降低 $J$；划分数量有限，故有限步停止，\kw{不保证全局最优}。
+
+\kw{空簇（Empty cluster）：}均值未定义，不能除以零。可重置中心（如选远点），或按预定策略保留旧中心。上面的终止证明假设非空；修复策略须另外考虑。特征缩放会改变聚类几何。
+
+\sect{层次聚类 / Hierarchical clustering}
+\kw{凝聚式（Agglomerative）：}从单点簇出发，按连接距离（linkage）合并最近两簇，记录合并高度，直至剩一簇。
+
+\kw{单连接（Single linkage）：}最小跨簇距离。
+\[d_{single}(A,B)=\min_{x\in A,y\in B}d(x,y),\]
+\kw{全连接（Complete linkage）：}最大跨簇距离。
+\[d_{complete}(A,B)=\max_{x\in A,y\in B}d(x,y),\]
+\kw{平均连接（Average linkage）：}所有跨簇点对平均。
+\[d_{average}(A,B)=\frac1{|A||B|}\sum_{x\in A}\sum_{y\in B}d(x,y).\]
+Single 易经桥接点形成链（chaining）；Complete 偏向紧凑簇；Average 综合全部点对。\kw{树状图（Dendrogram）}的纵轴为合并不相似度；水平切线下的连通分支给出各簇。横向间隔不代表距离。同一切高下，不同 linkage 可给不同划分。
+
+\sect{标准正交几何 / Orthonormal geometry}
+\kw{柯西-施瓦茨不等式（Cauchy--Schwarz）}
+\[|x^Ty|\le\norm{x}\norm{y}.\]
+等号当且仅当向量线性相关（含零向量情形）。证明用 $0\le\norm{x-ay}^2$，当 $y\ne0$ 取 $a=x^Ty/\norm y^2$。
+
+\kw{标准正交组（Orthonormal list）：}$q_i^Tq_j=\delta_{ij}$，故线性无关；若张成 $S$，就是其标准正交基。令 $Q=[q_1\ \cdots\ q_k]$：
+\[Q^TQ=I_k,\qquad [x]_{\mathcal Q}=Q^Tx\quad(x\in S).\]
+用点积直接提取系数。矩形 $Q$ 通常不满足 $QQ^T=I_d$。
+
+\kw{正交矩阵（Orthogonal matrix）}特指方阵：
+\[Q^{-1}=Q^T,\quad (Qx)^T(Qy)=x^Ty,\quad\norm{Qx}=\norm x.\]
+保持长度、距离、点积及非零向量夹角。不要把“列标准正交”直接当作“方形正交矩阵”。
+
+\kw{Gram--Schmidt 正交化：}输入 $v_1,\ldots,v_k$ 线性无关。
+\[u_1=v_1,\quad q_1=u_1/\norm{u_1},\]
+\[u_j=v_j-\sum_{i<j}(q_i^Tv_j)q_i,\qquad
+q_j=u_j/\norm{u_j}.\]
+先减去\kw{全部}已有方向的分量，再归一化；每个前缀的张成空间不变。残差为零表示相关，应跳过该向量，不可归一化零向量；最后核对 $Q^TQ=I$。
+
+\sect{谱定理与半正定 / Spectral theorem \& PSD}
+实对称 $A=A^T\in\R^{d\times d}$ 有实标准正交特征基：
+\[Aq_j=\lambda_jq_j,\quad Q^TQ=I,\]
+\[A=Q\Lambda Q^T=\sum_{j=1}^d\lambda_jq_jq_j^T.\]
+不同特征值的特征向量正交；重特征空间内可另选标准正交基。$Q^T$ 取坐标，$\Lambda$ 逐项伸缩，$Q$ 转回原表示。
+\[x=\sum_j a_jq_j\quad\Rightarrow\quad x^TAx=\sum_j\lambda_ja_j^2.\]
+\kw{半正定（Positive semidefinite, PSD）：}$A\succeq0\iff$ 对所有 $x$ 有 $x^TAx\ge0\iff$ 全部 $\lambda_j\ge0$。\kw{正定（Positive definite, PD）：}对非零 $x$ 严格为正，等价全部 $\lambda_j>0$。
+
+PSD 可奇异，PD 可逆。任意实 $B$ 均有 $B^TB\succeq0$，因为 $x^TB^TBx=\norm{Bx}^2$。有负特征值则非 PSD。一般非对称实矩阵未必有正交实特征基。
+\end{sheetcol}
+
+\begin{sheetcol}{\D}
+\sect{支持向量机 / SVM}
+SVM：Support vector machine。
+$y_i\in\{-1,+1\}$，分数 $f_i=w^Tx_i+b$。本节 $f\ge0$ 判 $+1$，否则 $-1$；$w\ne0$ 时函数间隔／几何间隔／点到边界距离为：
+\[m_i=y_if_i,\quad\gamma_i=\frac{m_i}{\norm w},\quad
+d(x,H)=\frac{|w^Tx+b|}{\norm w}.\]
+正比例缩放参数不改变边界与几何间隔，但改变原始分数。
+
+\kw{硬间隔（Hard margin）：}两类均出现、严格可分。
+\[\min_{w,b}\tfrac12\norm w^2\quad\text{s.t. }m_i\ge1\ (\forall i).\]
+最优解 $\min_i m_i=1$；训练间隔 $\gamma=1/\norm w$，完整间隔带宽 $2/\norm w$。\kw{支持向量（Support vectors）}满足 $m_i=1$，触及间隔边界。
+
+\kw{软间隔（Soft margin）：}$C>0$；\kw{松弛变量（slack）}$\xi_i\ge0$ 允许违反单位间隔。
+\[\begin{aligned}
+\min_{w,b,\xi}\quad&\tfrac12\norm w^2+C\sum_i\xi_i,\\
+\text{s.t.}\quad&m_i\ge1-\xi_i,\quad\xi_i\ge0.
+\end{aligned}\]
+固定 $w,b$，最小松弛 $\xi_i^*=(1-m_i)_+=\max(0,1-m_i)$，即\kw{合页损失（hinge loss）}。等价目标：
+\[J(w,b)=\tfrac12\norm w^2+C\sum_i(1-m_i)_+.\]
+$\xi=0$ 满足间隔；$0<\xi<1$ 在正确侧但侵入间隔；$\xi=1$ 在决策边界；$\xi>1$ 在错误侧。分对也可有 hinge 损失；软 SVM 中间隔内／违规点也可影响拟合。
+
+大 $C$ 更重罚违反，小 $C$ 更偏好小范数。单位／\kw{尺度（scale）}改变距离与正则化几何，应联同 $C$ 调整。软间隔允许 $w=0$，此时是常数打分。
+
+\kw{二次规划（Quadratic programming, QP）：}凸二次目标加线性约束，局部极小均为全局极小。
+
+\kw{次梯度（Subgradient）：}先由同一组旧参数计算 $I=\{i:m_i<1\}$，再同时更新：
+\[\begin{aligned}
+w^+&=(1-\eta)w+\eta C\sum_{i\in I}y_ix_i,\\
+b^+&=b+\eta C\sum_{i\in I}y_i.
+\end{aligned}\]
+收缩权重并修正违规点；$m=1$ 处取零 hinge 次梯度合法。单步可增加目标，任意常步长不保证收敛。
+
+\kw{非线性 SVM（Nonlinear SVM）：}固定特征映射（feature map）$\phi$，在分数、损失和更新中将 $x_i$ 换为 $\phi(x_i)$。对参数仍凸，原空间边界可弯曲。例：$\phi(x)=(x,x^2)$，$4x-x^2-3>0\iff1<x<3$；特征 $x_1^2+x_2^2$ 可表达圆边界。
+
+\sect{奇异值分解与推荐 / SVD \& recommendation}
+SVD：Singular value decomposition。
+$A\in\R^{m\times d}$，秩 $r$，\kw{紧 SVD（Compact SVD）}：
+\[A=U_r\Sigma_rV_r^T=\sum_{j=1}^r\sigma_ju_jv_j^T,\]
+$U_r\in\R^{m\times r}$、$V_r\in\R^{d\times r}$ 各列标准正交；奇异值 $\sigma_1\ge\cdots\ge\sigma_r>0$。
+\[Av_j=\sigma_ju_j,\quad A^Tu_j=\sigma_jv_j,\quad A^TAv_j=\sigma_j^2v_j.\]
+\kw{截断（Truncation）：}$A_k=U_k\Sigma_kV_k^T$ 在秩至多 $k$ 的矩阵中最小化 Frobenius 平方误差：
+\[\norm{A-A_k}_F^2=\sum_{j>k}\sigma_j^2,\quad
+\norm A_F^2=\sum_j\sigma_j^2.\]
+\kw{推荐因子（Latent factors）：}评分表 $R\in\R^{n\times m}$，用户因子 $P\in\R^{n\times k}$，物品因子 $Q\in\R^{m\times k}$；$\hat r_{ij}=p_i^Tq_j$、$\hat R=PQ^T$。完整表可取 $P=U_k\Sigma_k,Q=V_k$。行是单个对象的嵌入（embedding），列是模式。
+
+\kw{缺失评分（Missing ratings）}不等于零；只拟合已观察训练对 $\Omega$：
+\[L=\sum_{(i,j)\in\Omega}(r_{ij}-p_i^Tq_j)^2+\lambda(\norm P_F^2+\norm Q_F^2).\]
+\kw{交替最小二乘（Alternating least squares, ALS）：}$\lambda>0$，小随机值初始化，交替解岭回归。$Q_i$ 含用户 $i$ 评过的物品行，$r_i$ 是对应评分；$P_j$ 含给物品 $j$ 评分的用户行，评分为 $r_j$：
+\[p_i=(Q_i^TQ_i+\lambda I)^{-1}Q_i^Tr_i,\]
+\[q_j=(P_j^TP_j+\lambda I)^{-1}P_j^Tr_j.\]
+求解线性系统，不显式求逆。精确块更新不增加 $L$；联合问题非凸，无全局保证。用验证选 $k,\lambda$；独立测试评分评价预测。无训练记录称\kw{冷启动（cold start）}。
+\[\mathrm{RMSE}=\sqrt{\frac1{|T|}\sum_{(i,j)\in T}(r_{ij}-\hat r_{ij})^2}.\]
+RMSE 为\kw{均方根误差（Root mean squared error）}。
+\end{sheetcol}
+
+\begin{sheetcol}{\F}
+\sect{二阶检验与凸性 / Second-order tests}
+\kw{一维驻点（Stationary point）：}可微内点极值须有 $f'(x^*)=0$，但零导数不充分。$f''(x^*)>0$ 为严格局部极小，$<0$ 为严格局部极大，$=0$ 无法判定；还要检查端点与不可微点。
+
+\kw{多变量：}$\nabla f(x^*)=0$；\kw{海森矩阵（Hessian）}$H_{ij}=\partial_i\partial_jf$，$C^2$ 时对称。
+\[f(x+v)\approx f(x)+\nabla f(x)^Tv+\tfrac12v^TH(x)v.\]
+在驻点：$H\succ0$ 为严格局部极小；$H\prec0$ 为严格局部极大；不定（indefinite）为\kw{鞍点（saddle）}；半正／半负定的奇异情形检验不充分。$C^2$ 的局部极小必要条件是 $H\succeq0$。
+
+\kw{二维判别式：}$D=f_{xx}f_{yy}-f_{xy}^2$。驻点处 $D>0,f_{xx}>0$ 为极小；$D>0,f_{xx}<0$ 为极大；$D<0$ 为鞍点；$D=0$ 无法判定。
+
+\kw{凸性（Convexity）：}定义域为凸集。
+\[f(tx+(1-t)y)\le tf(x)+(1-t)f(y),\quad t\in[0,1].\]
+可微时等价 $f(y)\ge f(x)+\nabla f(x)^T(y-x)$；$C^2$ 时等价处处 $H(x)\succeq0$。凸函数局部极小即全局极小，$\nabla f=0$ 足以判定全局最小。\kw{严格凸（strictly convex）}至多一个最小点，但不保证存在。处处 $H\succ0$ 是严格凸的充分非必要条件。
+
+\sect{正规方程与 Ridge / Normal equations}
+设计矩阵 $X\in\R^{N\times p}$ 的行可含截距／基函数，$y\in\R^N$。\kw{残差平方和（RSS）：}
+\[RSS=\norm{X\theta-y}^2,\quad
+\nabla RSS=2X^T(X\theta-y),\]
+\[\nabla^2RSS=2X^TX\succeq0,\qquad X^TX\hat\theta=X^Ty.\]
+若 $X$ 满列秩（full column rank）：
+\[\hat\theta=(X^TX)^{-1}X^Ty.\]
+否则最小化参数可不唯一，但训练拟合值唯一。数值实现应解最小二乘，而非显式求逆。
+
+\kw{岭回归（Ridge regression）：}$\lambda>0$。
+\[J=RSS+\lambda\norm\theta^2,\quad
+\hat\theta=(X^TX+\lambda I)^{-1}X^Ty,\]
+\[\nabla J=2X^T(X\theta-y)+2\lambda\theta.\]
+$X^TX+\lambda I\succ0$，保证唯一解并改善条件数（conditioning）。上式惩罚所有参数；若不惩罚截距，将 $I$ 换为 $\diag(0,1,\ldots,1)$，唯一性需另核条件。
+
+\kw{参数回归（Parametric regression）：}$h_\theta(x)=\sum_j\theta_j\phi_j(x)$ 对参数线性，关于输入可非线性。平方损失最优为 $f^*(x)=\E[Y\mid X=x]$。\kw{核／kNN 回归：}$\hat h(x)=\sum_iW_i(x)Y_i$；用归一化核权重，或最近 $k$ 个输出均值。\kw{回归树（Regression tree）：}叶子预测均值，按子节点 RSS 选分裂；森林取树预测平均。
+
+\kw{逻辑回归的平均梯度与 Hessian：}
+\[\nabla J=\frac1N\sum_i(p_i-y_i)x_i,\qquad
+\nabla^2J=\frac1NX^TDX,\]
+$D=\diag(p_i(1-p_i))\succeq0$，故目标凸，通常无闭式解。无正则且数据可分时，有限参数 MLE 可能不存在。
+
+\sect{梯度下降与收敛 / GD \& convergence}
+\[\theta_{t+1}=\theta_t-\alpha\nabla J(\theta_t).\]
+全批量梯度下降（GD）每步用全部 $N$ 点。$J=RSS/N$ 时：
+\[\theta^+=\theta-\alpha\frac2N X^T(X\theta-y).\]
+\kw{学习率（Learning rate）}$\alpha$ 太大会振荡／发散，太小则慢。梯度小、目标／参数变化小或达到迭代预算可停止；验证可指导\kw{早停（early stopping）}。
+
+若凸目标 $K$-光滑（smooth）、最小点存在，且 $0<\alpha\le1/K$：
+\[J(\theta_t)-J(\theta^*)\le\frac{\norm{\theta_0-\theta^*}^2}{2\alpha t}.\]
+$K$ 是 Hessian 特征值上界／梯度 Lipschitz 常数。强凸（strongly convex）、曲率下界 $\mu>0$ 时，适当 GD 有线性速率；非凸时不保证全局最小。
+
+\kw{随机／小批量梯度（SGD / mini-batch）}，$J=N^{-1}\sum_i\ell_i$：
+\[g_t=\frac1b\sum_{i\in B_t}\nabla\ell_i(\theta_t),\quad
+\theta_{t+1}=\theta_t-\alpha_tg_t.\]
+均匀抽样时 $\E[g_t\mid\theta_t]=\nabla J(\theta_t)$。一轮（epoch）约 $N/b$ 次更新。小 $b$ 每步便宜、噪声大；大 $b$ 方差小、代价高。正则项梯度另加，注意平均与求和的尺度。
+
+固定学习率常留下噪声平台（noise floor）。标准随机逼近条件下，一组充分的递减步长条件为：
+\[\sum_t\alpha_t=\infty,\qquad\sum_t\alpha_t^2<\infty.\]
+例如 $\alpha_t=a/(b+t)^\gamma$、$1/2<\gamma\le1$。仍须满足目标与梯度噪声等假设，不能仅凭步长序列宣称收敛。
+\end{sheetcol}
+
+\begin{sheetcol}{\G}
+\sect{集成学习 / Ensemble learning}
+\kw{装袋（Bagging）：}有放回重采样（bootstrap）$B$ 次，每份大小 $N$，各拟合一棵树。分类多数投票，回归平均；成员相关性越低，降方差通常越有效。
+
+\kw{随机森林（Random forest）：}bootstrap 加\emph{每次分裂}随机抽特征子集，常使用深树。随机特征降低树间相关性，增强稳定性但牺牲可解释性；不保证绝不过拟合。
+
+\sect{神经网络与反传 / Neural networks}
+\kw{前向传播（Forward pass）：}$a^0=x$；隐藏层：
+\[z^\ell=W^\ell a^{\ell-1}+b^\ell,\qquad
+ a^\ell=\phi(z^\ell).\]
+无非线性激活时，多层仿射映射仍可合成一层。训练通常非凸；表达能力强不保证泛化。
+
+\kw{激活函数（Activations）：}整流线性单元 ReLU 为 $(z)_+=\max(0,z)$；sigmoid 为 $\sigma(z)=1/(1+e^{-z})$；双曲正切 $\tanh z$；反正切 $\arctan z$；阶跃（step）$\1\{z\ge0\}$。
+\[\phi'_{ReLU}=\1\{z>0\}\ (z\ne0),\quad
+\sigma'=\sigma(1-\sigma),\]
+\[(\tanh z)'=1-\tanh^2z,\quad (\arctan z)'=(1+z^2)^{-1}.\]
+ReLU 在零点可选次梯度（常取 0）；阶跃跳点无普通导数，其他点梯度为零，不利于梯度训练。
+
+\kw{输出层（Output）：}二元用 sigmoid＋BCE；多类用 softmax＋CE，$y$ 为独热（one-hot）标签：
+\[p_c=\frac{e^{z_c}}{\sum_j e^{z_j}},\quad \hat y=\argmax_c p_c,\]
+\[\ell=-\sum_c y_c\log p_c.\]
+指数运算前减去 $\max_jz_j$ 可提高数值稳定性。上述匹配输出／损失组合的输出误差均为 $\delta^L=p-y$。
+
+\kw{反向传播（Backpropagation）：}输出分数 logits 为线性层，隐藏层误差逐层回传：
+\[\delta^\ell=((W^{\ell+1})^T\delta^{\ell+1})\odot\phi'(z^\ell),\]
+\[\frac{\partial\ell}{\partial W^\ell}=\delta^\ell(a^{\ell-1})^T,\qquad
+\frac{\partial\ell}{\partial b^\ell}=\delta^\ell.\]
+平均损失须取各样本梯度平均。链式法则（chain rule）传误差，注意形状匹配；饱和激活可导致小梯度。
+
+\kw{初始化（Initialization）：}零均值小随机权重打破神经元对称性；偏置可取零。输入／输出连接数为 fan-in $n_{in}$、fan-out $n_{out}$，常用\kw{权重方差}（不是标准差）：
+\[\text{LeCun }\frac1{n_{in}},\quad
+\text{Xavier }\frac2{n_{in}+n_{out}},\quad
+\text{He }\frac2{n_{in}}.\]
+He 适合 ReLU；Xavier 平衡层间尺度。隐藏权重全零会使同层单元保持对称。
+
+\sect{优化器更新式 / Optimizer equations}
+$g_t=\nabla J(w_t)$ 或小批量梯度。平方、开根、乘除均\kw{逐坐标（elementwise）}；历史状态初始为零。$0<\beta,\beta_1,\beta_2<1$，$\epsilon>0$ 防止数值除零。
+
+\kw{动量／重球（Momentum / heavy ball）：}采用速度（velocity）记法。
+\[v_t=\beta v_{t-1}-\alpha_tg_t,\qquad w_{t+1}=w_t+v_t.\]
+积累历史下降方向，可减少振荡。
+
+\kw{Nesterov 加速梯度（NAG）：}在前瞻（look-ahead）位置计算梯度。
+\[v_t=\beta v_{t-1}-\alpha_t\nabla J(w_t+\beta v_{t-1}),\]
+\[w_{t+1}=w_t+v_t.\]
+与 heavy ball 的差异在梯度求值位置。
+
+\kw{自适应梯度（Adagrad）：}永久累计历史梯度平方。
+\[s_t=s_{t-1}+g_t\odot g_t,\qquad
+w_{t+1}=w_t-\frac{\alpha_tg_t}{\sqrt{s_t+\epsilon}}.\]
+按坐标缩小有效学习率，对稀疏坐标有用，但步长可能持续变小。
+
+\kw{均方根传播（RMSProp）：}以指数移动平均（EMA）替代永久累计。
+\[s_t=\beta s_{t-1}+(1-\beta)g_t\odot g_t,\]
+\[w_{t+1}=w_t-\frac{\alpha_tg_t}{\sqrt{s_t+\epsilon}}.\]
+遗忘旧平方梯度。本课 Adagrad、RMSProp 的 $\epsilon$ 放在根号内。
+
+\kw{自适应矩估计（Adaptive moment estimation, Adam）：}沿用课件的\emph{负梯度一阶矩}。
+\[m_t=\beta_1m_{t-1}-(1-\beta_1)g_t,\]
+\[s_t=\beta_2s_{t-1}+(1-\beta_2)g_t\odot g_t,\]
+\[\hat m_t=\frac{m_t}{1-\beta_1^t},\qquad
+\hat s_t=\frac{s_t}{1-\beta_2^t},\qquad t\ge1,\]
+\[w_{t+1}=w_t+\frac{\alpha_t\hat m_t}{\sqrt{\hat s_t+\epsilon_{root}}+\epsilon}.\]
+$m_0=s_0=0$；从 $t=1$ 做\kw{偏差修正（bias correction）}。常用 $\beta_1=.9$、$\beta_2=.999$、$\epsilon=10^{-8}$、$\epsilon_{root}=0$。
+
+\kw{符号检查：}负梯度已存在 $m_t$ 中，所以最后用\emph{加号}。若一阶矩改存正梯度，最后须用减号；不能混用。偏差修正补偿 EMA 从零开始的偏差，不是消除统计模型偏差。
+\end{sheetcol}
+
+\typeout{COL-A=\the\dimexpr\ht\A+\dp\A\relax}
+\typeout{COL-B=\the\dimexpr\ht\B+\dp\B\relax}
+\typeout{COL-C=\the\dimexpr\ht\C+\dp\C\relax}
+\typeout{COL-D=\the\dimexpr\ht\D+\dp\D\relax}
+\typeout{COL-F=\the\dimexpr\ht\F+\dp\F\relax}
+\typeout{COL-G=\the\dimexpr\ht\G+\dp\G\relax}
+\head{1}{学习 / 统计 / 模型 / 聚类 / 标准正交几何}
+\noindent\usebox{\A}\hfill\usebox{\B}\hfill\usebox{\C}
+\foot{中文版＋英文术语 / 内容与英文版对应 / 概率界与收敛结论均须满足所列条件}
+\newpage
+\head{2}{SVM / SVD / 二阶检验 / 优化 / 神经网络 / 优化器}
+\noindent\usebox{\D}\hfill\usebox{\F}\hfill\usebox{\G}
+\foot{未注明范数均为欧氏范数 / $I$ 为单位矩阵 / 优化器符号约定沿用 Lecture 12}
+\end{document}

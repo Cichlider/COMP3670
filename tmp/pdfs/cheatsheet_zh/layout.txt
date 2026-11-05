@@ -1,0 +1,366 @@
+COMP3670 机器学习速查 / MACHINE LEARNING   1/2
+学习 / 统计 / 模型 / 聚类 / 标准正交几何
+从数据学习 / Learning from data                                     参数估计与逻辑模型 / Parametric models                                  K 均值聚类 / K-means
+演绎（Deduction）：理论／前提 → 预测；真前提加有           参数方法（Parametric）：固定有限维模型族。非参数                                                        非空簇 C1 , . . . , Ck 的目标为簇内平方和（SSE）：
+效逻辑可保证结论。归纳（Induction）：观察 → 一般 （Nonparametric）：复杂度可随数据增长，以局部性／                                                                   Xk    X                   1 X
+                                                                                                                                                     2
+规律；有限证据不能证明普遍命题，一个反例就可将其                 平滑代替固定形状。代入法（Plug-in）：先估计条件概                                                          J =                 ∥xi − cr ∥ ,             cr =                   xi .
+                                                                                                                                                                                    |Cr |
+证伪（falsify）。                             率 η ，再代入决策规则。                                                                                  r=1 i∈Cr                                            i∈Cr
+
+监督学习（Supervised）：有标签 (xi , yi )；分类输出离    似然／最大似然（Likelihood / MLE），i.i.d.：                                                    Lloyd 步骤：初始化中心／划分；把每点分到最近中心；
+散，回归输出数值。无监督（Unsupervised）      ：只有 xi ，                      YN                                                              重新计算均值；重复到分配不变。多次初始化择优，可
+发现结构。强化学习（Reinforcement）：状态 → 动作                     L(θ) =       p(zi | θ),                                                  能收敛到不同局部最优。
+                                                                                                                                  X        X
+→ 奖励，学习最大化累积奖励的策略（policy）        ；奖励可                         i=1
+                                                                                                                                         ∥xi − c∥ =
+                                                                                                                                                    2                           2
+                                                                                                                                                                   ∥xi − x̄∥ + n∥c − x̄∥ .
+                                                                                                                                                                                               2
+                                                              X
+延迟。                                              θ̂ = arg max     log p(zi | θ).                                                    i                          i
+感知机算法（PLA）：yi ∈ {−1, +1}。令 w = b = 0；                    θ
+                                                                i                                                             此恒等式说明均值唯一最小化非空簇 SSE。分配和均值
+找到错分点，更新，重复到无错分：                         数据固定，参数变化；似然不是参数的概率分布。                                                               更新均不增加 J 。若始终无空簇、距离并列时留在原簇，
+          w ← w + yi x i ,        b ← b + yi .                 Bernoulli 模型 p̂ = k/N ；高斯（Gaussian）MLE：                        则每次分组改变严格降低 J ；划分数量有限，故有限步
+                                                                             X               X
+L1 约定 wT x + b > 0 判 +1，否则 −1。严格线性可分                             µ̂ = N
+                                                                          −1          2
+                                                                                   zi ,
+                                                                                          −1
+                                                                                              σ̂ = N
+                                                                                                      2
+                                                                                                               (zi − µ̂) .    停止，不保证全局最优。
+时有限步停止；不可分时无此保证。训练零错误不等于                                                   i                               i                  空簇（Empty cluster）：均值未定义，不能除以零。可
+泛化（generalization）良好。                                          一致性／渐近效率要求模型正确及正则条件；错误模型                                       重置中心（如选远点），或按预定策略保留旧中心。上
+方差与数值积分 / Variance & integration                               族即使拟合很好，也可能系统性偏离真实规律。                                          面的终止证明假设非空；修复策略须另外考虑。特征缩
+                                                               逻辑回归（Logistic regression），y ∈ {0, 1}：                          放会改变聚类几何。
+
+    Var(X) = E[(X − EX)2 ] = E[X 2 ] − (EX)2 .                            T                                   1               层次聚类 / Hierarchical clustering
+        R                                                            g = w x + b,             p = σ(g) =           ,
+                                                                                                           1 + e−g            凝聚式（Agglomerative）：从单点簇出发，按连接距离
+求 I = ab f (x)dx，记 h = (b − a)/n、xi = a + ih、                                    p
+fi = f (xi )。                                                                         log
+                                                                                     = g.                                    （linkage）合并最近两簇，记录合并高度，直至剩一簇。
+                                                                               1−p                                            单连接（Single linkage）：最小跨簇距离。
+复合梯形公式（Trapezoidal rule）
+                  "                  #                         几率（odds）= p/(1 − p) = eg ，g 是对数几率                                      dsingle (A, B) = min d(x, y),
+                h      X
+                       n−1
+          Tn =         f0 + 2         fi + fn .               （log-odds）。其余变量固定，xj 加一使 odds 乘 ewj ，                                                                  x∈A,y∈B
+
+                   2                                           不是使概率乘该倍数。p > 1/2 ⇐⇒ g > 0；代价可                                 全连接（Complete linkage）：最大跨簇距离。
+                                i=1
+若 max[a,b] |f ′′ | ≤ M2 ，则                                     改变阈值。                                                              dcomplete (A, B) = max d(x, y),
+                                                                                                                                                                      x∈A,y∈B
+                                                               交叉熵（Cross-entropy, CE）
+                  M2 (b − a)              3
+                                                                                                                              平均连接（Average linkage）：所有跨簇点对平均。
+      |I − Tn | ≤            .                                    ℓCE (y, p) = −y log p − (1 − y) log(1 − p).                                        X X
+                     12n2                                            Q y                                                                          1
+复合辛普森公式（Simpson’s rule）：n 为偶数；内点权                              条件似然 i pi i (1 − pi )1−yi ；MLE 等价最小化平均                               daverage (A, B) =                                  d(x, y).
+                                                                                                                                                                   |A||B|
+重按奇、偶索引取 4, 2。                                                 CE，并非直接最小化 0–1 错误。自信且错误的概率惩                                                                                  x∈A y∈B
+                                                             罚很大。                                                           Single 易经桥接点形成链（chaining）；Complete 偏向紧
+        h         X        X                                 逻辑回归梯度（Gradient）：增广 x 含偏置。                                     凑簇；Average 综合全部点对。树状图（Dendrogram）
+   Sn =    f0 + 4   fi + 2   fi + fn                                         ′                                              的纵轴为合并不相似度；水平切线下的连通分支给出各
+        3                            .                                   σ (z) = σ(z)(1 − σ(z)),
+                       1≤i<n          2≤i<n                                                     T                             簇。横向间隔不代表距离。同一切高下，不同 linkage
+                        i odd          i even                          ∇w ℓi = (σ(w xi ) − yi )xi ,
+                                                                                                                              可给不同划分。
+若 max |f | ≤ M4 ，则
+         (4)                                                         1 X                   2        1 T
+                                                                ∇J =     (pi − yi )xi ,  ∇ J =       X DX,                    标准正交几何 / Orthonormal geometry
+|I − Sn | ≤ M4 (b − a)5 /(180n4 )。n 加倍，梯形／                           N i                           N
+Simpson 误差界分别缩为 1/4、1/16。                                                                                                     柯西-施瓦茨不等式（Cauchy–Schwarz）
+                                                               D = diag(pi (1 − pi )) ⪰ 0，故目标凸，通常无闭式解。                                                    T
+                                                                                                                                                        |x y| ≤ ∥x∥∥y∥.
+泛化与复杂度 / Generalization                                        无正则且数据可分时，有限参数 MLE 可能不存在。
+D = {(Xi , Yi )}N                                                                                                             等号当且仅当向量线性相关（含零向量情形）。证明用
+                i=1 独立同分布（i.i.d.）
+                                ；L = Eout 为                    非参数分类 / Nonparametric classification
+总体风险，L     b = Ein 为经验风险；ERM 最小化 L    b。以                                                                                     0 ≤ ∥x − ay∥2 ，当 y ̸= 0 取 a = xT y/∥y∥2 。
+                                                               直方图密度（Histogram density）：一维箱 A(x) 宽度                           标准正交组（Orthonormal list）：qiT qj = δij ，故线性
+下界用于二元 0–1 损失。                                                 为 l：
+Hoeffding 不等式：h 须在看数据前固定。                                                                                                     无关；若张成 S ，就是其标准正交基。令
+                                                                            #{i : Xi ∈ A(x)}
+                                                  2
+                                                                     ˆ       f (x) =                 .                        Q = [q1 · · · qk ]：
+               b
+    Pr{|L(h) − L(h)| > ϵ} ≤ 2e
+                               −2N ϵ
+                                     .                                                    Nl                                             T                                   T
+                                                               d 维时分母中的 l 换为箱体积。核密度估计（Kernel                                            Q Q = Ik ,             [x]Q = Q x           (x ∈ S).
+有限集合 |H| = M ，用并集界（union bound）：                                                                                              用点积直接提取系数。矩形 Q 通常不满足 QQT = Id 。
+                                                               density estimation, KDE）：核 κ 已归一化，带宽
+                    b                           −2N ϵ2
+     Pr{sup |L(h) − L(h)| > ϵ} ≤ 2M e                     .   （bandwidth）为 σ 。                                                正交矩阵（Orthogonal matrix）特指方阵：
+                                                                                                    
+                                                                                     1 X
+         h                                                                                                                         −1        T             T                T
+                                                                                              x − Xi                           Q        =Q ,       (Qx) (Qy) = x y,                 ∥Qx∥ = ∥x∥.
+以至少 1 − δ   的概率，所有 h 同时满足
+              p                                                           fˆ(x) =         κ            .
+        b                                                                          Nσ d          σ                            保持长度、距离、点积及非零向量夹角。不要把“列标
+L(h) ≤ L(h) + log(2M /δ)/(2N )。数据选出的规则                                                  i
+                                                                                                                              准正交”直接当作“方形正交矩阵”。
+需要这种一致控制（uniform control）。                                     小箱宽／带宽：高方差、易过拟合；大带宽：更平滑、
+                                                                                                                              Gram–Schmidt 正交化：输入 v1 , . . . , vk 线性无关。
+打散（Shatter）：存在一个 N 点集，其全部 2N 标记                                偏差增大。量纲、无关特征和高维稀疏性都会影响距离。     P
+均可实现。S(H, N ) 是最多可实现标记数；v = dV C                               统一局部投票（Local vote）：Wi ≥ 0， i Wi = 1。                                              u1 = v1 ,         q1 = u1 /∥u1 ∥,
+                                                                             X                                                                     X
+是最大可打散规模。单向阈值 VC 维为 1；区间为 2；                                         η̂(x) =   Wi (x)1{Yi = 1},                                     uj = vj −
+                                                                                                                                                           T
+                                                                                                                                                         (qi vj )qi ,           qj = uj /∥uj ∥.
+Rd 中仿射超平面为 d + 1。                                                                         i                                                        i<j
+Sauer 引理：有限 v 、N > v 时，                                                                                                       先减去全部已有方向的分量，再归一化；每个前缀的张
+                                                                        ĥ(x) = 1{η̂(x) > 1/2}.
+S(H, N ) ≤ (N + 1)v 。课件 VC 泛化界：                                                                                               成空间不变。残差为零表示相关，应跳过该向量，不可
+                                                      2        直方图分类：Wi = 1{Xi ∈ A(x)}/N (x)，空箱须另
+              b > ϵ} ≤ 8(N + 1)v e−N ϵ /32 .
+  Pr{sup |L − L|                                                                                                              归一化零向量；最后核对 QT Q = I 。
+                                                               定规则。k 近邻（kNN）：最近 k 点各权重 1/k，其余
+      h
+           q                                                   为零；小 k 更灵活、噪声更大。奇数 k 避免二元票数                                    谱定理与半正定 / Spectral theorem & PSD
+复杂度罚项为        N [v log(N + 1) + log(8/δ)]。
+              32
+                                                               平局，不能避免距离并列。                             实对称 A = AT ∈ Rd×d 有实标准正交特征基：
+不可知 PAC（Agnostic PAC）：对任意分布 P ，当                               核分类（Kernel classification）                                              T
+                                                                                                                      Aqj = λj qj , Q Q = I,
+N ≥ NH (ϵ, δ)，要求 Pr{L(ĥ) ≤ L(h∗ ) + ϵ} ≥ 1 − δ ，                               κ((x − Xi )/σ)
+                                                          Kernel: Wi (x) = P                     .                                  Xd
+其中 h∗ = arg minh∈H L(h)。二元分布无关 PAC 可学                                           j κ((x − Xj )/σ)                     A = QΛQ =
+                                                                                                                              T                T
+                                                                                                                                        λj qj qj .
+习 ⇔ v < ∞（标准可测性条件下）                。课件界给出的充分        紧支撑核须处理分母为零。高斯核（Gaussian）                                                       j=1
+样本量级：                                   
+                                                         2
+                                                    e−∥u∥ ；柯西核（Cauchy）(1 + ∥u∥d+1 )−1 ；均匀核              不同特征值的特征向量正交；重特征空间内可另选标准
+                   v log(1/ϵ) + log(1/δ)           （Uniform）1∥u∥≤1 ；三角核（Triangular）(1 − ∥u∥)+ ； 正交基。Q X
+                                                                                                                  T
+                                                                                                                     取坐标，Λ 逐项伸缩，QX             转回原表示。
+          NH = O                            .
+                             ϵ2                     Epanechnikov 核 (1 − ∥u∥2 )+ 。共同常数在权重归一                    x=       aj qj ⇒ x Ax =
+                                                                                                                                     T                 2
+                                                                                                                                                   λj aj .
+逼近／估计误差（Approximation / estimation）                 化时抵消。k, l, σ 用验证／ CV 选择。                                        j                           j
+             ∗        ∗         ∗              ∗
+ L(ĥ) − L(f ) = L(h ) − L(f ) + L(ĥ) − L(h ) .    决策树与不纯度 / Trees & impurity                          半正定（Positive semidefinite, PSD）：A ⪰ 0 ⇐⇒
+ |       {z    } |       {z       } |     {z     }
+   Bayes 超额风险          ∆ app             ∆ est      CART：递归问 xj ≤ a，叶子构成轴对齐区域，各叶输                       对所有 x 有 xT Ax ≥ 0 ⇐⇒ 全部 λj ≥ 0。正定
+                                                    出多数类。路径条件取 AND，同类叶子取 OR。                           （Positive definite, PD）：对非零 x 严格为正，等价全
+∆app 来自模型集合限制；∆est 来自有限数据。缩小集
+                                                    节点  R  内类别    1 比例为    p ；Gini  ／误分类／熵不纯度：          部 λj > 0。
+合可增加逼近误差，却降低估计难度；与偏差／方差权
+                                                         IG = 2p(1 − p), Ierr = min(p, 1 − p),
+                                                                                                        PSD 可奇异，PD 可逆。任意实 B 均有 B T B ⪰ 0，因
+衡（bias–variance trade-off）有关。
+                                                                                                        为 xT B T Bx = ∥Bx∥2 。有负特征值则非 PSD。一般
+K 折交叉验证（Cross-validation, CV）          ：每次以 K − 1     IH = −p log p − (1 − p) log(1 − p), 0 log 0 = 0.  非对称实矩阵未必有正交实特征基。
+折训练、剩余一折验证，轮换取平均：                                   纯节点不纯度为 0；p = 1/2 时最大。不纯度下降
+                         −1
+                            XK
+                                   (j)             （Impurity decrease）：
+          ECV (M ) = K                Eval (M ).
+                                                                          NL            NU
+                                j=1                                 ∆I = I(R) −I(RL ) −    I(RU ).
+                                                                          NR            NR
+按 CV 选超参数后，在开发数据上重拟合；未触碰的测
+                                                               NR 是父节点人数，NL , NU 为两子节点人数。选合法
+试集只作最终评价。预处理也应在每折内拟合。折间分
+                                                               候选中下降最大的分裂，再递归。贪心（greedy）局部
+数不独立；获胜候选的 CV 分数仍可能乐观。
+                                                               最优不等于树空间全局 ERM。按纯度、深度、最小叶
+                                                               人数停止，或剪枝（pruning）；用验证选约束。深单树
+                                                               方差高；严格单调的坐标变换保持阈值排序。
+中文版＋英文术语 / 内容与英文版对应 / 概率界与收敛结论均须满足所列条件   A4 / 100% / 双面长边翻转
+ COMP3670 机器学习速查 / MACHINE LEARNING                                                                                                                                                                                                        2/2
+ SVM / SVD / 二阶检验 / 优化 / 神经网络 / 优化器
+
+ 支持向量机 / SVM                                                                         二阶检验与凸性 / Second-order tests                                                 集成学习 / Ensemble learning
+yi ∈ {−1, +1}，分数 fi = wT xi + b。本节 f ≥ 0 判                                           一维驻点（Stationary point）：可微内点极值须有                                              装袋（Bagging）
+                                                                                                                                                                            ：有放回重采样（bootstrap）B 次，每
++1，否则 −1；w ̸= 0 时函数间隔／几何间隔／点到边                                                       f ′ (x∗ ) = 0，但零导数不充分。f ′′ (x∗ ) > 0 为严格局                                    份大小 N ，各拟合一棵树。分类多数投票，回归平均；
+ 界距离为：                                                                               部极小，< 0 为严格局部极大，= 0 无法判定；还要检                                                 成员相关性越低，降方差通常越有效。
+                               mi                                  |wT x + b|        查端点与不可微点。                                                                    随机森林（Random forest）：bootstrap 加每次分裂随
+  m i = y i fi ,      γi =         ,          d(x, H) =                       .      多变量：∇f (x∗ ) = 0；海森矩阵（Hessian）                                               机抽特征子集，常使用深树。随机特征降低树间相关性，
+                               ∥w∥                                   ∥w∥
+ 正比例缩放参数不改变边界与几何间隔，但改变原始分                                                            Hij = ∂i ∂j f ，C 2 时对称。                                                      增强稳定性但牺牲可解释性；不保证绝不过拟合。
+                                                                                                                                T              T
+ 数。                                                                                      f (x + v) ≈ f (x) + ∇f (x) v + 12 v H(x)v.                               神经网络与反传 / Neural networks
+ 硬间隔（Hard margin）：两类均出现、严格可分。                                                        在驻点：H ≻ 0 为严格局部极小；H ≺ 0 为严格局部                                                前向传播（Forward pass）：a0 = x；隐藏层：
+       min 12 ∥w∥2 s.t. mi ≥ 1 (∀i).                                                 极大；不定（indefinite）为鞍点（saddle）；半正／半负                                                       ℓ
+                                                                                                                                                                          z =W a
+                                                                                                                                                                                          ℓ ℓ−1
+                                                                                                                                                                                                  +b ,
+                                                                                                                                                                                                        ℓ           ℓ
+                                                                                                                                                                                                                   a = ϕ(z ).
+                                                                                                                                                                                                                                    ℓ
+              w,b
+                                                                                     定的奇异情形检验不充分。C 2 的局部极小必要条件是
+                                                                                                                                                                 无非线性激活时，多层仿射映射仍可合成一层。训练通
+ 最优解 mini mi = 1；训练间隔 γ = 1/∥w∥，完整间隔                                                 H ⪰ 0。
+                                                                                                                                                                 常非凸；表达能力强不保证泛化。
+ 带宽 2/∥w∥。支持向量（Support vectors）满足                                                    二维判别式：D = fxx fyy − fxy
+                                                                                                           2
+                                                                                                              。驻点处
+                                                                                                                                                                 激活函数（Activations）：整流线性单元 ReLU 为
+ mi = 1，触及间隔边界。                                                                      D > 0, fxx > 0 为极小；D > 0, fxx < 0 为极大；
+                                                                                                                                                                 (z)+ = max(0, z)；sigmoid 为 σ(z) = 1/(1 + e−z )；
+ 软间隔（Soft margin）：C > 0；松弛变量（slack）                                                  D < 0 为鞍点；D = 0 无法判定。
+                                                                                                                                                                 双曲正切 tanh z ；反正切 arctan z ；阶跃（step）
+ ξi ≥ 0 允许违反单位间隔。                                                                    凸性（Convexity）：定义域为凸集。
+                          X                                                                                                                                      1{z ≥ 0}。
+          min 12 ∥w∥2 + C   ξi ,                                                     f (tx + (1 − t)y) ≤ tf (x) + (1 − t)f (y),                    t ∈ [0, 1].        ′                           ′
+              w,b,ξ                                                                                                                                                 ϕReLU = 1{z > 0} (z ̸= 0), σ = σ(1 − σ),
+                                                     i                               可微时等价 f (y) ≥ f (x) + ∇f (x)T (y − x)；C 2 时等                                         ′                  2                              ′             2 −1
+                   s.t. mi ≥ 1 − ξi ,                     ξi ≥ 0.                                                                                                 (tanh z) = 1 − tanh z,                (arctan z) = (1 + z )                    .
+                                                                                     价处处 H(x) ⪰ 0。凸函数局部极小即全局极小，
+                                                                                     ∇f = 0 足以判定全局最小。严格凸（strictly convex）                                         ReLU 在零点可选次梯度（常取 0）；阶跃跳点无普通导
+ 固定 w, b，最小松弛
+                                                                                                                                                                  数，其他点梯度为零，不利于梯度训练。
+ ξi∗ = (1 − mi )+ = max(0, 1 − mi )，即合页损失                                            至多一个最小点，但不保证存在。处处 H ≻ 0 是严格
+                                                                                     凸的充分非必要条件。                                                                   输出层（Output）：二元用 sigmoid ＋ BCE；多类用
+（hinge loss）。等价目标：
+                               X                                                                                                                                  softmax ＋ CE，y 为独热（one-hot）标签：
+                        2
+         J(w, b) = 12 ∥w∥ + C                            (1 − mi )+ .                正规方程与岭回归 / Normal equations &                                                                  ez c
+                                                 i                                   ridge                                                                                    pc = P z ,                    ŷ = arg max pc ,
+                                                                                                                                                                                         j
+                                                                                                                                                                                    j e                                 c
+ ξ = 0 满足间隔；0 < ξ < 1 在正确侧但侵入间隔；                                                     设计矩阵 X ∈ RN ×p 的行可含截距／基函数，                                                                                   X
+ ξ = 1 在决策边界；ξ > 1 在错误侧。分对也可有 hinge                                                  y ∈ RN 。残差平方和（RSS）：                                                                                  ℓ=−               yc log pc .
+ 损失；软 SVM 中间隔内／违规点也可影响拟合。                                                              RSS = ∥Xθ − y∥ ,
+                                                                                                                2
+                                                                                                                            ∇RSS = 2X (Xθ − y),
+                                                                                                                                               T                                                    c
+ 大 C 更重罚违反，小 C 更偏好小范数。单位／尺度                                                                2                T                              T            T         指数运算前减去 maxj zj 可提高数值稳定性。上述匹配
+                                                                                        ∇ RSS = 2X X ⪰ 0,      X X θ̂ = X y.
+（scale）改变距离与正则化几何，应联同 C 调整。软间                                                                                                                                     输出／损失组合的输出误差均为 δ L = p − y 。
+ 隔允许 w = 0，此时是常数打分。                                                                  若 X 满列秩（full column rank）：                                                   反向传播（Backpropagation）：输出分数 logits 为线性
+                                                                                                                        T     −1       T
+ 二次规划（Quadratic programming, QP）：凸二次目                                                                    θ̂ = (X X)                X y.                           层，隐藏层误差逐层回传：
+ 标加线性约束，局部极小均为全局极小。                                                                  否则最小化参数可不唯一，但训练拟合值唯一。数值实                                                              δ = ((W
+                                                                                                                                                                                  ℓ
+                                                                                                                                                                                        ) δ
+                                                                                                                                                                                             ℓ+1 T          ℓ+1             ′
+                                                                                                                                                                                                                  ) ⊙ ϕ (z ),
+                                                                                                                                                                                                                                ℓ
+
+ 次梯度（Subgradient）：先由同一组旧参数计算                                                         现应解最小二乘，而非显式求逆。                                                                       ∂ℓ                                        ∂ℓ
+                                                                                                                                                                                  ℓ   ℓ−1 T                                   ℓ
+ I = {i : mi < 1}，再同时更新：                                                             岭回归（Ridge regression）：λ > 0。                                                              = δ (a    ) ,                             =δ .
+             +
+                         X                                                                                    2                    T               −1       T
+                                                                                                                                                                          ∂W ℓ                                       ∂bℓ
+             w        = (1 − η)w + ηC                          yi x i ,                J = RSS + λ∥θ∥ ,                 θ̂ = (X X + λI)                 X y,      平均损失须取各样本梯度平均。链式法则（chain rule）
+                                                         i∈I
+                                                                                                                    T
+                                                                                                ∇J = 2X (Xθ − y) + 2λθ.                                           传误差，注意形状匹配；饱和激活可导致小梯度。
+                                      X
+              b
+                  +
+                      = b + ηC                yi .                                   X T X + λI ≻ 0，保证唯一解并改善条件数                                                   初始化（Initialization）
+                                                                                                                                                                                    ：零均值小随机权重打破神经元
+                                      i∈I                                           （conditioning）。上式惩罚所有参数；若不惩罚截距，将                                              对称性；偏置可取零。输入／输出连接数为 fan-in nin 、
+ 收缩权重并修正违规点；m = 1 处取零 hinge 次梯度合                                                     I 换为 diag(0, 1, . . . , 1)，唯一性需另核条件。                                         fan-out nout ，常用权重方差（不是标准差）：
+                                                                                     参数回归（Parametric           regression）：                                                        1                    2                                2
+ 法。单步可增加目标，任意常步长不保证收敛。                                                                        P                                                                      LeCun            ,    Xavier              ,                He          .
+                                                                                                 j θj ϕj (x) 对参数线性，关于输入可非线性。
+ 非线性 SVM（Nonlinear SVM）：固定特征映射                                                       hθ (x) =                                                                                     nin               nin + nout                          nin
+                                                                                                        ∗                                                         He 适合 ReLU；Xavier 平衡层间尺度。隐藏权重全零会
+                                                                                                    Pf (x) = E[Y | X = x]。核／ kNN
+（feature map）ϕ，在分数、损失和更新中将 xi 换为                                                     平方损失最优为
+ ϕ(xi )。对参数仍凸，原空间边界可弯曲。例：                                                            回归：ĥ(x) =                                                                   使同层单元保持对称。
+                                                                                                       i Wi (x)Yi ；用归一化核权重，或最近
+ ϕ(x) = (x, x2 )，4x − x2 − 3 > 0 ⇐⇒ 1 < x < 3；                                       k 个输出均值。回归树（Regression tree）           ：叶子预测                                 优化器更新式 / Optimizer equations
+ 特征 x21 + x22 可表达圆边界。                                                                均值，按子节点 RSS 选分裂；森林取树预测平均。                                                    gt = ∇J(wt ) 或小批量梯度。平方、开根、乘除均逐
+ 奇异值分解与推荐 / SVD & recommendation                                                     梯度下降与收敛 / GD & convergence                                                   坐标（elementwise）；历史状态初始为零。
+ A ∈ Rm×d ，秩 r ，紧 SVD（Compact SVD）：                                                                                                                               0 < β, β1 , β2 < 1，ϵ > 0 防止数值除零。
+                                              X
+                                              r                                                          θt+1 = θt − α∇J(θt ).                                    动量／重球（Momentum / heavy ball）：采用速度
+              A = Ur Σ r V r =
+                                      T
+                                                     σj u j v j ,
+                                                                   T                                                                                             （velocity）记法。
+                                                                                     全批量梯度下降（GD）每步用全部 N 点。
+                                              j=1
+                                                                                     J = RSS/N 时：                                                                      vt = βvt−1 − αt gt ,                    wt+1 = wt + vt .
+ Ur ∈ Rm×r 、Vr ∈ Rd×r 各列标准正交；奇异值                                                             +         2 T                                                        积累历史下降方向，可减少振荡。
+ σ1 ≥ · · · ≥ σr > 0。                                                                       θ = θ − α X (Xθ − y).                                                 Nesterov 加速梯度：在前瞻（look-ahead）位置计算梯
+                                                                                                       N
+  Avj = σj uj ,
+                           T
+                          A uj = σj vj ,
+                                                               T
+                                                          A Avj = σj vj .
+                                                                                2
+                                                                                     学习率（Learning rate）α 太大会振荡／发散，太小则                                             度。
+              ：Ak = Uk Σk VkT
+ 截断（Truncation）                                                在秩至多 k 的矩             慢。梯度小、目标／参数变化小或达到迭代预算可停                                                              vt = βvt−1 − αt ∇J(wt + βvt−1 ),
+ 阵中最小化 Frobenius X
+                 平方误差：                                                               止；验证可指导早停（early stopping）。                                                                            wt+1 = wt + vt .
+                                                                   X                 若凸目标 K -光滑（smooth）、最小点存在，且
+       ∥A − Ak ∥F =
+                      2
+                                      σj ,
+                                          2
+                                                ∥A∥F =
+                                                           2                2
+                                                                           σj .                                                                                  与 heavy ball 的差异在梯度求值位置。
+                               j>k                                     j
+                                                                                     0 < α ≤ 1/K ：                                                               Adagrad：永久累计历史梯度平方。
+                                                                                                                               ∥θ − θ ∗ ∥2                                                                               α t gt
+ 推荐因子（Latent factors）    ：评分表 R ∈ Rn×m ，用户                                   ∗
+                                                                 J(θt ) − J(θ ) ≤
+                                                                                     0
+                                                                                               .                                                                   st = st−1 + gt ⊙ gt ,                    wt+1 = wt − √        .
+                                                                                       2αt                                                                                                                                st + ϵ
+ 因子 P ∈ Rn×k ，物品因子 Q ∈ Rm×k ；r̂ij = pT       i qj 、
+ R̂ = P QT 。完整表可取 P = Uk Σk , Q = Vk 。行是单            K  是 Hessian   特征值上界／梯度         Lipschitz 常数。强凸                                                              按坐标缩小有效学习率，对稀疏坐标有用，但步长可能
+ 个对象的嵌入（embedding），列是模式。                            （strongly convex）、曲率下界 µ > 0 时，适当 GD 有线                                                                       持续变小。
+ 缺失评分（Missing ratings）不等于零；只拟合已观察                    性速率；非凸时不保证全局最小。                                                                                              RMSProp：以指数移动平均（EMA）替代永久累计。
+ 训练对 Ω：                                              随机／小批量梯度（SGD
+                                                               P               / mini-batch），                                                                                     st = βst−1 + (1 − β)gt ⊙ gt ,
+         X           T     2        2      2         J = N −1       ℓi ：                                                                                                                            α t gt
+    L=       (rij − pi qj ) + λ(∥P ∥F + ∥Q∥F ).                   i
+                                                                                                                                                                                     wt+1 = wt − √
+                                                                1 X                                                                                                                                 st + ϵ
+                                                                                                                                                                                                           .
+         (i,j)∈Ω                                                                          gt =              ∇ℓi (θt ),         θt+1 = θt − αt gt .
+ 交替最小二乘（Alternating least squares, ALS）：
+                                                                                                 b
+                                                                                                     i∈Bt                                                         遗忘旧平方梯度。本课 Adagrad、RMSProp 的 ϵ 放在根
+                                                                                                                                                                  号内。
+ λ > 0，小随机值初始化，交替解岭回归。Qi 含用户 i                                                       均匀抽样时 E[gt | θt ] = ∇J(θt )。一轮（epoch）约
+ 评过的物品行，ri 是对应评分；Pj 含给物品 j 评分的                                                                                                                                    自适应矩估计（Adam）：沿用课件的负梯度一阶矩。
+                                                                                     N /b 次更新。小 b 每步便宜、噪声大；大 b 方差小、
+ 用户行，评分为 rj ：                                                                        代价高。正则项梯度另加，注意平均与求和的尺度。                                                                       mt = β1 mt−1 − (1 − β1 )gt ,
+                                                 −1
+                               T
+               pi = (Qi Qi + λI)
+                                                               T
+                                                          Q i ri ,                   固定学习率常留下噪声平台（noise floor）。标准随机逼                                                        st = β2 st−1 + (1 − β2 )gt ⊙ gt ,
+                               T                 −1         T                        近条件下，一组充分的递减步长条件为：
+                                                                                             X              X
+                                                                                                                                                                               mt                  st
+               qj = (Pj Pj + λI)                         Pj rj .                                                                                                      m̂t =          ,   ŝt =           ,    t ≥ 1,
+                                                                                                         αt = ∞,
+                                                                                                                                       2
+                                                                                                                                    αt < ∞.                                  1 − β1t             1 − β2t
+ 求解线性系统，不显式求逆。精确块更新不增加 L；联
+                                                                                                     t                         t                                                                  αt m̂t
+ 合问题非凸，无全局保证。用验证选 k, λ；独立测试评                                                                                                                                                wt+1 = wt + √                    .
+ 分评价预测。无训练记录称冷启动（cold start）。                                                        例如 αt = a/(b + t)γ 、1/2 < γ ≤ 1。仍须满足目标                                                                  ŝt + ϵroot + ϵ
+            v                                                                        与梯度噪声等假设，不能仅凭步长序列宣称收敛。                                                       m0 = s0 = 0；从 t = 1 做偏差修正（bias correction）         。
+            u 1 X
+            u                                                                                                                                                     常用 β1 = .9、β2 = .999、ϵ = 10−8 、ϵroot = 0。
+     RMSE = t     (rij − r̂ij )2 .
+                               |T |                                                                                                                               符号检查：负梯度已存在 mt 中，所以最后用加号。若
+                                      (i,j)∈T
+                                                                                                                                                                  一阶矩改存正梯度，最后须用减号；不能混用。偏差修
+ RMSE 为均方根误差（Root mean squared error）。
+                                                                                                                                                                  正补偿 EMA 从零开始的偏差，不是消除统计模型偏差。
+
+ 未注明范数均为欧氏范数 / I 为单位矩阵 / 优化器符号约定沿用 Lecture 12                                                                                                                                                                   A4 / 100% / 双面长边翻转
+
